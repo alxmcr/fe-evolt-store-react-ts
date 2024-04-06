@@ -6,7 +6,7 @@ export default {
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
-        white: {
+        light: {
           50: '#ffffff',
           100: '#efefef',
           200: '#dcdcdc',
