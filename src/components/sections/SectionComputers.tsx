@@ -1,5 +1,5 @@
-import Icon15x15Close from '../@icons/15x15/Icon15x15Close';
-import Icon15x15Filter from '../@icons/15x15/Icon15x15Filter';
+import Icon16x16Close from '../@icons/16x16/Icon16x16Close';
+import Icon16x16Filter from '../@icons/16x16/Icon16x16Filter';
 import BoxGridProducts from '../boxes/BoxGridProducts';
 
 export default function SectionComputers() {
@@ -9,11 +9,11 @@ export default function SectionComputers() {
         <h2>Computers</h2>
         <div>
           <button>
-            <Icon15x15Filter />
+            <Icon16x16Filter />
             <span>Filter</span>
           </button>
           <button>
-            <Icon15x15Close />
+            <Icon16x16Close />
             <span>Reset</span>
           </button>
         </div>

@@ -1,5 +1,5 @@
 import { ProductData } from '../../@types/appTypes';
-import Icon15x15Plus from '../@icons/15x15/Icon15x15Plus';
+import Icon16x16Plus from '../@icons/16x16/Icon16x16Plus';
 import BoxProductImage from '../boxes/BoxProductImage';
 
 type Props = {
@@ -29,7 +29,7 @@ export default function CardProduct({ product }: Props) {
         </p>
         <button className="flex items-center justify-center">
           <span className="uppercase">Add to cart</span>
-          <Icon15x15Plus />
+          <Icon16x16Plus />
         </button>
       </footer>
     </article>
