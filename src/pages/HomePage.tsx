@@ -1,4 +1,4 @@
-import AppHeader from '../components/common/AppHeader';
+import AppHeader from '../components/common/header/AppHeader';
 
 export default function HomePage() {
   return (
