@@ -9,7 +9,7 @@ export default function Icon10x10Close() {
     >
       <path
         d="M2.81595 7.18442L5.00038 5M5.00038 5L7.18479 2.81557M5.00038 5L2.81595 2.81557M5.00038 5L7.18479 7.18442"
-        stroke="black"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
