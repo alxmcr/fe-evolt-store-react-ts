@@ -7,6 +7,8 @@ export type ProductData = {
   model: string;
   SKU: string;
   memory: string;
-  urlPhoto: string;
+  urlPhoto?: string;
+  filenamePhoto: string;
+  altPhoto: string;
   screenSize: string;
 };

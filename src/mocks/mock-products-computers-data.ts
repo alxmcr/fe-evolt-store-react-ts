@@ -9,7 +9,8 @@ export const product001: ProductData = {
   model: 'M2',
   SKU: 'MKW43LL/A',
   memory: '8GB RAM, 256GB SSD',
-  urlPhoto: '[Image of Apple MacBook Air M2]',
+  filenamePhoto: 'product001.jpeg',
+  altPhoto: '[Image of Apple MacBook Air M2]',
   screenSize: '13.6-inch',
 };
 
@@ -22,7 +23,8 @@ export const product002: ProductData = {
   model: 'i7-1185G7',
   SKU: '206X00PT',
   memory: '16GB RAM, 512GB SSD',
-  urlPhoto: '[Image of Microsoft Surface Laptop Studio]',
+  filenamePhoto: 'product001.jpeg',
+  altPhoto: '[Image of Microsoft Surface Laptop Studio]',
   screenSize: '14.4-inch',
 };
 
@@ -35,7 +37,8 @@ export const product003: ProductData = {
   model: 'Ryzen 9 6900HX',
   SKU: 'G614JM-XB99Q',
   memory: '16GB RAM, 1TB SSD',
-  urlPhoto: '[Image of ASUS ROG Strix G15 Advantage Edition]',
+  filenamePhoto: 'product001.jpeg',
+  altPhoto: '[Image of ASUS ROG Strix G15 Advantage Edition]',
   screenSize: '15.6-inch',
 };
 
@@ -48,7 +51,8 @@ export const product004: ProductData = {
   model: 'i5-1235U',
   SKU: 'LX728T-ER726',
   memory: '8GB RAM, 256GB SSD',
-  urlPhoto: '[Image of Acer Chromebook Spin 713]',
+  filenamePhoto: 'product001.jpeg',
+  altPhoto: '[Image of Acer Chromebook Spin 713]',
   screenSize: '13.5-inch',
 };
 
@@ -61,7 +65,8 @@ export const product005: ProductData = {
   model: 'Ryzen 5 5500U',
   SKU: '82LM00QBUS',
   memory: '16GB RAM, 256GB SSD',
-  urlPhoto: '[Image of Lenovo IdeaPad Flex 5 14]',
+  filenamePhoto: 'product001.jpeg',
+  altPhoto: '[Image of Lenovo IdeaPad Flex 5 14]',
   screenSize: '14-inch',
 };
 
@@ -74,7 +79,8 @@ export const product006: ProductData = {
   model: 'i7-1260P',
   SKU: '8NR93AV_16',
   memory: '16GB RAM, 1TB SSD',
-  urlPhoto: '[Image of HP Spectre x360 14]',
+  filenamePhoto: 'product001.jpeg',
+  altPhoto: '[Image of HP Spectre x360 14]',
   screenSize: '14-inch',
 };
 
@@ -87,7 +93,8 @@ export const product007: ProductData = {
   model: 'i7-1250U',
   SKU: '9305-0004',
   memory: '16GB RAM, 512GB SSD',
-  urlPhoto: '[Image of Dell XPS 13 Plus]',
+  filenamePhoto: 'product001.jpeg',
+  altPhoto: '[Image of Dell XPS 13 Plus]',
   screenSize: '13.4-inch',
 };
 
@@ -100,7 +107,8 @@ export const product008: ProductData = {
   model: 'i7-1260P',
   SKU: 'NP950QDB-KA3US',
   memory: '16GB RAM, 1TB SSD',
-  urlPhoto: '[Image of Samsung Galaxy Book 2 Pro 360]',
+  filenamePhoto: 'product001.jpeg',
+  altPhoto: '[Image of Samsung Galaxy Book 2 Pro 360]',
   screenSize: '13.3-inch',
 };
 
@@ -113,7 +121,8 @@ export const product009: ProductData = {
   model: 'RTX 3060',
   SKU: '11SCXR-203US',
   memory: '16GB RAM, 512GB SSD',
-  urlPhoto: '[Image of MSI GF65 Thin]',
+  filenamePhoto: 'product001.jpeg',
+  altPhoto: '[Image of MSI GF65 Thin]',
   screenSize: '15.6-inch',
 };
 
@@ -126,7 +135,8 @@ export const product010: ProductData = {
   model: 'M1',
   SKU: 'MGJ73LL/A',
   memory: '8GB RAM, 256GB SSD',
-  urlPhoto: '[Image of Apple iMac 24-inch]',
+  filenamePhoto: 'product001.jpeg',
+  altPhoto: '[Image of Apple iMac 24-inch]',
   screenSize: '24-inch',
 };
 
