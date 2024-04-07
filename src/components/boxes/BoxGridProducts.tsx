@@ -1,3 +1,12 @@
+import useProducts from '../../hooks/useProducts';
+import GridProducts from '../grids/GridProducts';
+
 export default function BoxGridProducts() {
-  return null;
+  const { products } = useProducts();
+
+  return (
+    <div>
+      <GridProducts products={products} />
+    </div>
+  );
 }
