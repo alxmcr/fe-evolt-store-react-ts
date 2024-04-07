@@ -8,13 +8,13 @@ export default function SectionComputers() {
       <header className="flex items-center justify-between">
         <h2 className="font-bold">Computers</h2>
         <div className="flex items-center justify-between gap-2">
-          <button className="flex h-[1.625rem] w-[4.625rem] items-center gap-2 rounded-lg border-[1px] border-light-950 px-8">
+          <button className="flex min-h-[1.875rem] min-w-[5.125rem] items-center gap-2 rounded-lg border-[1px] border-light-950 px-4">
             <Icon16x16Filter />
-            <span>Filter</span>
+            <span className="text-[.75rem]">Filter</span>
           </button>
-          <button className="flex h-[1.625rem] w-[4.625rem] items-center gap-2 rounded-lg border-[1px] border-light-950 px-8">
+          <button className="flex min-h-[1.875rem] min-w-[5.125rem] items-center gap-2 rounded-lg border-[1px] border-light-950 px-4">
             <Icon16x16Close />
-            <span>Reset</span>
+            <span className="text-[.75rem]">Reset</span>
           </button>
         </div>
       </header>

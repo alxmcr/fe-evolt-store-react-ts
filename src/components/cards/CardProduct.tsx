@@ -12,7 +12,7 @@ export default function CardProduct({ product }: Props) {
   }
 
   return (
-    <article className="w-[9.75rem] rounded-md bg-white">
+    <article className="rounded-md bg-white">
       <header className="min-h-[3.5rem] px-[.375rem] py-[.625rem]">
         <h3 className="text-[.625rem] uppercase text-perano-200">
           {product.category}
