@@ -1,22 +1,26 @@
 import { ProductData } from '../@types/appTypes';
 
-export const product001: ProductData = {
+export const computer001: ProductData = {
+  category: 'Computers',
   name: 'Apple MacBook Air M2',
-  price: '$1199',
+  priceValue: 1199.46,
+  priceCurrency: 'MXN',
   brand: 'Apple',
   operatingSystem: 'macOS Monterey',
   color: 'Space Gray',
   model: 'M2',
   SKU: 'MKW43LL/A',
   memory: '8GB RAM, 256GB SSD',
-  filenamePhoto: 'apple-macbook-air-m2.jpeg',
+  filenamePhoto: 'apple-macbook-air-m2.png',
   altPhoto: '[Image of Apple MacBook Air M2]',
   screenSize: '13.6-inch',
 };
 
-export const product002: ProductData = {
+export const computer002: ProductData = {
+  category: 'Computers',
   name: 'Microsoft Surface Laptop Studio',
-  price: '$1599',
+  priceValue: 1599.46,
+  priceCurrency: 'MXN',
   brand: 'Microsoft',
   operatingSystem: 'Windows 11 Home',
   color: 'Platinum',
@@ -28,9 +32,11 @@ export const product002: ProductData = {
   screenSize: '14.4-inch',
 };
 
-export const product003: ProductData = {
+export const computer003: ProductData = {
+  category: 'Computers',
   name: 'ASUS ROG Strix G15 Advantage Edition',
-  price: '$1799',
+  priceValue: 1799.46,
+  priceCurrency: 'MXN',
   brand: 'ASUS',
   operatingSystem: 'Windows 11 Home',
   color: 'Black',
@@ -42,9 +48,11 @@ export const product003: ProductData = {
   screenSize: '15.6-inch',
 };
 
-export const product004: ProductData = {
+export const computer004: ProductData = {
+  category: 'Computers',
   name: 'Acer Chromebook Spin 713',
-  price: '$699',
+  priceValue: 699.46,
+  priceCurrency: 'MXN',
   brand: 'Acer',
   operatingSystem: 'Chrome OS',
   color: 'Silver',
@@ -56,9 +64,11 @@ export const product004: ProductData = {
   screenSize: '13.5-inch',
 };
 
-export const product005: ProductData = {
+export const computer005: ProductData = {
+  category: 'Computers',
   name: 'Lenovo IdeaPad Flex 5 14',
-  price: '$799',
+  priceValue: 799.46,
+  priceCurrency: 'MXN',
   brand: 'Lenovo',
   operatingSystem: 'Windows 11 Home',
   color: 'Grey',
@@ -70,9 +80,11 @@ export const product005: ProductData = {
   screenSize: '14-inch',
 };
 
-export const product006: ProductData = {
+export const computer006: ProductData = {
+  category: 'Computers',
   name: 'HP Spectre x360 14',
-  price: '$1299',
+  priceValue: 1299.46,
+  priceCurrency: 'MXN',
   brand: 'HP',
   operatingSystem: 'Windows 11 Home',
   color: 'Nightfall Teal',
@@ -84,9 +96,11 @@ export const product006: ProductData = {
   screenSize: '14-inch',
 };
 
-export const product007: ProductData = {
+export const computer007: ProductData = {
+  category: 'Computers',
   name: 'Dell XPS 13 Plus',
-  price: '$999',
+  priceValue: 999.46,
+  priceCurrency: 'MXN',
   brand: 'Dell',
   operatingSystem: 'Windows 11 Pro',
   color: 'Platinum White',
@@ -98,9 +112,11 @@ export const product007: ProductData = {
   screenSize: '13.4-inch',
 };
 
-export const product008: ProductData = {
+export const computer008: ProductData = {
+  category: 'Computers',
   name: 'Samsung Galaxy Book 2 Pro 360',
-  price: '$1499',
+  priceValue: 1499.46,
+  priceCurrency: 'MXN',
   brand: 'Samsung',
   operatingSystem: 'Windows 11 Home',
   color: 'Mystic Silver',
@@ -112,9 +128,11 @@ export const product008: ProductData = {
   screenSize: '13.3-inch',
 };
 
-export const product009: ProductData = {
+export const computer009: ProductData = {
+  category: 'Computers',
   name: 'MSI GF65 Thin',
-  price: '$1099',
+  priceValue: 1099.46,
+  priceCurrency: 'MXN',
   brand: 'MSI',
   operatingSystem: 'Windows 11 Home',
   color: 'Black',
@@ -127,8 +145,10 @@ export const product009: ProductData = {
 };
 
 export const product010: ProductData = {
+  category: 'Computers',
   name: 'Apple iMac 24-inch',
-  price: '$1299',
+  priceValue: 1299.46,
+  priceCurrency: 'MXN',
   brand: 'Apple',
   operatingSystem: 'macOS Monterey',
   color: 'Blue',
@@ -141,14 +161,14 @@ export const product010: ProductData = {
 };
 
 export const MOCK_DATA_COMPUTERS: ProductData[] = [
-  product001,
-  product002,
-  product003,
-  product004,
-  product005,
-  product006,
-  product007,
-  product008,
-  product009,
+  computer001,
+  computer002,
+  computer003,
+  computer004,
+  computer005,
+  computer006,
+  computer007,
+  computer008,
+  computer009,
   product010,
 ];

@@ -1,6 +1,8 @@
 export type ProductData = {
+  category?: string;
   name: string;
-  price: string;
+  priceValue: number;
+  priceCurrency?: string;
   brand: string;
   operatingSystem: string;
   color: string;
