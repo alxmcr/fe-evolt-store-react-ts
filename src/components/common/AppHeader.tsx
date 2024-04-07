@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom';
-import Icon26x26Thunderbolt from '../@icons/26x26/Icon26x26Thunderbolt';
-import Icon26x26User from '../@icons/26x26/Icon26x26User';
-import Icon26x26Heart from '../@icons/26x26/Icon26x26Heart';
-import Icon26x26Cart from '../@icons/26x26/Icon26x26Cart';
+import Icon30x30User from '../@icons/30x30/Icon30x30User';
+import Icon30x30Heart from '../@icons/30x30/Icon30x30Heart';
+import Icon30x30Cart from '../@icons/30x30/Icon30x30Cart';
 import AppBadgeIcon from '../badges/AppBadgeIcon';
+import Icon26x26Thunderbolt from '../@icons/26x26/Icon26x26Thunderbolt';
 
 export default function AppHeader() {
   return (
@@ -17,7 +17,7 @@ export default function AppHeader() {
       <div className="flex items-center gap-2">
         <NavLink to="/user-profile" className="flex size-[40px] items-center">
           <AppBadgeIcon smallText="0">
-            <Icon26x26User />
+            <Icon30x30User />
           </AppBadgeIcon>
         </NavLink>
         <NavLink
@@ -25,7 +25,7 @@ export default function AppHeader() {
           className="flex size-[40px] items-center"
         >
           <AppBadgeIcon smallText="0">
-            <Icon26x26Heart />
+            <Icon30x30Heart />
           </AppBadgeIcon>
         </NavLink>
         <NavLink
@@ -33,7 +33,7 @@ export default function AppHeader() {
           className="flex size-[40px] items-center"
         >
           <AppBadgeIcon smallText="0">
-            <Icon26x26Cart />
+            <Icon30x30Cart />
           </AppBadgeIcon>
         </NavLink>
       </div>
