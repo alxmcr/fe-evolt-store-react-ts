@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import Icon26x26Thunderbolt from '../../@icons/26x26/Icon26x26Thunderbolt';
 import AppHeaderActions from './AppHeaderActions';
+import AppHeaderSearchForm from './AppHeaderSearchForm';
 
 export default function AppHeader() {
   return (
@@ -11,6 +12,7 @@ export default function AppHeader() {
         </span>{' '}
         <span className="text-[16px] font-semibold">eVolt</span>
       </NavLink>
+      <AppHeaderSearchForm />
       <AppHeaderActions />
     </header>
   );
