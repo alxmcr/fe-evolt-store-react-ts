@@ -1,9 +1,11 @@
 type Props = {
+  photoSource: string;
   photoFilename: string;
   photoAlt: string;
 };
 
 export default function BoxProductImage({
+  photoSource = '',
   photoFilename = '',
   photoAlt = '',
 }: Props) {
@@ -13,7 +15,7 @@ export default function BoxProductImage({
         <img src={`/product-assets/${photoFilename}`} alt={photoAlt} />
       </div>
       <span className="text-right text-[.5rem] text-perano-300">
-        Designed by <a href="#">Freepik</a>
+        Designed by <a href="#">{photoSource}</a>
       </span>
     </div>
   );

@@ -12,6 +12,7 @@ export type ProductData = {
   memory: string;
   yearRelease?: number;
   photoUrl?: string;
+  photoSource: string;
   photoFilename: string;
   photoAlt: string;
   screenSize: string;
