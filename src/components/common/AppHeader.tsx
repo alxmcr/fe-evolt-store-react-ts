@@ -1,5 +1,5 @@
-import Icon26x26Thunderbolt from './@icons/26x26/Icon26x26Thunderbolt';
-import AppNavLink from './common/AppNavlink';
+import Icon26x26Thunderbolt from '../@icons/26x26/Icon26x26Thunderbolt';
+import AppNavLink from './AppNavlink';
 
 export default function AppHeader() {
   return (
