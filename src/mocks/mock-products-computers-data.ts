@@ -71,7 +71,7 @@ export const computer004: ProductData = {
 export const computer005: ProductData = {
   id: 'product-000001',
   category: 'Computers',
-  name: 'Lenovo IdeaPad Flex 5 14',
+  name: "Lenovo IdeaPad Flex 5 14'",
   priceValue: 799.46,
   priceCurrency: 'MXN',
   brand: 'Lenovo',
@@ -80,7 +80,7 @@ export const computer005: ProductData = {
   model: 'Ryzen 5 5500U',
   SKU: '82LM00QBUS',
   memory: '16GB RAM, 256GB SSD',
-  photoFilename: 'lenovo-ideapad-flex-5-14.png',
+  photoFilename: 'lenovo-ideapad-flex-5-14inch.png',
   photoAlt: '[Image of Lenovo IdeaPad Flex 5 14]',
   screenSize: '14-inch',
 };
@@ -88,7 +88,7 @@ export const computer005: ProductData = {
 export const computer006: ProductData = {
   id: 'product-000001',
   category: 'Computers',
-  name: 'HP Spectre x360 14',
+  name: "HP Spectre x360 14'",
   priceValue: 1299.46,
   priceCurrency: 'MXN',
   brand: 'HP',
