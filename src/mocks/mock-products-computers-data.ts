@@ -130,7 +130,7 @@ export const product010: ProductData = {
   screenSize: '24-inch',
 };
 
-export const MOCK_DATA_COMPUTERS = [
+export const MOCK_DATA_COMPUTERS: ProductData[] = [
   product001,
   product002,
   product003,
