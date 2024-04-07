@@ -5,6 +5,14 @@ import Icon30x30User from '../../@icons/30x30/Icon30x30User';
 import AppBadgeIcon from '../../badges/AppBadgeIcon';
 
 export default function AppHeaderActions() {
+  const handleFavorites = () => {
+    console.log('Display favorites');
+  };
+
+  const handleCart = () => {
+    console.log('Display cart');
+  };
+
   return (
     <div className="flex items-center gap-2">
       <NavLink to="/user-profile" className="flex size-[40px] items-center">
@@ -12,22 +20,19 @@ export default function AppHeaderActions() {
           <Icon30x30User />
         </AppBadgeIcon>
       </NavLink>
-      <NavLink
-        to="/favorites-products"
+      <button
         className="flex size-[40px] items-center"
+        onClick={handleFavorites}
       >
         <AppBadgeIcon smallText="0">
           <Icon30x30Heart />
         </AppBadgeIcon>
-      </NavLink>
-      <NavLink
-        to="/favorites-products"
-        className="flex size-[40px] items-center"
-      >
+      </button>
+      <button className="flex size-[40px] items-center" onClick={handleCart}>
         <AppBadgeIcon smallText="0">
           <Icon30x30Cart />
         </AppBadgeIcon>
-      </NavLink>
+      </button>
     </div>
   );
 }
