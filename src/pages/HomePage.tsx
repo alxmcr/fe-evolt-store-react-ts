@@ -1,8 +1,8 @@
-import AppHeader from '../components/AppHeader';
+import AppHeader from '../components/common/header/AppHeader';
 
 export default function HomePage() {
   return (
-    <main className="bg-perano-100 h-screen p-4">
+    <main className="h-screen bg-perano-100 p-4">
       <AppHeader />
     </main>
   );
