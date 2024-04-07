@@ -4,9 +4,9 @@ import BoxGridProducts from '../boxes/BoxGridProducts';
 
 export default function SectionComputers() {
   return (
-    <section>
+    <section className="flex flex-col gap-4">
       <header className="flex items-center justify-between">
-        <h2>Computers</h2>
+        <h2 className="font-bold">Computers</h2>
         <div className="flex items-center justify-between gap-2">
           <button className="flex h-[1.625rem] w-[4.625rem] items-center gap-2 rounded-lg border-[1px] border-light-950 px-8">
             <Icon16x16Filter />
