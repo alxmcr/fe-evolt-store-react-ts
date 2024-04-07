@@ -5,7 +5,7 @@ import Icon26x26Thunderbolt from './@icons/26x26/Icon26x26Thunderbolt';
 
 export default function AppHeader() {
   return (
-    <header className="flex flex-col gap-4">
+    <header className="flex flex-col gap-4 bg-perano-400">
       <a href="#" className="text-green-400">
         <Icon26x26Thunderbolt />
       </a>
