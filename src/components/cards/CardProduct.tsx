@@ -12,23 +12,25 @@ export default function CardProduct({ product }: Props) {
   }
 
   return (
-    <article className="h-[20.25rem] w-[9.75rem] rounded-md bg-white">
-      <header className="h-[3.5rem] px-[.375rem] py-[.625rem]">
+    <article className="w-[9.75rem] rounded-md bg-white">
+      <header className="min-h-[3.5rem] px-[.375rem] py-[.625rem]">
         <h3 className="text-[.625rem] uppercase text-perano-200">
           {product.category}
         </h3>
-        <h2 className="text-ellipsis text-[1rem] font-bold">{product.name}</h2>
+        <h2 className="truncate text-ellipsis text-[1rem] font-bold">
+          {product.name}
+        </h2>
       </header>
       <BoxProductImage
         photoFilename={product.photoFilename}
         photoAlt={product.photoAlt}
       />
-      <footer className="px-[.375rem] py-[.625rem]">
+      <footer className="flex flex-col gap-3 px-[.375rem] py-[.625rem]">
         <p className="text-[.9375rem] font-semibold">
           {product.priceCurrency} {product.priceValue}
         </p>
-        <button className="flex items-center justify-center">
-          <span className="uppercase">Add to cart</span>
+        <button className="flex min-h-[1.625rem] items-center justify-center gap-2 rounded-lg border border-perano-200">
+          <span className="text-[.5625rem] font-semibold uppercase">Add to cart</span>
           <Icon16x16Plus />
         </button>
       </footer>
