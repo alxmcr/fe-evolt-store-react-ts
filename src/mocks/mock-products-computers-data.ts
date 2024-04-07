@@ -1,6 +1,7 @@
 import { ProductData } from '../@types/appTypes';
 
 export const computer001: ProductData = {
+  id: 'product-000001',
   category: 'Computers',
   name: 'Apple MacBook Air M2',
   priceValue: 1199.46,
@@ -17,6 +18,7 @@ export const computer001: ProductData = {
 };
 
 export const computer002: ProductData = {
+  id: 'product-000001',
   category: 'Computers',
   name: 'Microsoft Surface Laptop Studio',
   priceValue: 1599.46,
@@ -33,6 +35,7 @@ export const computer002: ProductData = {
 };
 
 export const computer003: ProductData = {
+  id: 'product-000001',
   category: 'Computers',
   name: 'ASUS ROG Strix G15 Advantage Edition',
   priceValue: 1799.46,
@@ -49,6 +52,7 @@ export const computer003: ProductData = {
 };
 
 export const computer004: ProductData = {
+  id: 'product-000001',
   category: 'Computers',
   name: 'Acer Chromebook Spin 713',
   priceValue: 699.46,
@@ -65,6 +69,7 @@ export const computer004: ProductData = {
 };
 
 export const computer005: ProductData = {
+  id: 'product-000001',
   category: 'Computers',
   name: 'Lenovo IdeaPad Flex 5 14',
   priceValue: 799.46,
@@ -81,6 +86,7 @@ export const computer005: ProductData = {
 };
 
 export const computer006: ProductData = {
+  id: 'product-000001',
   category: 'Computers',
   name: 'HP Spectre x360 14',
   priceValue: 1299.46,
@@ -97,6 +103,7 @@ export const computer006: ProductData = {
 };
 
 export const computer007: ProductData = {
+  id: 'product-000001',
   category: 'Computers',
   name: 'Dell XPS 13 Plus',
   priceValue: 999.46,
@@ -113,6 +120,7 @@ export const computer007: ProductData = {
 };
 
 export const computer008: ProductData = {
+  id: 'product-000001',
   category: 'Computers',
   name: 'Samsung Galaxy Book 2 Pro 360',
   priceValue: 1499.46,
@@ -129,6 +137,7 @@ export const computer008: ProductData = {
 };
 
 export const computer009: ProductData = {
+  id: 'product-000001',
   category: 'Computers',
   name: 'MSI GF65 Thin',
   priceValue: 1099.46,
@@ -145,6 +154,7 @@ export const computer009: ProductData = {
 };
 
 export const computer010: ProductData = {
+  id: 'product-000001',
   category: 'Computers',
   name: 'Apple iMac 24-inch',
   priceValue: 1299.46,
