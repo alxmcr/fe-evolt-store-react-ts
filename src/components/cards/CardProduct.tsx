@@ -24,7 +24,7 @@ export default function CardProduct({ product }: Props) {
         photoAlt={product.photoAlt}
       />
       <footer className="px-[.375rem] py-[.625rem]">
-        <p className="text-[.9375rem]">
+        <p className="text-[.9375rem] font-semibold">
           {product.priceCurrency} {product.priceValue}
         </p>
         <button className="flex items-center justify-center">
