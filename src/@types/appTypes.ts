@@ -10,8 +10,8 @@ export type ProductData = {
   SKU: string;
   memory: string;
   yearRelease?: number;
-  urlPhoto?: string;
-  filenamePhoto: string;
-  altPhoto: string;
+  photoUrl?: string;
+  photoFilename: string;
+  photoAlt: string;
   screenSize: string;
 };

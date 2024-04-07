@@ -11,8 +11,8 @@ export const computer001: ProductData = {
   model: 'M2',
   SKU: 'MKW43LL/A',
   memory: '8GB RAM, 256GB SSD',
-  filenamePhoto: 'apple-macbook-air-m2.png',
-  altPhoto: '[Image of Apple MacBook Air M2]',
+  photoFilename: 'apple-macbook-air-m2.png',
+  photoAlt: '[Image of Apple MacBook Air M2]',
   screenSize: '13.6-inch',
 };
 
@@ -27,8 +27,8 @@ export const computer002: ProductData = {
   model: 'i7-1185G7',
   SKU: '206X00PT',
   memory: '16GB RAM, 512GB SSD',
-  filenamePhoto: 'microsoft-surface-laptop-studio.jpeg',
-  altPhoto: '[Image of Microsoft Surface Laptop Studio]',
+  photoFilename: 'microsoft-surface-laptop-studio.jpeg',
+  photoAlt: '[Image of Microsoft Surface Laptop Studio]',
   screenSize: '14.4-inch',
 };
 
@@ -43,8 +43,8 @@ export const computer003: ProductData = {
   model: 'Ryzen 9 6900HX',
   SKU: 'G614JM-XB99Q',
   memory: '16GB RAM, 1TB SSD',
-  filenamePhoto: 'asus-rog-strix-g15-advantage-edition.jpeg',
-  altPhoto: '[Image of ASUS ROG Strix G15 Advantage Edition]',
+  photoFilename: 'asus-rog-strix-g15-advantage-edition.jpeg',
+  photoAlt: '[Image of ASUS ROG Strix G15 Advantage Edition]',
   screenSize: '15.6-inch',
 };
 
@@ -59,8 +59,8 @@ export const computer004: ProductData = {
   model: 'i5-1235U',
   SKU: 'LX728T-ER726',
   memory: '8GB RAM, 256GB SSD',
-  filenamePhoto: 'acer-chromebook-spin-713.jpeg',
-  altPhoto: '[Image of Acer Chromebook Spin 713]',
+  photoFilename: 'acer-chromebook-spin-713.jpeg',
+  photoAlt: '[Image of Acer Chromebook Spin 713]',
   screenSize: '13.5-inch',
 };
 
@@ -75,8 +75,8 @@ export const computer005: ProductData = {
   model: 'Ryzen 5 5500U',
   SKU: '82LM00QBUS',
   memory: '16GB RAM, 256GB SSD',
-  filenamePhoto: 'lenovo-ideapad-flex-5-14.jpeg',
-  altPhoto: '[Image of Lenovo IdeaPad Flex 5 14]',
+  photoFilename: 'lenovo-ideapad-flex-5-14.jpeg',
+  photoAlt: '[Image of Lenovo IdeaPad Flex 5 14]',
   screenSize: '14-inch',
 };
 
@@ -91,8 +91,8 @@ export const computer006: ProductData = {
   model: 'i7-1260P',
   SKU: '8NR93AV_16',
   memory: '16GB RAM, 1TB SSD',
-  filenamePhoto: 'hp-spectre-x360-14.jpeg',
-  altPhoto: '[Image of HP Spectre x360 14]',
+  photoFilename: 'hp-spectre-x360-14.jpeg',
+  photoAlt: '[Image of HP Spectre x360 14]',
   screenSize: '14-inch',
 };
 
@@ -107,8 +107,8 @@ export const computer007: ProductData = {
   model: 'i7-1250U',
   SKU: '9305-0004',
   memory: '16GB RAM, 512GB SSD',
-  filenamePhoto: 'dell-xps-13-plus.jpeg',
-  altPhoto: '[Image of Dell XPS 13 Plus]',
+  photoFilename: 'dell-xps-13-plus.jpeg',
+  photoAlt: '[Image of Dell XPS 13 Plus]',
   screenSize: '13.4-inch',
 };
 
@@ -123,8 +123,8 @@ export const computer008: ProductData = {
   model: 'i7-1260P',
   SKU: 'NP950QDB-KA3US',
   memory: '16GB RAM, 1TB SSD',
-  filenamePhoto: 'samsung-galaxy-book-2-pro-360.jpeg',
-  altPhoto: '[Image of Samsung Galaxy Book 2 Pro 360]',
+  photoFilename: 'samsung-galaxy-book-2-pro-360.jpeg',
+  photoAlt: '[Image of Samsung Galaxy Book 2 Pro 360]',
   screenSize: '13.3-inch',
 };
 
@@ -139,12 +139,12 @@ export const computer009: ProductData = {
   model: 'RTX 3060',
   SKU: '11SCXR-203US',
   memory: '16GB RAM, 512GB SSD',
-  filenamePhoto: 'msi-gf65-thin.jpeg',
-  altPhoto: '[Image of MSI GF65 Thin]',
+  photoFilename: 'msi-gf65-thin.jpeg',
+  photoAlt: '[Image of MSI GF65 Thin]',
   screenSize: '15.6-inch',
 };
 
-export const product010: ProductData = {
+export const computer010: ProductData = {
   category: 'Computers',
   name: 'Apple iMac 24-inch',
   priceValue: 1299.46,
@@ -155,8 +155,8 @@ export const product010: ProductData = {
   model: 'M1',
   SKU: 'MGJ73LL/A',
   memory: '8GB RAM, 256GB SSD',
-  filenamePhoto: 'apple-imac-24-inch.jpeg',
-  altPhoto: '[Image of Apple iMac 24-inch]',
+  photoFilename: 'apple-imac-24-inch.jpeg',
+  photoAlt: '[Image of Apple iMac 24-inch]',
   screenSize: '24-inch',
 };
 
@@ -170,5 +170,5 @@ export const MOCK_DATA_COMPUTERS: ProductData[] = [
   computer007,
   computer008,
   computer009,
-  product010,
+  computer010,
 ];
