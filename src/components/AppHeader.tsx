@@ -1,12 +1,12 @@
+import { NavLink } from 'react-router-dom';
 import Icon26x26Thunderbolt from './@icons/26x26/Icon26x26Thunderbolt';
-import AppNavLink from './common/AppNavlink';
 
 export default function AppHeader() {
   return (
     <header>
-      <AppNavLink className="text-light-950 rounded-full bg-white">
+      <NavLink to="/" className="rounded-full bg-white text-light-950">
         <Icon26x26Thunderbolt />
-      </AppNavLink>
+      </NavLink>
     </header>
   );
 }
