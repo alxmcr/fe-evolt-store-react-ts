@@ -1,49 +1,49 @@
-export default function Icon15x15Filter() {
+export default function Icon16x16Filter() {
   return (
     <svg
-      width={15}
-      height={15}
-      viewBox="0 0 15 15"
+      width={16}
+      height={16}
+      viewBox="0 0 16 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M13.7499 4.0625H9.99994"
+        d="M14.6666 4.33333H10.6666"
         stroke="currentColor"
         strokeMiterlimit={10}
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M3.75006 4.0625H1.25006"
+        d="M4.00007 4.33333H1.3334"
         stroke="currentColor"
         strokeMiterlimit={10}
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M6.25005 6.25005C7.45817 6.25005 8.43755 5.27067 8.43755 4.06255C8.43755 2.85442 7.45817 1.87505 6.25005 1.87505C5.04192 1.87505 4.06255 2.85442 4.06255 4.06255C4.06255 5.27067 5.04192 6.25005 6.25005 6.25005Z"
+        d="M6.66671 6.66671C7.95538 6.66671 9.00005 5.62204 9.00005 4.33338C9.00005 3.04471 7.95538 2.00005 6.66671 2.00005C5.37805 2.00005 4.33338 3.04471 4.33338 4.33338C4.33338 5.62204 5.37805 6.66671 6.66671 6.66671Z"
         stroke="currentColor"
         strokeMiterlimit={10}
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M13.75 10.9374H11.25"
+        d="M14.6667 11.6666H12"
         stroke="currentColor"
         strokeMiterlimit={10}
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M5.00006 10.9374H1.25006"
+        d="M5.3334 11.6666H1.3334"
         stroke="currentColor"
         strokeMiterlimit={10}
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M8.75 13.1251C9.95812 13.1251 10.9375 12.1457 10.9375 10.9376C10.9375 9.72944 9.95812 8.75006 8.75 8.75006C7.54188 8.75006 6.5625 9.72944 6.5625 10.9376C6.5625 12.1457 7.54188 13.1251 8.75 13.1251Z"
+        d="M9.33333 14.0001C10.622 14.0001 11.6667 12.9554 11.6667 11.6667C11.6667 10.3781 10.622 9.3334 9.33333 9.3334C8.04467 9.3334 7 10.3781 7 11.6667C7 12.9554 8.04467 14.0001 9.33333 14.0001Z"
         stroke="currentColor"
         strokeMiterlimit={10}
         strokeLinecap="round"

@@ -4,7 +4,7 @@ import AppHeaderActions from './AppHeaderActions';
 
 export default function AppHeader() {
   return (
-    <header className="flex h-[58px] items-center justify-between rounded-md bg-perano-400 px-[1rem] py-[.6875rem]">
+    <header className="flex h-[58px] w-full items-center justify-between rounded-md bg-perano-400 px-4 py-[.6875rem]">
       <NavLink to="/" className="flex items-center gap-2 text-light-950">
         <span className="flex size-[38px] items-center justify-center  rounded-full bg-white">
           <Icon26x26Thunderbolt />
