@@ -11,7 +11,7 @@ export default function BoxProductImage({
 }: Props) {
   return (
     <div className="flex flex-col gap-2 px-2">
-      <div className="flex h-[7.75rem] flex-col justify-center bg-perano-100 md:h-[12.75rem]">
+      <div className="flex h-[7.75rem] flex-col justify-center bg-perano-100 md:h-[12.75rem] lg:h-[16.75rem]">
         <img
           src={`/product-assets/${photoFilename}`}
           alt={photoAlt}
