@@ -23,7 +23,7 @@ export default function SectionComputers() {
           </button>
         </div>
       </header>
-      <div className="gap-4 lg:grid lg:grid-cols-2">
+      <div className="lg:flex lg:gap-4">
         <AsideProductsFilter />
         <BoxGridProducts />
       </div>
