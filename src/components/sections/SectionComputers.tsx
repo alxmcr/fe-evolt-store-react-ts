@@ -4,7 +4,7 @@ import BoxGridProducts from '../boxes/BoxGridProducts';
 
 export default function SectionComputers() {
   return (
-    <section className="flex flex-col gap-4 lg:w-[67.5rem]">
+    <section className="flex flex-col gap-4">
       <header className="flex items-center justify-between gap-2">
         <h2 className="text-xl font-bold">Computers</h2>
         <div className="flex items-center justify-between gap-2">
