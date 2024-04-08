@@ -13,13 +13,11 @@ export default function CardProduct({ product }: Props) {
 
   return (
     <article className="rounded-md bg-white">
-      <header className="min-h-[3.5rem] px-[.375rem] py-[.625rem]">
+      <header className="min-h-14 px-[.375rem] py-[.625rem]">
         <h3 className="text-[.625rem] uppercase text-perano-200">
           {product.category}
         </h3>
-        <h2 className="truncate text-ellipsis text-[1rem] font-bold">
-          {product.name}
-        </h2>
+        <h2 className="truncate text-[1rem] font-bold">{product.name}</h2>
       </header>
       <BoxProductImage
         photoFilename={product.photoFilename}
