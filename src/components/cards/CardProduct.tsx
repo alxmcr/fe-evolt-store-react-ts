@@ -28,7 +28,7 @@ export default function CardProduct({ product }: Props) {
         <p className="text-[.9375rem] font-semibold">
           {product.priceCurrency} {product.priceValue}
         </p>
-        <button className="flex min-h-[1.625rem] items-center justify-center gap-2 rounded-lg border border-perano-200">
+        <button className="flex min-h-[1.875rem] items-center justify-center gap-2 rounded-lg border border-perano-200">
           <span className="text-[.5625rem] font-semibold uppercase">
             Add to cart
           </span>
