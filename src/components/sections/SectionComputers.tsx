@@ -6,7 +6,7 @@ export default function SectionComputers() {
   return (
     <section className="flex flex-col gap-4">
       <header className="flex items-center justify-between">
-        <h2 className="font-bold">Computers</h2>
+        <h2 className="font-bold text-xl">Computers</h2>
         <div className="flex items-center justify-between gap-2">
           <button className="flex min-h-[1.875rem] min-w-[5.125rem] items-center gap-2 rounded-lg border-[1px] border-light-950 px-4">
             <Icon16x16Filter />
