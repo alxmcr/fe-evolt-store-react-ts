@@ -19,7 +19,7 @@ export const computer001: ProductData = {
 };
 
 export const computer002: ProductData = {
-  id: 'product-000001',
+  id: 'product-000002',
   category: 'Computers',
   name: 'Microsoft Surface Laptop Studio',
   priceValue: 1599.46,
@@ -37,7 +37,7 @@ export const computer002: ProductData = {
 };
 
 export const computer003: ProductData = {
-  id: 'product-000001',
+  id: 'product-000003',
   category: 'Computers',
   name: 'ASUS ROG Strix G15 Advantage Edition',
   priceValue: 1799.46,
@@ -55,7 +55,7 @@ export const computer003: ProductData = {
 };
 
 export const computer004: ProductData = {
-  id: 'product-000001',
+  id: 'product-000004',
   category: 'Computers',
   name: 'Acer Chromebook Spin 713',
   priceValue: 699.46,
@@ -73,7 +73,7 @@ export const computer004: ProductData = {
 };
 
 export const computer005: ProductData = {
-  id: 'product-000001',
+  id: 'product-000005',
   category: 'Computers',
   name: "Lenovo IdeaPad Flex 5 14'",
   priceValue: 799.46,
@@ -91,7 +91,7 @@ export const computer005: ProductData = {
 };
 
 export const computer006: ProductData = {
-  id: 'product-000001',
+  id: 'product-000006',
   category: 'Computers',
   name: "HP Spectre x360 14'",
   priceValue: 1299.46,
@@ -109,7 +109,7 @@ export const computer006: ProductData = {
 };
 
 export const computer007: ProductData = {
-  id: 'product-000001',
+  id: 'product-000007',
   category: 'Computers',
   name: 'Dell XPS 13 Plus',
   priceValue: 999.46,
@@ -127,7 +127,7 @@ export const computer007: ProductData = {
 };
 
 export const computer008: ProductData = {
-  id: 'product-000001',
+  id: 'product-000008',
   category: 'Computers',
   name: 'Samsung Galaxy Book 2 Pro 360',
   priceValue: 1499.46,
@@ -145,7 +145,7 @@ export const computer008: ProductData = {
 };
 
 export const computer009: ProductData = {
-  id: 'product-000001',
+  id: 'product-000009',
   category: 'Computers',
   name: 'MSI GF65 Thin',
   priceValue: 1099.46,
@@ -163,21 +163,23 @@ export const computer009: ProductData = {
 };
 
 export const computer010: ProductData = {
-  id: 'product-000001',
-  category: 'Computers',
-  name: 'Apple iMac 24-inch',
-  priceValue: 1299.46,
-  priceCurrency: 'MXN',
-  brand: 'Apple',
-  operatingSystem: 'macOS Monterey',
-  color: 'Blue',
-  model: 'M1',
-  SKU: 'MGJ73LL/A',
-  memory: '8GB RAM, 256GB SSD',
+  id: 'product-000010',
+  category: 'Laptops',
+  name: 'Razer Blade 15',
+  priceValue: 1999,
+  priceCurrency: 'USD',
+  brand: 'Razer',
+  operatingSystem: 'Windows 10',
+  color: 'Mercury White',
+  model: 'Blade 15',
+  SKU: 'RAZER-BLD15-WHT',
+  memory: '16GB RAM',
+  yearRelease: 2020,
+  photoUrl: 'https://example.com/laptop8.jpg',
   photoSource: 'trustedreviews.com',
-  photoFilename: 'apple-imac-24-inch.png',
-  photoAlt: '[Image of Apple iMac 24-inch]',
-  screenSize: '24-inch',
+  photoFilename: 'razer-blade-15.png',
+  photoAlt: '[Image of Razer Blade 15 Laptop]',
+  screenSize: '15.6 inches',
 };
 
 export const MOCK_DATA_COMPUTERS: ProductData[] = [
