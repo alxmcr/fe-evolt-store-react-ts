@@ -1,7 +1,6 @@
 import React from 'react';
-import FormFielPriceInput from '../forms-formfields/FormFielPriceInput';
 import { formatNumber } from '../../helpers/helpers-format';
-import Icon16x16ArrowRight from '../@icons/16x16/Icon16x16ArrowRight';
+import FormFilterByRangePrices from '../forms/FormFilterByRangePrices';
 
 export default function CardPriceRangeSlider() {
   const MIN_VALUE = 1;
@@ -10,18 +9,6 @@ export default function CardPriceRangeSlider() {
   const START_MAX_VALUE = 900;
   const [minPrice, setMinPrice] = React.useState(START_MIN_VALUE);
   const [maxPrice, setMaxPrice] = React.useState(START_MAX_VALUE);
-
-  const onChangeMinPrice = (ev: React.ChangeEvent<HTMLInputElement>) => {
-    setMinPrice(Number(ev.target.value));
-  };
-
-  const onChangeMaxPrice = (ev: React.ChangeEvent<HTMLInputElement>) => {
-    setMaxPrice(Number(ev.target.value));
-  };
-
-  const onSubmit = (ev: React.FormEvent) => {
-    ev.preventDefault();
-  };
 
   return (
     <article className="flex flex-col gap-3">
@@ -35,39 +22,14 @@ export default function CardPriceRangeSlider() {
           <span>$ {formatNumber(maxPrice)}</span>
         </div>
       </header>
-      <form onSubmit={onSubmit} className="flex items-start gap-3">
-        <div className="flex min-w-[13.375rem] gap-2">
-          <FormFielPriceInput
-            labelText="Min price"
-            inputName="min-range"
-            inputId="min-range"
-            inputValue={minPrice}
-            minValue={MIN_VALUE}
-            maxValue={maxPrice - 1}
-            onChange={onChangeMinPrice}
-          />
-          <span className="flex h-[2.875rem] w-[1.125rem] items-center justify-center text-[.875rem]">
-            to
-          </span>
-          <FormFielPriceInput
-            labelText="Max price"
-            inputName="max-range"
-            inputId="max-range"
-            inputValue={maxPrice}
-            minValue={minPrice + 1}
-            maxValue={MAX_VALUE}
-            onChange={onChangeMaxPrice}
-          />
-        </div>
-        <div>
-          <button
-            type="submit"
-            className="flex h-[2.875rem] w-8 items-center justify-center rounded-md bg-perano-300 text-xl text-white"
-          >
-            <Icon16x16ArrowRight />
-          </button>
-        </div>
-      </form>
+      <FormFilterByRangePrices
+        minValue={MIN_VALUE}
+        maxValue={MAX_VALUE}
+        minPrice={minPrice}
+        maxPrice={maxPrice}
+        setMinPrice={setMinPrice}
+        setMaxPrice={setMaxPrice}
+      />
     </article>
   );
 }

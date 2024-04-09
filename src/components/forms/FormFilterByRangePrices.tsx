@@ -5,19 +5,20 @@ import FormFielPriceInput from '../forms-formfields/FormFielPriceInput';
 type Props = {
   minValue: number;
   maxValue: number;
-  startMinValue: number;
-  startMaxValue: number;
+  minPrice: number;
+  maxPrice: number;
+  setMinPrice: React.Dispatch<React.SetStateAction<number>>;
+  setMaxPrice: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export default function FormFilterByRangePrices({
+  minPrice = 0,
+  maxPrice = 0,
   minValue = 0,
   maxValue = 0,
-  startMinValue = 0,
-  startMaxValue = 0,
+  setMinPrice,
+  setMaxPrice,
 }: Props) {
-  const [minPrice, setMinPrice] = React.useState(startMinValue);
-  const [maxPrice, setMaxPrice] = React.useState(startMaxValue);
-
   const onChangeMinPrice = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setMinPrice(Number(ev.target.value));
   };
