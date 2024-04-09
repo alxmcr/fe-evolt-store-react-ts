@@ -36,7 +36,7 @@ export default function CardPriceRangeSlider() {
           </div>
         </div>
       </header>
-      <form onSubmit={onSubmit} className="flex items-end gap-3">
+      <form onSubmit={onSubmit} className="flex items-start gap-3">
         <FormFielPriceInput
           labelText="Min price"
           inputName="min-range"
@@ -59,7 +59,7 @@ export default function CardPriceRangeSlider() {
         <div>
           <button
             type="submit"
-            className="flex h-14 w-8 items-center justify-center rounded-md bg-black p-2 text-white"
+            className="flex h-[2.875rem] w-8 items-center justify-center rounded-md bg-black p-2 text-white"
           >
             <Icon16x16ArrowRight />
           </button>

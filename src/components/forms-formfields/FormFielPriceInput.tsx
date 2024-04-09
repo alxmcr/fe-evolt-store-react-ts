@@ -20,25 +20,25 @@ export default function FormFielPriceInput({
   return (
     <label
       htmlFor={inputId}
-      className="flex h-[4.5rem] w-[5.875rem] flex-col gap-2 text-perano-300"
+      className="flex h-[4.5rem] w-[5.875rem] flex-col gap-2  text-perano-300"
     >
-      <span>{labelText}</span>
-      <div className="flex h-14 w-[108px] items-center justify-between rounded-2xl bg-white">
+      <div className="flex h-14 w-[108px] items-center justify-between rounded-2xl border border-perano-300 bg-white">
         <input
           type="number"
           name={inputName}
           id={inputId}
-          className="size-full rounded-l-xl px-1 text-xl outline-none"
+          className="size-full rounded-l-2xl px-2 text-xl outline-none"
           value={inputValue}
           onChange={onChange}
           min={inputMin}
           max={inputMax}
           required
         />
-        <span className="flex h-full w-12 items-center justify-center rounded-r-xl bg-black text-xl text-white">
+        <span className="flex h-full w-12 items-center justify-center rounded-r-xl bg-perano-300 text-xl text-white">
           $
         </span>
       </div>
+      <span className="text-[.75rem] text-perano-200">{labelText}</span>
     </label>
   );
 }
