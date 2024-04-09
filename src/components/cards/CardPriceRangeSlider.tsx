@@ -6,8 +6,10 @@ import Icon16x16ArrowRight from '../@icons/16x16/Icon16x16ArrowRight';
 export default function CardPriceRangeSlider() {
   const MIN_VALUE = 1;
   const MAX_VALUE = 1100;
-  const [minPrice, setMinPrice] = React.useState(1000);
-  const [maxPrice, setMaxPrice] = React.useState(1100);
+  const START_MIN_VALUE = 500;
+  const START_MAX_VALUE = 900;
+  const [minPrice, setMinPrice] = React.useState(START_MIN_VALUE);
+  const [maxPrice, setMaxPrice] = React.useState(START_MAX_VALUE);
 
   const onChangeMinPrice = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setMinPrice(Number(ev.target.value));
