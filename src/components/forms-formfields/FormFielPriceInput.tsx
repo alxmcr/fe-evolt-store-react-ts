@@ -3,8 +3,8 @@ type FormFieldPriceInputProps = {
   inputId: string;
   inputName: string;
   inputValue: number;
-  inputMin: number;
-  inputMax: number;
+  minValue: number;
+  maxValue: number;
   onChange: (ev: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -13,8 +13,8 @@ export default function FormFielPriceInput({
   inputId = '',
   inputName = '',
   inputValue = 0,
-  inputMin = 0,
-  inputMax = 100,
+  minValue = 0,
+  maxValue = 100,
   onChange,
 }: FormFieldPriceInputProps) {
   return (
@@ -30,8 +30,8 @@ export default function FormFielPriceInput({
           className="size-full rounded-l-md px-2 text-xl outline-none"
           value={inputValue}
           onChange={onChange}
-          min={inputMin}
-          max={inputMax}
+          min={minValue}
+          max={maxValue}
           required
         />
         <span className="flex h-[2.875rem] w-12 items-center justify-center rounded-r-md bg-perano-300 text-xl text-white">

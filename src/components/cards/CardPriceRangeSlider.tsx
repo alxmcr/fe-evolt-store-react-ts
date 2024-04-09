@@ -42,8 +42,8 @@ export default function CardPriceRangeSlider() {
             inputName="min-range"
             inputId="min-range"
             inputValue={minPrice}
-            inputMin={MIN_VALUE}
-            inputMax={maxPrice - 1}
+            minValue={MIN_VALUE}
+            maxValue={maxPrice - 1}
             onChange={onChangeMinPrice}
           />
           <span className="flex h-[2.875rem] w-[1.125rem] items-center justify-center text-[.875rem]">
@@ -54,8 +54,8 @@ export default function CardPriceRangeSlider() {
             inputName="max-range"
             inputId="max-range"
             inputValue={maxPrice}
-            inputMin={minPrice + 1}
-            inputMax={MAX_VALUE}
+            minValue={minPrice + 1}
+            maxValue={MAX_VALUE}
             onChange={onChangeMaxPrice}
           />
         </div>
