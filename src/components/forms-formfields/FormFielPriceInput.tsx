@@ -38,7 +38,7 @@ export default function FormFielPriceInput({
           $
         </span>
       </div>
-      <span className="text-center text-[.75rem] text-perano-200">
+      <span className="text-center text-[.75rem] text-perano-300">
         {labelText}
       </span>
     </label>

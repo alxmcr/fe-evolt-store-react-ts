@@ -27,7 +27,7 @@ export default function CardPriceRangeSlider() {
         <h4 className="font-bold uppercase tracking-widest text-perano-500">
           Pricing
         </h4>
-        <div className="flex gap-2 text-perano-200">
+        <div className="flex gap-2 text-perano-300">
           <span>$ {formatNumber(minPrice)}</span>
           <span>-</span>
           <span>$ {formatNumber(maxPrice)}</span>
