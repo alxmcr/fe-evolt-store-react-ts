@@ -1,0 +1,70 @@
+import React from 'react';
+import FormFielPriceInput from '../forms-formfields/FormFielPriceInput';
+import { formatNumber } from '../../helpers/helpers-format';
+import Icon16x16ArrowRight from '../@icons/16x16/Icon16x16ArrowRight';
+
+export default function CardPriceRangeSlider() {
+  const MIN_VALUE = 1;
+  const MAX_VALUE = 1100;
+  const [minPrice, setMinPrice] = React.useState(1000);
+  const [maxPrice, setMaxPrice] = React.useState(1100);
+
+  const onChangeMinPrice = (ev: React.ChangeEvent<HTMLInputElement>) => {
+    setMinPrice(Number(ev.target.value));
+  };
+
+  const onChangeMaxPrice = (ev: React.ChangeEvent<HTMLInputElement>) => {
+    setMaxPrice(Number(ev.target.value));
+  };
+
+  const onSubmit = (ev: React.FormEvent) => {
+    ev.preventDefault();
+  };
+
+  return (
+    <article className="flex w-full flex-col gap-3">
+      <header className="flex flex-col gap-1">
+        <h4 className="font-semibold uppercase tracking-widest text-perano-300">
+          Pricing
+        </h4>
+        <div className="flex gap-2">
+          <h3 className="font-semibold">Filter:</h3>
+          <div className="flex gap-2">
+            <span>$ {formatNumber(minPrice)}</span>
+            <span>-</span>
+            <span>$ {formatNumber(maxPrice)}</span>
+          </div>
+        </div>
+      </header>
+      <form onSubmit={onSubmit} className="flex items-end gap-3">
+        <FormFielPriceInput
+          labelText="Min price"
+          inputName="min-range"
+          inputId="min-range"
+          inputValue={minPrice}
+          inputMin={MIN_VALUE}
+          inputMax={maxPrice - 1}
+          onChange={onChangeMinPrice}
+        />
+        <span className="flex h-14 w-4 items-center justify-center">to</span>
+        <FormFielPriceInput
+          labelText="Max price"
+          inputName="max-range"
+          inputId="max-range"
+          inputValue={maxPrice}
+          inputMin={minPrice + 1}
+          inputMax={MAX_VALUE}
+          onChange={onChangeMaxPrice}
+        />
+        <div>
+          <button
+            type="submit"
+            className="flex h-14 w-8 items-center justify-center rounded-md bg-black p-2 text-white"
+          >
+            <Icon16x16ArrowRight />
+          </button>
+        </div>
+      </form>
+    </article>
+  );
+}
