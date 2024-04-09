@@ -16,20 +16,22 @@ export default function CardPriceRangeSlider() {
         <h4 className="font-bold uppercase tracking-widest text-perano-500">
           Pricing
         </h4>
+      </header>
+      <div className="flex flex-col gap-2">
         <div className="flex gap-2 text-perano-300">
           <span>$ {formatNumber(minPrice)}</span>
           <span>-</span>
           <span>$ {formatNumber(maxPrice)}</span>
         </div>
-      </header>
-      <FormFilterByRangePrices
-        minValue={MIN_VALUE}
-        maxValue={MAX_VALUE}
-        minPrice={minPrice}
-        maxPrice={maxPrice}
-        setMinPrice={setMinPrice}
-        setMaxPrice={setMaxPrice}
-      />
+        <FormFilterByRangePrices
+          minValue={MIN_VALUE}
+          maxValue={MAX_VALUE}
+          minPrice={minPrice}
+          maxPrice={maxPrice}
+          setMinPrice={setMinPrice}
+          setMaxPrice={setMaxPrice}
+        />
+      </div>
     </article>
   );
 }
