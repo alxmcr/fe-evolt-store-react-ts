@@ -18,7 +18,10 @@ export default function FormFielPriceInput({
   onChange,
 }: FormFieldPriceInputProps) {
   return (
-    <label htmlFor={inputId} className="flex flex-col gap-2">
+    <label
+      htmlFor={inputId}
+      className="flex h-[4.5rem] w-[5.875rem] flex-col gap-2 text-perano-300"
+    >
       <span>{labelText}</span>
       <div className="flex h-14 w-[108px] items-center justify-between rounded-2xl bg-white">
         <input
