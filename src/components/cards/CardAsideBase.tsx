@@ -1,6 +1,6 @@
 type Props = {
   title: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 export default function CardAsideBase({ title = '', children }: Props) {
