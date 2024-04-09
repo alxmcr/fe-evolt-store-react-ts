@@ -20,7 +20,7 @@ export default function FormFielPriceInput({
   return (
     <label
       htmlFor={inputId}
-      className="flex h-[4.5rem] min-w-[5.875rem] flex-col gap-2  text-perano-300"
+      className="flex h-[4.5rem] min-w-[5.875rem] flex-col gap-1  text-perano-300"
     >
       <div className="flex h-[2.875rem] w-[108px] items-center justify-between rounded-md border border-perano-300 bg-white">
         <input
@@ -38,7 +38,9 @@ export default function FormFielPriceInput({
           $
         </span>
       </div>
-      <span className="text-[.75rem] text-perano-200">{labelText}</span>
+      <span className="text-center text-[.75rem] text-perano-200">
+        {labelText}
+      </span>
     </label>
   );
 }
