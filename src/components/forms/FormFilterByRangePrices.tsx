@@ -59,7 +59,7 @@ export default function FormFilterByRangePrices({
       <div>
         <button
           type="submit"
-          className="flex h-[2.875rem] w-8 items-center justify-center rounded-md bg-perano-300 text-xl text-white"
+          className="flex h-[2.875rem] w-8 items-center justify-center rounded-md bg-perano-500 text-xl text-white"
         >
           <Icon16x16ArrowRight />
         </button>
