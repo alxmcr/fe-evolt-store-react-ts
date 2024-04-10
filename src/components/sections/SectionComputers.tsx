@@ -1,5 +1,6 @@
 import Icon16x16Close from '../@icons/16x16/Icon16x16Close';
 import Icon16x16Filter from '../@icons/16x16/Icon16x16Filter';
+import AsideProductsFilter from '../asides/AsideProductsFilter';
 import BoxGridProducts from '../boxes/BoxGridProducts';
 
 export default function SectionComputers() {
@@ -22,7 +23,10 @@ export default function SectionComputers() {
           </button>
         </div>
       </header>
-      <BoxGridProducts />
+      <div className="lg:relative lg:flex lg:gap-4">
+        <AsideProductsFilter />
+        <BoxGridProducts />
+      </div>
     </section>
   );
 }
