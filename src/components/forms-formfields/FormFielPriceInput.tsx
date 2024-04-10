@@ -27,7 +27,7 @@ export default function FormFielPriceInput({
           type="number"
           name={inputName}
           id={inputId}
-          className="size-full rounded-l-md px-2 text-xl outline-none"
+          className="size-full rounded-l-md px-2 text-xl text-light-950 outline-none"
           value={inputValue}
           onChange={onChange}
           min={minValue}
