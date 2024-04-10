@@ -16,7 +16,7 @@ export type ProductData = {
   photoFilename: string;
   photoAlt: string;
   screenSize: string;
-  bluetoothVersion?: number;
+  bluetoothVersion?: string;
   storage?: string;
 };
 
@@ -32,5 +32,5 @@ export type StorageData = {
 
 export type BluetoothData = {
   id: string;
-  version: number;
+  version: string;
 };
