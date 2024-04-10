@@ -29,3 +29,8 @@ export type StorageData = {
   id: string;
   capacity: string;
 };
+
+export type BluetoothData = {
+  id: string;
+  version: number;
+};
