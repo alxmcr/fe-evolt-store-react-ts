@@ -10,7 +10,7 @@ const storage002: StorageData = {
 };
 
 const storage003: StorageData = {
-  id: 'storage0002',
+  id: 'storage0003',
   capacity: '512GB SSD',
 };
 
