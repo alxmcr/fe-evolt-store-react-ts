@@ -16,6 +16,8 @@ export const computer001: ProductData = {
   photoFilename: 'apple-macbook-air-m2.png',
   photoAlt: '[Image of Apple MacBook Air M2]',
   screenSize: '13.6-inch',
+  bluetoothVersion: 5.0,
+  storage: '128GB SSD + 128GB Micro SD',
 };
 
 export const computer002: ProductData = {
@@ -34,6 +36,8 @@ export const computer002: ProductData = {
   photoFilename: 'microsoft-surface-laptop-studio.png',
   photoAlt: '[Image of Microsoft Surface Laptop Studio]',
   screenSize: '14.4-inch',
+  bluetoothVersion: 5.1,
+  storage: '512GB SSD',
 };
 
 export const computer003: ProductData = {
@@ -52,6 +56,8 @@ export const computer003: ProductData = {
   photoFilename: 'asus-rog-strix-g15-advantage-edition.png',
   photoAlt: '[Image of ASUS ROG Strix G15 Advantage Edition]',
   screenSize: '15.6-inch',
+  bluetoothVersion: 5.0,
+  storage: '256GB SSD',
 };
 
 export const computer004: ProductData = {
@@ -70,6 +76,8 @@ export const computer004: ProductData = {
   photoFilename: 'acer-chromebook-spin-713.png',
   photoAlt: '[Image of Acer Chromebook Spin 713]',
   screenSize: '13.5-inch',
+  bluetoothVersion: 5.2,
+  storage: '1TB SSD',
 };
 
 export const computer005: ProductData = {
@@ -88,6 +96,8 @@ export const computer005: ProductData = {
   photoFilename: 'lenovo-ideapad-flex-5-14inch.png',
   photoAlt: '[Image of Lenovo IdeaPad Flex 5 14]',
   screenSize: '14-inch',
+  bluetoothVersion: 5.1,
+  storage: '2TB SSD',
 };
 
 export const computer006: ProductData = {
@@ -106,6 +116,8 @@ export const computer006: ProductData = {
   photoFilename: 'hp-spectre-x360-14.png',
   photoAlt: '[Image of HP Spectre x360 14]',
   screenSize: '14-inch',
+  bluetoothVersion: 5.3,
+  storage: '256GB SSD',
 };
 
 export const computer007: ProductData = {
@@ -124,6 +136,8 @@ export const computer007: ProductData = {
   photoFilename: 'dell-xps-13-plus.png',
   photoAlt: '[Image of Dell XPS 13 Plus]',
   screenSize: '13.4-inch',
+  bluetoothVersion: 5.1,
+  storage: '128GB SSD + 128GB Micro SD',
 };
 
 export const computer008: ProductData = {
@@ -142,6 +156,8 @@ export const computer008: ProductData = {
   photoFilename: 'samsung-galaxy-book-2-pro-360.png',
   photoAlt: '[Image of Samsung Galaxy Book 2 Pro 360]',
   screenSize: '13.3-inch',
+  bluetoothVersion: 5.2,
+  storage: '1TB SSD',
 };
 
 export const computer009: ProductData = {
@@ -160,6 +176,8 @@ export const computer009: ProductData = {
   photoFilename: 'msi-gf65-thin.png',
   photoAlt: '[Image of MSI GF65 Thin]',
   screenSize: '15.6-inch',
+  bluetoothVersion: 5.0,
+  storage: '128GB SSD + 128GB Micro SD',
 };
 
 export const computer010: ProductData = {
@@ -180,6 +198,8 @@ export const computer010: ProductData = {
   photoFilename: 'razer-blade-15.png',
   photoAlt: '[Image of Razer Blade 15 Laptop]',
   screenSize: '15.6 inches',
+  bluetoothVersion: 5.0,
+  storage: '128GB SSD + 128GB Micro SD',
 };
 
 export const MOCK_DATA_COMPUTERS: ProductData[] = [

@@ -16,9 +16,16 @@ export type ProductData = {
   photoFilename: string;
   photoAlt: string;
   screenSize: string;
+  bluetoothVersion?: number;
+  storage?: string;
 };
 
 export type BrandData = {
   id: string;
   name: string;
+};
+
+export type StorageData = {
+  id: string;
+  capacity: string;
 };
