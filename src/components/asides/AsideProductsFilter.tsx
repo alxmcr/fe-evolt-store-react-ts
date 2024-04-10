@@ -1,5 +1,7 @@
+import { MOCK_BRANDS } from '../../mocks/mock-brands-products';
 import BoxFormFilterByRangePrices from '../boxes/BoxFormFilterByRangePrices';
 import CardAsideBase from '../cards/CardAsideBase';
+import FormFilterByBrands from '../forms/FormFilterByBrands';
 
 export default function AsideProductsFilter() {
   return (
@@ -7,8 +9,9 @@ export default function AsideProductsFilter() {
       <CardAsideBase title="Pricing">
         <BoxFormFilterByRangePrices />
       </CardAsideBase>
-
-      <CardAsideBase title="Brands"></CardAsideBase>
+      <CardAsideBase title="Brands">
+        <FormFilterByBrands brands={MOCK_BRANDS} />
+      </CardAsideBase>
       <CardAsideBase title="Storage"></CardAsideBase>
       <CardAsideBase title="Bluetooth"></CardAsideBase>
     </aside>

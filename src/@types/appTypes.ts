@@ -17,3 +17,8 @@ export type ProductData = {
   photoAlt: string;
   screenSize: string;
 };
+
+export type BrandData = {
+  id: string;
+  name: string;
+};
