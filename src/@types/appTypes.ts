@@ -34,3 +34,8 @@ export type BluetoothData = {
   id: string;
   version: string;
 };
+
+export type FilterProductTag = {
+  key: string;
+  value: string;
+};
