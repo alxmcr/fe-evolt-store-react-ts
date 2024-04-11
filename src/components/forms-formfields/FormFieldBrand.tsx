@@ -2,27 +2,27 @@ import { BrandData } from '../../@types/appTypes';
 
 type Props = {
   labelText: string;
-  htmlFor: string;
+  inputId: string;
   brandSelected: BrandData | null;
   onChangeBrand: (brand: BrandData) => void;
 };
 
 export default function FormFieldBrand({
   labelText = '',
-  htmlFor = '',
+  inputId = '',
   brandSelected,
   onChangeBrand,
 }: Props) {
   console.log('🚀 ~ brandSelected:', brandSelected);
   return (
-    <label htmlFor={htmlFor} className={`flex items-center gap-x-2 text-lg`}>
+    <label htmlFor={inputId} className={`flex items-center gap-x-2 text-lg`}>
       <input
         type="checkbox"
-        name={htmlFor}
-        id={htmlFor}
+        name={inputId}
+        id={inputId}
         className="peer/draft hidden size-10"
         onChange={() => onChangeBrand}
-        checked={brandSelected?.id === htmlFor}
+        checked={brandSelected?.id === inputId}
       />
       <span
         className="flex items-center gap-2 before:flex before:size-5 before:items-center before:justify-center before:rounded-full before:border before:border-solid before:border-perano-500 before:content-[''] peer-checked/draft:text-perano-500  peer-checked/draft:before:bg-perano-500

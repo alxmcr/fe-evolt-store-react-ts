@@ -1,18 +1,18 @@
 type Props = {
   labelText: string;
-  htmlFor: string;
+  inputId: string;
 };
 
 export default function FormFieldStorage({
   labelText = '',
-  htmlFor = '',
+  inputId = '',
 }: Props) {
   return (
-    <label htmlFor={htmlFor} className={`flex items-center gap-x-2 text-lg`}>
+    <label htmlFor={inputId} className={`flex items-center gap-x-2 text-lg`}>
       <input
         type="checkbox"
-        name={htmlFor}
-        id={htmlFor}
+        name={inputId}
+        id={inputId}
         className="peer/draft hidden size-10"
       />
       <span
