@@ -1,14 +1,17 @@
+import { FilterProductTag } from '../../@types/appTypes';
 import Icon16x16Close from '../@icons/16x16/Icon16x16Close';
 
 type Props = {
-  children: React.ReactNode;
+  filterTag: FilterProductTag;
   removeFilter: () => void;
 };
 
-export default function FilterTag({ children, removeFilter }: Props) {
+export default function FilterTag({ filterTag, removeFilter }: Props) {
+  if (filterTag === null || filterTag === undefined) return null;
+
   return (
     <div className="flex items-center gap-2 border border-perano-600 p-[.4375rem] font-semibold text-perano-600">
-      <span>{children}</span>
+      <span>{filterTag.value}</span>
       <button className="text-red-500" onClick={removeFilter}>
         <Icon16x16Close />
       </button>

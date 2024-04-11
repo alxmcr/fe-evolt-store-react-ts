@@ -1,9 +1,7 @@
 import React from 'react';
-import { formatNumber } from '../../helpers/helpers-format';
+import { ProductFilterContext } from '../../providers/ProductFilterProvider/ProductFilterContext';
 import Icon16x16Close from '../@icons/16x16/Icon16x16Close';
 import Icon16x16Filter from '../@icons/16x16/Icon16x16Filter';
-import { ProductFilterContext } from '../../providers/ProductFilterProvider/ProductFilterContext';
-import FilterTag from '../tags/FilterTag';
 
 export default function HeaderFilterActions() {
   const filterContext = React.useContext(ProductFilterContext);
@@ -24,15 +22,7 @@ export default function HeaderFilterActions() {
           <span className="text-[.75rem]">Reset</span>
         </button>
       </div>
-      <div>
-        {filterContext.filterPriceMax > 0 ? (
-          <FilterTag removeFilter={() => {}}>
-            <span>$ {formatNumber(filterContext.filterPriceMin)}</span>
-            <span>-</span>
-            <span>$ {formatNumber(filterContext.filterPriceMax)}</span>
-          </FilterTag>
-        ) : null}
-      </div>
+      <div></div>
     </header>
   );
 }
