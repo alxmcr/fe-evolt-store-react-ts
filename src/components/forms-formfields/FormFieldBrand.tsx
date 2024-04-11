@@ -1,19 +1,50 @@
+import React from 'react';
+import { TagFilter } from '../../@types/filterTypes';
+
 type Props = {
   labelText: string;
   htmlFor: string;
+  inputId: string;
+  inputName: string;
+  setBrandsSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
 };
 
 export default function FormFieldBrand({
   labelText = '',
   htmlFor = '',
+  inputId = '',
+  inputName = '',
+  setBrandsSelected,
 }: Props) {
+  const [checked, setChecked] = React.useState(false);
+
+  const onChangeCheckbox = (ev: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked(ev.target.checked);
+
+    setBrandsSelected((prev) => {
+      const tagId = `tag-${inputId}`;
+      if (ev.target.checked) {
+        const tag: TagFilter = {
+          id: tagId,
+          key: 'brand',
+          value: labelText,
+          typeValue: 'string',
+        };
+        return [...prev, tag];
+      }
+      return prev.filter((tag) => tag.id !== tagId);
+    });
+  };
+
   return (
     <label htmlFor={htmlFor} className={`flex items-center gap-x-2 text-lg`}>
       <input
         type="checkbox"
-        name={htmlFor}
-        id={htmlFor}
+        name={inputName}
+        id={inputId}
         className="peer/draft hidden size-10"
+        onChange={onChangeCheckbox}
+        checked={checked}
       />
       <span
         className="flex items-center gap-2 before:flex before:size-5 before:items-center before:justify-center before:rounded-full before:border before:border-solid before:border-perano-500 before:content-[''] peer-checked/draft:text-perano-500  peer-checked/draft:before:bg-perano-500
