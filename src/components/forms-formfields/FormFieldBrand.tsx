@@ -1,18 +1,22 @@
 type Props = {
   labelText: string;
   htmlFor: string;
+  inputId: string;
+  inputName: string;
 };
 
 export default function FormFieldBrand({
   labelText = '',
   htmlFor = '',
+  inputId = '',
+  inputName = '',
 }: Props) {
   return (
     <label htmlFor={htmlFor} className={`flex items-center gap-x-2 text-lg`}>
       <input
         type="checkbox"
-        name={htmlFor}
-        id={htmlFor}
+        name={inputName}
+        id={inputId}
         className="peer/draft hidden size-10"
       />
       <span

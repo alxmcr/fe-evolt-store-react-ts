@@ -13,6 +13,8 @@ export default function FormFilterByStorages({ storages = [] }: Props) {
           key={storage.id}
           htmlFor={`storage-${storage.id}`}
           labelText={storage.capacity}
+          inputId={`storage-${storage.id}`}
+          inputName="storage"
         />
       ))}
     </form>
