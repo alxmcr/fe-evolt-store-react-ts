@@ -1,6 +1,6 @@
 import { StorageData } from '../../@types/appTypes';
 import { TagFilter } from '../../@types/filterTypes';
-import FormFieldStorage from '../forms-formfields/FormFieldStorage';
+import FormFieldStorageCheckbox from '../forms-formfields/FormFieldStorageCheckbox';
 
 type Props = {
   storages: StorageData[];
@@ -14,7 +14,7 @@ export default function GroupCheckboxesStorages({
   return (
     <div>
       {storages.map((storage) => (
-        <FormFieldStorage
+        <FormFieldStorageCheckbox
           key={storage.id}
           htmlFor={`storage-${storage.id}`}
           labelText={storage.capacity}

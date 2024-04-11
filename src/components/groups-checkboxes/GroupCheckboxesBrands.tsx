@@ -1,6 +1,6 @@
 import { BrandData } from '../../@types/appTypes';
 import { TagFilter } from '../../@types/filterTypes';
-import FormFieldBrand from '../forms-formfields/FormFieldBrand';
+import FormFieldBrandCheckbox from '../forms-formfields/FormFieldBrandCheckbox';
 
 type Props = {
   brands: BrandData[];
@@ -14,7 +14,7 @@ export default function GroupCheckboxesBrands({
   return (
     <div>
       {brands.map((brand) => (
-        <FormFieldBrand
+        <FormFieldBrandCheckbox
           key={brand.id}
           htmlFor={`brand-${brand.id}`}
           labelText={brand.name}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BluetoothData } from '../../@types/appTypes';
 import { TagFilter } from '../../@types/filterTypes';
-import FormFieldBluetooth from '../forms-formfields/FormFieldBluetooth';
+import FormFieldBluetoothCheckbox from '../forms-formfields/FormFieldBluetoothCheckbox';
 
 type Props = {
   bluetooths: BluetoothData[];
@@ -15,7 +15,7 @@ export default function GroupCheckboxesBluetooths({
   return (
     <div>
       {bluetooths.map((bluetooth) => (
-        <FormFieldBluetooth
+        <FormFieldBluetoothCheckbox
           key={bluetooth.id}
           htmlFor={`bluetooth-${bluetooth.id}`}
           labelText={String(bluetooth.version)}

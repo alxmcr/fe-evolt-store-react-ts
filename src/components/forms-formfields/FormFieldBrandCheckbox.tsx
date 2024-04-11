@@ -9,7 +9,7 @@ type Props = {
   setBrandsSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
 };
 
-export default function FormFieldBrand({
+export default function FormFieldBrandCheckbox({
   labelText = '',
   htmlFor = '',
   inputId = '',
