@@ -5,7 +5,7 @@ export default function HeaderFilterActions() {
   return (
     <header className="flex items-center justify-between gap-2 rounded-lg bg-white p-[.5rem]">
       <div className="flex items-center justify-between gap-2">
-        <button className="flex min-h-[1.875rem] max-w-[5.125rem] items-center gap-2 rounded-lg border border-light-950 px-4">
+        <button className="flex min-h-[1.875rem] max-w-[5.125rem] items-center gap-2 rounded-lg border border-light-950 px-4 lg:hidden">
           <span className="w-4">
             <Icon16x16Filter />
           </span>
