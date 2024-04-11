@@ -10,18 +10,20 @@ import GroupCheckboxesBrands from '../groups-checkboxes/GroupCheckboxesBrands';
 import GroupCheckboxesStorages from '../groups-checkboxes/GroupCheckboxesStorages';
 
 type Props = {
+  startMinValue: number;
+  startMaxValue: number;
   setBrandsSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
   setBluetoothsSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
   setStoragesSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
 };
 
 export default function AsideProductsFilter({
+  startMinValue = 0,
+  startMaxValue = 0,
   setBrandsSelected,
   setBluetoothsSelected,
   setStoragesSelected,
 }: Props) {
-  const startMinValue = 500;
-  const startMaxValue = 900;
   const [minPrice, setMinPrice] = React.useState(startMinValue);
   const [maxPrice, setMaxPrice] = React.useState(startMaxValue);
 

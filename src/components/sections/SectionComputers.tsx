@@ -20,6 +20,8 @@ export default function SectionComputers() {
           setBrandsSelected={setBrandsSelected}
           setBluetoothsSelected={setBluetoothsSelected}
           setStoragesSelected={setStoragesSelected}
+          startMinValue={500}
+          startMaxValue={900}
         />
         <BoxGridProducts
           brandsSelected={brandsSelected}
