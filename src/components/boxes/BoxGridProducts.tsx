@@ -6,7 +6,7 @@ export default function BoxGridProducts() {
   const { products } = useProducts();
 
   return (
-    <div className="lg:w-4/6">
+    <div className="flex flex-col gap-4 lg:w-4/6">
       <HeaderFilterActions />
       <GridProducts products={products} />
     </div>
