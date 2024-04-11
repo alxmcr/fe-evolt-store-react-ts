@@ -3,21 +3,22 @@ import { formatNumber } from '../../helpers/helpers-format';
 import FormFilterByRangePrices from '../forms/FormFilterByRangePrices';
 
 type Props = {
+  minPrice: number;
+  maxPrice: number;
   minValue: number;
   maxValue: number;
-  startMinValue: number;
-  startMaxValue: number;
+  setMinPrice: React.Dispatch<React.SetStateAction<number>>;
+  setMaxPrice: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export default function BoxFormFilterByRangePrices({
+  minPrice = 0,
+  maxPrice = 0,
   minValue = 0,
   maxValue = 0,
-  startMinValue = 0,
-  startMaxValue = 0,
+  setMinPrice,
+  setMaxPrice,
 }: Props) {
-  const [minPrice, setMinPrice] = React.useState(startMinValue);
-  const [maxPrice, setMaxPrice] = React.useState(startMaxValue);
-
   return (
     <div className="flex flex-col gap-2">
       <div className="flex gap-2 ">

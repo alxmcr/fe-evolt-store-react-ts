@@ -20,14 +20,21 @@ export default function AsideProductsFilter({
   setBluetoothsSelected,
   setStoragesSelected,
 }: Props) {
+  const startMinValue = 500;
+  const startMaxValue = 900;
+  const [minPrice, setMinPrice] = React.useState(startMinValue);
+  const [maxPrice, setMaxPrice] = React.useState(startMaxValue);
+
   return (
     <aside className="hidden rounded-xl bg-white p-4 lg:sticky lg:flex lg:h-[810px] lg:w-2/6 lg:flex-col lg:gap-4">
       <CardAsideBase title="Pricing">
         <BoxFormFilterByRangePrices
           minValue={1}
           maxValue={1100}
-          startMinValue={500}
-          startMaxValue={900}
+          minPrice={minPrice}
+          maxPrice={maxPrice}
+          setMinPrice={setMinPrice}
+          setMaxPrice={setMaxPrice}
         />
       </CardAsideBase>
       <CardAsideBase title="Brands">
