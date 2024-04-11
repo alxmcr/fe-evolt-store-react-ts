@@ -8,7 +8,12 @@ export default function CardPriceRangeSlider() {
           Pricing
         </h4>
       </header>
-      <BoxFormFilterByRangePrices />
+      <BoxFormFilterByRangePrices
+        minValue={1}
+        maxValue={1100}
+        startMinValue={500}
+        startMaxValue={900}
+      />
     </article>
   );
 }
