@@ -8,6 +8,8 @@ type Props = {
 };
 
 export default function ProductFilterCriteriasProvider({ children }: Props) {
+  const minValue = 1;
+  const maxValue = 1100;
   const startMinValue = 500;
   const startMaxValue = 900;
   const [minPrice, setMinPrice] = React.useState(startMinValue);
@@ -21,6 +23,8 @@ export default function ProductFilterCriteriasProvider({ children }: Props) {
   );
 
   const value: ProductFilterCriteriasContextData = {
+    minValue,
+    maxValue,
     minPrice,
     maxPrice,
     brandsSelected,
