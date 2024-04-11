@@ -9,5 +9,5 @@ export default function useProducts() {
     setProducts(MOCK_DATA_COMPUTERS);
   }, []);
 
-  return { products };
+  return { products, setProducts };
 }
