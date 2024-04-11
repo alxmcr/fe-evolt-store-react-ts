@@ -1,3 +1,5 @@
+import React from 'react';
+
 type Props = {
   labelText: string;
   htmlFor: string;
@@ -11,6 +13,12 @@ export default function FormFieldStorage({
   inputId = '',
   inputName = '',
 }: Props) {
+  const [storageSelectedId, setStorageSelectedId] = React.useState('');
+
+  const onChangeCheckbox = (inputCheckboxId = '') => {
+    setStorageSelectedId(inputCheckboxId);
+  };
+
   return (
     <label htmlFor={htmlFor} className={`flex items-center gap-x-2 text-lg`}>
       <input
@@ -18,6 +26,8 @@ export default function FormFieldStorage({
         name={inputName}
         id={inputId}
         className="peer/draft hidden size-10"
+        onChange={() => onChangeCheckbox(inputId)}
+        checked={inputId === storageSelectedId}
       />
       <span
         className="flex items-center gap-2 before:flex before:size-5 before:items-center before:justify-center before:rounded-full before:border before:border-solid before:border-perano-500 before:content-[''] peer-checked/draft:text-perano-500  peer-checked/draft:before:bg-perano-500
