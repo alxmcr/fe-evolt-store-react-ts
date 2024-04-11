@@ -4,6 +4,9 @@ import { ProductFilterCriteriasContextData } from '../../@types/providerTypes';
 const initialData: ProductFilterCriteriasContextData = {
   minPrice: 0,
   maxPrice: 0,
+  brandsSelected: [],
+  bluetoothsSelected: [],
+  storagesSelected: [],
   setMinPrice: () => {},
   setMaxPrice: () => {},
   setBrandsSelected: () => {},
