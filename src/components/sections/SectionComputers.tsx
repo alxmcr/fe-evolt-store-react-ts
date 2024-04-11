@@ -4,6 +4,10 @@ import AsideProductsFilter from '../asides/AsideProductsFilter';
 import BoxGridProducts from '../boxes/BoxGridProducts';
 
 export default function SectionComputers() {
+  const startMinValue = 500;
+  const startMaxValue = 900;
+  const [minPrice, setMinPrice] = React.useState(startMinValue);
+  const [maxPrice, setMaxPrice] = React.useState(startMaxValue);
   const [brandsSelected, setBrandsSelected] = React.useState<TagFilter[]>([]);
   const [bluetoothsSelected, setBluetoothsSelected] = React.useState<
     TagFilter[]
@@ -17,11 +21,13 @@ export default function SectionComputers() {
       <h2 className="text-xl font-bold">Computers</h2>
       <div className="lg:relative lg:flex lg:gap-4">
         <AsideProductsFilter
+          minPrice={minPrice}
+          maxPrice={maxPrice}
+          setMinPrice={setMinPrice}
+          setMaxPrice={setMaxPrice}
           setBrandsSelected={setBrandsSelected}
           setBluetoothsSelected={setBluetoothsSelected}
           setStoragesSelected={setStoragesSelected}
-          startMinValue={500}
-          startMaxValue={900}
         />
         <BoxGridProducts
           brandsSelected={brandsSelected}
