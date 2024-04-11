@@ -15,14 +15,14 @@ export default function BoxGridProducts({
   bluetoothsSelected,
   storagesSelected,
 }: Props) {
-  const context = React.useContext(ProductsContext);
+  const productsContext = React.useContext(ProductsContext);
 
   console.log({ brandsSelected, bluetoothsSelected, storagesSelected });
 
   return (
     <div className="flex flex-col gap-4 lg:w-4/6">
       <HeaderFilterActions />
-      <GridProducts products={context.productsFiltered} />
+      <GridProducts products={productsContext.productsFiltered} />
     </div>
   );
 }
