@@ -1,21 +1,21 @@
 import React from 'react';
 import { BluetoothData } from '../../@types/appTypes';
 import { TagFilter } from '../../@types/filterTypes';
-import FormFieldBluetooth from '../forms-formfields/FormFieldBluetooth';
+import FormFieldBluetoothCheckbox from '../forms-formfields/FormFieldBluetoothCheckbox';
 
 type Props = {
   bluetooths: BluetoothData[];
+  setBluetoothsSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
 };
 
-export default function FormFilterByBluetooths({ bluetooths = [] }: Props) {
-  const [bluetoothsSelected, setBluetoothsSelected] = React.useState<
-    TagFilter[]
-  >([]);
-
+export default function GroupCheckboxesBluetooths({
+  bluetooths = [],
+  setBluetoothsSelected,
+}: Props) {
   return (
-    <form className="flex flex-col gap-2">
+    <div>
       {bluetooths.map((bluetooth) => (
-        <FormFieldBluetooth
+        <FormFieldBluetoothCheckbox
           key={bluetooth.id}
           htmlFor={`bluetooth-${bluetooth.id}`}
           labelText={String(bluetooth.version)}
@@ -24,9 +24,6 @@ export default function FormFilterByBluetooths({ bluetooths = [] }: Props) {
           setBluetoothsSelected={setBluetoothsSelected}
         />
       ))}
-      {bluetoothsSelected.length > 0 ? (
-        <pre>{JSON.stringify(bluetoothsSelected, null, 2)}</pre>
-      ) : null}
-    </form>
+    </div>
   );
 }

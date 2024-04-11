@@ -1,9 +1,19 @@
+import React from 'react';
 import Icon16x16Close from '../@icons/16x16/Icon16x16Close';
 import Icon16x16Filter from '../@icons/16x16/Icon16x16Filter';
 import AsideProductsFilter from '../asides/AsideProductsFilter';
 import BoxGridProducts from '../boxes/BoxGridProducts';
+import { TagFilter } from '../../@types/filterTypes';
 
 export default function SectionComputers() {
+  const [brandsSelected, setBrandsSelected] = React.useState<TagFilter[]>([]);
+  const [bluetoothsSelected, setBluetoothsSelected] = React.useState<
+    TagFilter[]
+  >([]);
+  const [storagesSelected, setStoragesSelected] = React.useState<TagFilter[]>(
+    [],
+  );
+
   return (
     <section className="flex flex-col gap-4">
       <header className="flex items-center justify-between gap-2">
@@ -24,8 +34,16 @@ export default function SectionComputers() {
         </div>
       </header>
       <div className="lg:relative lg:flex lg:gap-4">
-        <AsideProductsFilter />
-        <BoxGridProducts />
+        <AsideProductsFilter
+          setBrandsSelected={setBrandsSelected}
+          setBluetoothsSelected={setBluetoothsSelected}
+          setStoragesSelected={setStoragesSelected}
+        />
+        <BoxGridProducts
+          brandsSelected={brandsSelected}
+          bluetoothsSelected={bluetoothsSelected}
+          storagesSelected={storagesSelected}
+        />
       </div>
     </section>
   );

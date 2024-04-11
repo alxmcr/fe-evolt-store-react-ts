@@ -1,19 +1,20 @@
-import React from 'react';
 import { BrandData } from '../../@types/appTypes';
-import FormFieldBrand from '../forms-formfields/FormFieldBrand';
 import { TagFilter } from '../../@types/filterTypes';
+import FormFieldBrandCheckbox from '../forms-formfields/FormFieldBrandCheckbox';
 
 type Props = {
   brands: BrandData[];
+  setBrandsSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
 };
 
-export default function FormFilterByBrands({ brands = [] }: Props) {
-  const [brandsSelected, setBrandsSelected] = React.useState<TagFilter[]>([]);
-
+export default function GroupCheckboxesBrands({
+  brands = [],
+  setBrandsSelected,
+}: Props) {
   return (
-    <form className="flex flex-col gap-2">
+    <div>
       {brands.map((brand) => (
-        <FormFieldBrand
+        <FormFieldBrandCheckbox
           key={brand.id}
           htmlFor={`brand-${brand.id}`}
           labelText={brand.name}
@@ -22,9 +23,6 @@ export default function FormFilterByBrands({ brands = [] }: Props) {
           setBrandsSelected={setBrandsSelected}
         />
       ))}
-      {brandsSelected.length > 0 ? (
-        <pre>{JSON.stringify(brandsSelected, null, 2)}</pre>
-      ) : null}
-    </form>
+    </div>
   );
 }

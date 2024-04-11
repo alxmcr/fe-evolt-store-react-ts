@@ -6,27 +6,27 @@ type Props = {
   htmlFor: string;
   inputId: string;
   inputName: string;
-  setStoragesSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
+  setBluetoothsSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
 };
 
-export default function FormFieldStorage({
+export default function FormFieldBluetoothCheckbox({
   labelText = '',
   htmlFor = '',
   inputId = '',
   inputName = '',
-  setStoragesSelected,
+  setBluetoothsSelected,
 }: Props) {
   const [checked, setChecked] = React.useState(false);
 
   const onChangeCheckbox = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(ev.target.checked);
 
-    setStoragesSelected((prev) => {
+    setBluetoothsSelected((prev) => {
       const tagId = `tag-${inputId}`;
       if (ev.target.checked) {
         const tag: TagFilter = {
           id: tagId,
-          key: 'storage',
+          key: 'bluetooth',
           value: labelText,
           typeValue: 'string',
         };

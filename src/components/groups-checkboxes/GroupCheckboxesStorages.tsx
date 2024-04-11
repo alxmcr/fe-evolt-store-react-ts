@@ -1,21 +1,20 @@
-import React from 'react';
 import { StorageData } from '../../@types/appTypes';
 import { TagFilter } from '../../@types/filterTypes';
-import FormFieldStorage from '../forms-formfields/FormFieldStorage';
+import FormFieldStorageCheckbox from '../forms-formfields/FormFieldStorageCheckbox';
 
 type Props = {
   storages: StorageData[];
+  setStoragesSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
 };
 
-export default function FormFilterByStorages({ storages = [] }: Props) {
-  const [storagesSelected, setStoragesSelected] = React.useState<TagFilter[]>(
-    [],
-  );
-
+export default function GroupCheckboxesStorages({
+  storages = [],
+  setStoragesSelected,
+}: Props) {
   return (
-    <form className="flex flex-col gap-2">
+    <div>
       {storages.map((storage) => (
-        <FormFieldStorage
+        <FormFieldStorageCheckbox
           key={storage.id}
           htmlFor={`storage-${storage.id}`}
           labelText={storage.capacity}
@@ -24,9 +23,6 @@ export default function FormFilterByStorages({ storages = [] }: Props) {
           setStoragesSelected={setStoragesSelected}
         />
       ))}
-      {storagesSelected.length > 0 ? (
-        <pre>{JSON.stringify(storagesSelected, null, 2)}</pre>
-      ) : null}
-    </form>
+    </div>
   );
 }
