@@ -17,10 +17,10 @@ export default function FormFilterByBluetooths({ bluetooths = [] }: Props) {
       {bluetooths.map((bluetooth) => (
         <FormFieldBluetooth
           key={bluetooth.id}
-          htmlFor={`brand-${bluetooth.id}`}
+          htmlFor={`bluetooth-${bluetooth.id}`}
           labelText={String(bluetooth.version)}
-          inputId={`brand-${bluetooth.id}`}
-          inputName="brand"
+          inputId={`bluetooth-${bluetooth.id}`}
+          inputName="bluetooth"
           setBluetoothsSelected={setBluetoothsSelected}
         />
       ))}
