@@ -1,10 +1,12 @@
 import React from 'react';
+import { TagFilter } from '../../@types/filterTypes';
 
 type Props = {
   labelText: string;
   htmlFor: string;
   inputId: string;
   inputName: string;
+  setStoragesSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
 };
 
 export default function FormFieldStorage({
@@ -12,11 +14,26 @@ export default function FormFieldStorage({
   htmlFor = '',
   inputId = '',
   inputName = '',
+  setStoragesSelected,
 }: Props) {
   const [checked, setChecked] = React.useState(false);
 
   const onChangeCheckbox = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(ev.target.checked);
+
+    setStoragesSelected((prev) => {
+      const tagId = `tag-${inputId}`;
+      if (ev.target.checked) {
+        const tag: TagFilter = {
+          id: tagId,
+          key: 'storage',
+          value: labelText,
+          typeValue: 'string',
+        };
+        return [...prev, tag];
+      }
+      return prev.filter((tag) => tag.id !== tagId);
+    });
   };
 
   return (

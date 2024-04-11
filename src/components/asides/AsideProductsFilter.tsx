@@ -5,7 +5,7 @@ import BoxFormFilterByRangePrices from '../boxes/BoxFormFilterByRangePrices';
 import CardAsideBase from '../cards/CardAsideBase';
 import FormFilterByBluetooths from '../forms/FormFilterByBluetooths';
 import FormFilterByBrands from '../forms/FormFilterByBrands';
-import FormFilterByStorages from '../forms/FormFilterByStorage';
+import FormFilterByStorages from '../forms/FormFilterByStorages';
 
 export default function AsideProductsFilter() {
   return (
