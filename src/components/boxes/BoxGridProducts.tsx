@@ -1,5 +1,6 @@
+import React from 'react';
 import { TagFilter } from '../../@types/filterTypes';
-import useProducts from '../../hooks/useProducts';
+import { ProductsContext } from '../../providers/ProductsProvider/ProductsContext';
 import GridProducts from '../grids/GridProducts';
 import HeaderFilterActions from '../headers/HeaderFilterActions';
 
@@ -14,14 +15,14 @@ export default function BoxGridProducts({
   bluetoothsSelected,
   storagesSelected,
 }: Props) {
-  console.log({ brandsSelected, bluetoothsSelected, storagesSelected });
+  const context = React.useContext(ProductsContext);
 
-  const { products } = useProducts();
+  console.log({ brandsSelected, bluetoothsSelected, storagesSelected });
 
   return (
     <div className="flex flex-col gap-4 lg:w-4/6">
       <HeaderFilterActions />
-      <GridProducts products={products} />
+      <GridProducts products={context.productsFiltered} />
     </div>
   );
 }
