@@ -1,10 +1,12 @@
 import React from 'react';
+import { TagFilter } from '../../@types/filterTypes';
 
 type Props = {
   labelText: string;
   htmlFor: string;
   inputId: string;
   inputName: string;
+  setBluetoothsSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
 };
 
 export default function FormFieldBluetooth({
@@ -12,11 +14,27 @@ export default function FormFieldBluetooth({
   htmlFor = '',
   inputId = '',
   inputName = '',
+  setBluetoothsSelected,
 }: Props) {
   const [checked, setChecked] = React.useState(false);
 
   const onChangeCheckbox = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(ev.target.checked);
+
+    setBluetoothsSelected((prev) => {
+      const tagId = `tag-${inputId}`;
+      if (ev.target.checked) {
+        const tag: TagFilter = {
+          id: tagId,
+          key: 'bluetooth',
+          value: labelText,
+          typeValue: 'string',
+        };
+        console.log("🚀 ~ setBluetoothsSelected ~ tag:", tag)
+        return [...prev, tag];
+      }
+      return prev.filter((tag) => tag.id !== tagId);
+    });
   };
 
   return (
