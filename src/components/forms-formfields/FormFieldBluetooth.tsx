@@ -30,7 +30,6 @@ export default function FormFieldBluetooth({
           value: labelText,
           typeValue: 'string',
         };
-        console.log("🚀 ~ setBluetoothsSelected ~ tag:", tag)
         return [...prev, tag];
       }
       return prev.filter((tag) => tag.id !== tagId);

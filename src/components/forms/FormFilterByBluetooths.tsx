@@ -24,7 +24,7 @@ export default function FormFilterByBluetooths({ bluetooths = [] }: Props) {
           setBluetoothsSelected={setBluetoothsSelected}
         />
       ))}
-      {bluetooths.length > 0 ? (
+      {bluetoothsSelected.length > 0 ? (
         <pre>{JSON.stringify(bluetoothsSelected, null, 2)}</pre>
       ) : null}
     </form>
