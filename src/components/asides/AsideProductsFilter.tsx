@@ -11,7 +11,12 @@ export default function AsideProductsFilter() {
   return (
     <aside className="hidden rounded-xl bg-white p-4 lg:sticky lg:flex lg:h-[810px] lg:w-2/6 lg:flex-col lg:gap-4">
       <CardAsideBase title="Pricing">
-        <BoxFormFilterByRangePrices />
+        <BoxFormFilterByRangePrices
+          minValue={1}
+          maxValue={1100}
+          startMinValue={500}
+          startMaxValue={900}
+        />
       </CardAsideBase>
       <CardAsideBase title="Brands">
         <FormFilterByBrands brands={MOCK_BRANDS} />
