@@ -10,6 +10,8 @@ import GroupCheckboxesBrands from '../groups-checkboxes/GroupCheckboxesBrands';
 import GroupCheckboxesStorages from '../groups-checkboxes/GroupCheckboxesStorages';
 
 type Props = {
+  minValue: number;
+  maxValue: number;
   minPrice: number;
   maxPrice: number;
   setMinPrice: React.Dispatch<React.SetStateAction<number>>;
@@ -20,6 +22,8 @@ type Props = {
 };
 
 export default function AsideProductsFilter({
+  minValue = 0,
+  maxValue = 0,
   minPrice = 0,
   maxPrice = 0,
   setMinPrice,
@@ -32,8 +36,8 @@ export default function AsideProductsFilter({
     <aside className="hidden rounded-xl bg-white p-4 lg:sticky lg:flex lg:h-[810px] lg:w-2/6 lg:flex-col lg:gap-4">
       <CardAsideBase title="Pricing">
         <BoxFormFilterByRangePrices
-          minValue={1}
-          maxValue={1100}
+          minValue={minValue}
+          maxValue={maxValue}
           minPrice={minPrice}
           maxPrice={maxPrice}
           setMinPrice={setMinPrice}

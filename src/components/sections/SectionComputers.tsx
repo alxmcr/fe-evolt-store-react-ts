@@ -5,6 +5,8 @@ import BoxGridProducts from '../boxes/BoxGridProducts';
 import { ProductsContext } from '../../providers/ProductsProvider/ProductsContext';
 
 export default function SectionComputers() {
+  const minValue = 1;
+  const maxValue = 1100;
   const startMinValue = 500;
   const startMaxValue = 900;
   const [minPrice, setMinPrice] = React.useState(startMinValue);
@@ -25,6 +27,8 @@ export default function SectionComputers() {
       </h2>
       <div className="lg:relative lg:flex lg:gap-4">
         <AsideProductsFilter
+          minValue={minValue}
+          maxValue={maxValue}
           minPrice={minPrice}
           maxPrice={maxPrice}
           setMinPrice={setMinPrice}
