@@ -22,7 +22,7 @@ export default function BoxGridProducts({
   return (
     <div className="flex flex-col gap-4 lg:w-4/6">
       <HeaderFilterActions />
-      <GridProducts products={context.products} />
+      <GridProducts products={context.productsFiltered} />
     </div>
   );
 }
