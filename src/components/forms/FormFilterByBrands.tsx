@@ -20,7 +20,7 @@ export default function FormFilterByBrands({ brands = [] }: Props) {
       {brands.map((brand) => (
         <FormFieldBrand
           key={brand.id}
-          htmlFor={`brand-${brand.name}`}
+          inputId={`brand-${brand.name}`}
           labelText={brand.name}
           brandSelected={brandSelected}
           onChangeBrand={() => onChangeBrand(brand)}
