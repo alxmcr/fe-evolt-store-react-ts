@@ -1,7 +1,13 @@
+import React from 'react';
+import { formatNumber } from '../../helpers/helpers-format';
 import Icon16x16Close from '../@icons/16x16/Icon16x16Close';
 import Icon16x16Filter from '../@icons/16x16/Icon16x16Filter';
+import { ProductFilterContext } from '../../providers/ProductFilterProvider/ProductFilterContext';
+import FilterTag from '../tags/FilterTag';
 
 export default function HeaderFilterActions() {
+  const filterContext = React.useContext(ProductFilterContext);
+
   return (
     <header className="flex items-center justify-between gap-2 rounded-lg bg-white p-[.5rem]">
       <div className="flex items-center justify-between gap-2">
@@ -17,6 +23,15 @@ export default function HeaderFilterActions() {
           </span>
           <span className="text-[.75rem]">Reset</span>
         </button>
+      </div>
+      <div>
+        {filterContext.filterPriceMax > 0 ? (
+          <FilterTag removeFilter={() => {}}>
+            <span>$ {formatNumber(filterContext.filterPriceMin)}</span>
+            <span>-</span>
+            <span>$ {formatNumber(filterContext.filterPriceMax)}</span>
+          </FilterTag>
+        ) : null}
       </div>
     </header>
   );
