@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon16x16ArrowRight from '../@icons/16x16/Icon16x16ArrowRight';
-import FormFielPriceInput from '../forms-formfields/FormFielPriceInput';
+import GroupInputsRangePrices from '../groups-inputs/GroupInputsRangePrices';
 
 type Props = {
   minValue: number;
@@ -19,43 +19,20 @@ export default function FormFilterByRangePrices({
   setMinPrice,
   setMaxPrice,
 }: Props) {
-  const onChangeMinPrice = (ev: React.ChangeEvent<HTMLInputElement>) => {
-    setMinPrice(Number(ev.target.value));
-  };
-
-  const onChangeMaxPrice = (ev: React.ChangeEvent<HTMLInputElement>) => {
-    setMaxPrice(Number(ev.target.value));
-  };
-
   const onSubmit = (ev: React.FormEvent) => {
     ev.preventDefault();
   };
 
   return (
     <form onSubmit={onSubmit} className="flex items-start gap-3">
-      <div className="flex min-w-[13.375rem] gap-2">
-        <FormFielPriceInput
-          labelText="Min price"
-          inputName="min-range"
-          inputId="min-range"
-          inputValue={minPrice}
-          minValue={minValue}
-          maxValue={maxPrice - 1}
-          onChange={onChangeMinPrice}
-        />
-        <span className="flex h-[2.875rem] w-[1.125rem] items-center justify-center text-[.875rem]">
-          to
-        </span>
-        <FormFielPriceInput
-          labelText="Max price"
-          inputName="max-range"
-          inputId="max-range"
-          inputValue={maxPrice}
-          minValue={minPrice + 1}
-          maxValue={maxValue}
-          onChange={onChangeMaxPrice}
-        />
-      </div>
+      <GroupInputsRangePrices
+        minPrice={minPrice}
+        maxPrice={maxPrice}
+        minValue={minValue}
+        maxValue={maxValue}
+        setMinPrice={setMinPrice}
+        setMaxPrice={setMaxPrice}
+      />
       <div>
         <button
           type="submit"
