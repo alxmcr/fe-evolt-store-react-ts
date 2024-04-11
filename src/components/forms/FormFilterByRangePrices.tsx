@@ -1,6 +1,7 @@
 import React from 'react';
 import Icon16x16ArrowRight from '../@icons/16x16/Icon16x16ArrowRight';
 import FormFielPriceInput from '../forms-formfields/FormFielPriceInput';
+import { ProductFilterContext } from '../../providers/ProductFilterProvider/ProductFilterContext';
 
 type Props = {
   minValue: number;
@@ -19,6 +20,8 @@ export default function FormFilterByRangePrices({
   setMinPrice,
   setMaxPrice,
 }: Props) {
+  const filterContext = React.useContext(ProductFilterContext);
+
   const onChangeMinPrice = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setMinPrice(Number(ev.target.value));
   };
@@ -29,6 +32,9 @@ export default function FormFilterByRangePrices({
 
   const onSubmit = (ev: React.FormEvent) => {
     ev.preventDefault();
+
+    filterContext.setFilterPriceMin(minPrice)
+    filterContext.setFilterPriceMax(maxPrice)
   };
 
   return (
