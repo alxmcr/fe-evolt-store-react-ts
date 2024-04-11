@@ -13,10 +13,10 @@ export default function FormFieldBluetooth({
   inputId = '',
   inputName = '',
 }: Props) {
-  const [bluetoothSelectedId, setBluetoothSelectedId] = React.useState('');
+  const [checked, setChecked] = React.useState(false);
 
-  const onChangeCheckbox = (inputCheckboxId = '') => {
-    setBluetoothSelectedId(inputCheckboxId);
+  const onChangeCheckbox = (ev: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked(ev.target.checked);
   };
 
   return (
@@ -26,8 +26,8 @@ export default function FormFieldBluetooth({
         name={inputName}
         id={inputId}
         className="peer/draft hidden size-10"
-        onChange={() => onChangeCheckbox(inputId)}
-        checked={inputId === bluetoothSelectedId}
+        onChange={onChangeCheckbox}
+        checked={checked}
       />
       <span
         className="flex items-center gap-2 before:flex before:size-5 before:items-center before:justify-center before:rounded-full before:border before:border-solid before:border-perano-500 before:content-[''] peer-checked/draft:text-perano-500  peer-checked/draft:before:bg-perano-500
