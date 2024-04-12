@@ -1,10 +1,10 @@
 import React from 'react';
-import { ProductsContext } from '../../providers/ProductsProvider/ProductsContext';
+import { ProductFilterCriteriasContext } from '../../providers/ProductFilterCriteriasProvider/ProductFilterCriteriasContext';
 import AsideProductsFilter from '../asides/AsideProductsFilter';
 import BoxGridProducts from '../boxes/BoxGridProducts';
 
 export default function SectionComputers() {
-  const context = React.useContext(ProductsContext);
+  const context = React.useContext(ProductFilterCriteriasContext);
 
   return (
     <section className="flex flex-col gap-4">

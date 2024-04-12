@@ -1,7 +1,9 @@
 import React from 'react';
 import { ProductsContextData } from '../../@types/providerTypes';
+import { LoadingStates } from '../../@enums/appEnums';
 
 const initialState: ProductsContextData = {
+  statusProducts: LoadingStates.IDLE,
   products: [],
   productsFiltered: [],
   startRangePrice: 0,
