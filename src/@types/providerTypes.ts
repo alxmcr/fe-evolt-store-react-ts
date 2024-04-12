@@ -16,14 +16,8 @@ export type ProductFilterCriteriasContextData = {
   maxValueInput: number;
   minPrice: number;
   maxPrice: number;
-  brandsSelected: FilterProductTag[];
-  bluetoothsSelected: FilterProductTag[];
-  storagesSelected: FilterProductTag[];
   setMinPrice: React.Dispatch<React.SetStateAction<number>>;
   setMaxPrice: React.Dispatch<React.SetStateAction<number>>;
-  setBrandsSelected: React.Dispatch<React.SetStateAction<FilterProductTag[]>>;
-  setBluetoothsSelected: React.Dispatch<React.SetStateAction<FilterProductTag[]>>;
-  setStoragesSelected: React.Dispatch<React.SetStateAction<FilterProductTag[]>>;
   tagsFilter: FilterProductTag[];
   setTagsFilter: React.Dispatch<React.SetStateAction<FilterProductTag[]>>;
 };
