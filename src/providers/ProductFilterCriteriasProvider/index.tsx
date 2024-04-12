@@ -21,6 +21,7 @@ export default function ProductFilterCriteriasProvider({ children }: Props) {
   const [storagesSelected, setStoragesSelected] = React.useState<TagFilter[]>(
     [],
   );
+  const [tagsFilter, setTagsFilter] = React.useState<TagFilter[]>([]);
 
   const value: ProductFilterCriteriasContextData = {
     minValueInput,
@@ -35,6 +36,8 @@ export default function ProductFilterCriteriasProvider({ children }: Props) {
     setBrandsSelected,
     setBluetoothsSelected,
     setStoragesSelected,
+    tagsFilter,
+    setTagsFilter,
   };
 
   return (

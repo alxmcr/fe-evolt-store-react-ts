@@ -1,7 +1,15 @@
+import React from 'react';
 import Icon16x16Close from '../@icons/16x16/Icon16x16Close';
 import Icon16x16Filter from '../@icons/16x16/Icon16x16Filter';
+import { ProductFilterCriteriasContext } from '../../providers/ProductFilterCriteriasProvider/ProductFilterCriteriasContext';
 
 export default function HeaderFilterActions() {
+  const contextProductFilterCriterias = React.useContext(
+    ProductFilterCriteriasContext,
+  );
+
+  console.log({ contextProductFilterCriterias });
+
   return (
     <header className="flex items-center justify-between gap-2 rounded-lg bg-white p-[.5rem]">
       <div className="flex items-center justify-between gap-2">

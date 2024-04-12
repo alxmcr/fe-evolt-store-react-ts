@@ -1,12 +1,12 @@
 import React from 'react';
 import { TagFilter } from '../../@types/filterTypes';
+import { ProductFilterCriteriasContext } from '../../providers/ProductFilterCriteriasProvider/ProductFilterCriteriasContext';
 
 type Props = {
   labelText: string;
   htmlFor: string;
   inputId: string;
   inputName: string;
-  setBrandsSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
 };
 
 export default function FormFieldBrandCheckbox({
@@ -14,14 +14,16 @@ export default function FormFieldBrandCheckbox({
   htmlFor = '',
   inputId = '',
   inputName = '',
-  setBrandsSelected,
 }: Props) {
+  const contextProductFilterCriterias = React.useContext(
+    ProductFilterCriteriasContext,
+  );
   const [checked, setChecked] = React.useState(false);
 
   const onChangeCheckbox = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(ev.target.checked);
 
-    setBrandsSelected((prev) => {
+    contextProductFilterCriterias.setTagsFilter((prev) => {
       const tagId = `tag-${inputId}`;
       if (ev.target.checked) {
         const tag: TagFilter = {

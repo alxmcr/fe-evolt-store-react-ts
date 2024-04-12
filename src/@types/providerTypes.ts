@@ -24,6 +24,6 @@ export type ProductFilterCriteriasContextData = {
   setBrandsSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
   setBluetoothsSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
   setStoragesSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
-  tagsFilter?: TagFilter[];
-  setTagsFilter?: React.Dispatch<React.SetStateAction<TagFilter[]>>;
+  tagsFilter: TagFilter[];
+  setTagsFilter: React.Dispatch<React.SetStateAction<TagFilter[]>>;
 };
