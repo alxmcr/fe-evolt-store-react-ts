@@ -1,10 +1,32 @@
 import React from 'react';
 import Icon16x16ArrowRight from '../@icons/16x16/Icon16x16ArrowRight';
 import GroupInputsRangePrices from '../groups-inputs/GroupInputsRangePrices';
+import { ProductFilterCriteriasContext } from '../../providers/ProductFilterCriteriasProvider/ProductFilterCriteriasContext';
+import { TagFilter } from '../../@types/filterTypes';
 
 export default function FormFilterByRangePrices() {
+  const contextProductFilterCriterias = React.useContext(
+    ProductFilterCriteriasContext,
+  );
+
   const onSubmit = (ev: React.FormEvent) => {
     ev.preventDefault();
+
+    contextProductFilterCriterias.setTagsFilter((prev) => {
+      const tagId = `tag-range-pricing`;
+      const minPrice = contextProductFilterCriterias.minPrice;
+      const maxPrice = contextProductFilterCriterias.maxPrice;
+      const rangePricing = `${minPrice} to ${maxPrice}`;
+
+      // create a tag
+      const tag: TagFilter = {
+        id: tagId,
+        key: 'range-pricing',
+        value: rangePricing,
+        typeValue: 'string',
+      };
+      return [...prev, tag];
+    });
   };
 
   return (
