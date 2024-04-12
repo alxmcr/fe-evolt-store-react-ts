@@ -1,4 +1,4 @@
-export type TagFilter = {
+export type FilterProductTag = {
   id: string;
   key: string;
   value: string;

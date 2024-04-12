@@ -1,5 +1,5 @@
 import React from 'react';
-import { TagFilter } from '../../@types/filterTypes';
+import { FilterProductTag } from '../../@types/filterTypes';
 import { ProductFilterCriteriasContext } from '../../providers/ProductFilterCriteriasProvider/ProductFilterCriteriasContext';
 
 type Props = {
@@ -26,7 +26,7 @@ export default function FormFieldBrandCheckbox({
     contextProductFilterCriterias.setTagsFilter((prev) => {
       const tagId = `tag-${inputId}`;
       if (ev.target.checked) {
-        const tag: TagFilter = {
+        const tag: FilterProductTag = {
           id: tagId,
           key: 'brand',
           value: labelText,
