@@ -1,5 +1,5 @@
 import { BluetoothData, BrandData, ProductData, StorageData } from './appTypes';
-import { TagFilter } from './filterTypes';
+import { FilterProductTag } from './filterTypes';
 
 export type ProductsContextData = {
   products: ProductData[];
@@ -16,14 +16,14 @@ export type ProductFilterCriteriasContextData = {
   maxValueInput: number;
   minPrice: number;
   maxPrice: number;
-  brandsSelected: TagFilter[];
-  bluetoothsSelected: TagFilter[];
-  storagesSelected: TagFilter[];
+  brandsSelected: FilterProductTag[];
+  bluetoothsSelected: FilterProductTag[];
+  storagesSelected: FilterProductTag[];
   setMinPrice: React.Dispatch<React.SetStateAction<number>>;
   setMaxPrice: React.Dispatch<React.SetStateAction<number>>;
-  setBrandsSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
-  setBluetoothsSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
-  setStoragesSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
-  tagsFilter: TagFilter[];
-  setTagsFilter: React.Dispatch<React.SetStateAction<TagFilter[]>>;
+  setBrandsSelected: React.Dispatch<React.SetStateAction<FilterProductTag[]>>;
+  setBluetoothsSelected: React.Dispatch<React.SetStateAction<FilterProductTag[]>>;
+  setStoragesSelected: React.Dispatch<React.SetStateAction<FilterProductTag[]>>;
+  tagsFilter: FilterProductTag[];
+  setTagsFilter: React.Dispatch<React.SetStateAction<FilterProductTag[]>>;
 };

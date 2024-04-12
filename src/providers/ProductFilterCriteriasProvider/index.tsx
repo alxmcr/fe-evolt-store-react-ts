@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProductFilterCriteriasContext } from './ProductFilterCriteriasContext';
-import { TagFilter } from '../../@types/filterTypes';
+import { FilterProductTag } from '../../@types/filterTypes';
 import { ProductFilterCriteriasContextData } from '../../@types/providerTypes';
 
 type Props = {
@@ -14,14 +14,14 @@ export default function ProductFilterCriteriasProvider({ children }: Props) {
   const startmaxValueInput = Math.floor(maxValueInput / 2);
   const [minPrice, setMinPrice] = React.useState(startminValueInput);
   const [maxPrice, setMaxPrice] = React.useState(startmaxValueInput);
-  const [brandsSelected, setBrandsSelected] = React.useState<TagFilter[]>([]);
+  const [brandsSelected, setBrandsSelected] = React.useState<FilterProductTag[]>([]);
   const [bluetoothsSelected, setBluetoothsSelected] = React.useState<
-    TagFilter[]
+    FilterProductTag[]
   >([]);
-  const [storagesSelected, setStoragesSelected] = React.useState<TagFilter[]>(
+  const [storagesSelected, setStoragesSelected] = React.useState<FilterProductTag[]>(
     [],
   );
-  const [tagsFilter, setTagsFilter] = React.useState<TagFilter[]>([]);
+  const [tagsFilter, setTagsFilter] = React.useState<FilterProductTag[]>([]);
 
   const value: ProductFilterCriteriasContextData = {
     minValueInput,
