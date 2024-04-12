@@ -14,15 +14,6 @@ export default function ProductFilterCriteriasProvider({ children }: Props) {
   const startmaxValueInput = Math.floor(maxValueInput / 2);
   const [minPrice, setMinPrice] = React.useState(startminValueInput);
   const [maxPrice, setMaxPrice] = React.useState(startmaxValueInput);
-  const [brandsSelected, setBrandsSelected] = React.useState<
-    FilterProductTag[]
-  >([]);
-  const [bluetoothsSelected, setBluetoothsSelected] = React.useState<
-    FilterProductTag[]
-  >([]);
-  const [storagesSelected, setStoragesSelected] = React.useState<
-    FilterProductTag[]
-  >([]);
   const [tagsFilter, setTagsFilter] = React.useState<FilterProductTag[]>([]);
 
   const value: ProductFilterCriteriasContextData = {
