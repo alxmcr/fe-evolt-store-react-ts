@@ -14,6 +14,8 @@ const initialData: ProductFilterCriteriasContextData = {
   setBrandsSelected: () => {},
   setBluetoothsSelected: () => {},
   setStoragesSelected: () => {},
+  tagsFilter: [],
+  setTagsFilter: () => {},
 };
 
 export const ProductFilterCriteriasContext = React.createContext(initialData);
