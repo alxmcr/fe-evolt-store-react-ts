@@ -22,8 +22,8 @@ export default function GroupInputsRangePrices() {
         inputName="min-range"
         inputId="min-range"
         inputValue={contextProductFilterCriterias.minPrice}
-        minValue={contextProductFilterCriterias.minValue}
-        maxValue={contextProductFilterCriterias.maxPrice - 1}
+        minValueInput={contextProductFilterCriterias.minValueInput}
+        maxValueInput={contextProductFilterCriterias.maxPrice - 1}
         onChange={onChangeMinPrice}
       />
       <span className="flex h-[2.875rem] w-[1.125rem] items-center justify-center text-[.875rem]">
@@ -34,8 +34,8 @@ export default function GroupInputsRangePrices() {
         inputName="max-range"
         inputId="max-range"
         inputValue={contextProductFilterCriterias.maxPrice}
-        minValue={contextProductFilterCriterias.minPrice + 1}
-        maxValue={contextProductFilterCriterias.maxValue}
+        minValueInput={contextProductFilterCriterias.minPrice + 1}
+        maxValueInput={contextProductFilterCriterias.maxValueInput}
         onChange={onChangeMaxPrice}
       />
     </div>

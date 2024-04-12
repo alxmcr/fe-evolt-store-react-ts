@@ -12,8 +12,8 @@ export type ProductsContextData = {
 };
 
 export type ProductFilterCriteriasContextData = {
-  minValue: number;
-  maxValue: number;
+  minValueInput: number;
+  maxValueInput: number;
   minPrice: number;
   maxPrice: number;
   brandsSelected: TagFilter[];

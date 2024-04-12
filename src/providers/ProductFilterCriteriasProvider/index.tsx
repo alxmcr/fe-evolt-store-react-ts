@@ -8,12 +8,12 @@ type Props = {
 };
 
 export default function ProductFilterCriteriasProvider({ children }: Props) {
-  const minValue = 1;
-  const maxValue = 1100;
-  const startMinValue = Math.floor(maxValue / 4);
-  const startMaxValue = Math.floor(maxValue / 2);
-  const [minPrice, setMinPrice] = React.useState(startMinValue);
-  const [maxPrice, setMaxPrice] = React.useState(startMaxValue);
+  const minValueInput = 1;
+  const maxValueInput = 1100;
+  const startminValueInput = Math.floor(maxValueInput / 4);
+  const startmaxValueInput = Math.floor(maxValueInput / 2);
+  const [minPrice, setMinPrice] = React.useState(startminValueInput);
+  const [maxPrice, setMaxPrice] = React.useState(startmaxValueInput);
   const [brandsSelected, setBrandsSelected] = React.useState<TagFilter[]>([]);
   const [bluetoothsSelected, setBluetoothsSelected] = React.useState<
     TagFilter[]
@@ -23,8 +23,8 @@ export default function ProductFilterCriteriasProvider({ children }: Props) {
   );
 
   const value: ProductFilterCriteriasContextData = {
-    minValue,
-    maxValue,
+    minValueInput,
+    maxValueInput,
     minPrice,
     maxPrice,
     brandsSelected,
