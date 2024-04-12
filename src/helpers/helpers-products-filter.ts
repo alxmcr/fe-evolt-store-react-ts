@@ -1,14 +1,17 @@
 import { ProductData } from '../@types/appTypes';
 import {
-    FilterBluetoothData,
-    FilterBrandData,
-    FilterStorageData,
+  FilterBluetoothData,
+  FilterBrandData,
+  FilterStorageData,
 } from '../@types/filterTypes';
+import { findAllBluetooths, findAllBrands, findAllStorages } from './helpers-products';
 
 export const findAllFilterBrands = (products: ProductData[] = []) => {
+  const brands = findAllBrands(products);
+
   const brandsFilterSet: Set<FilterBrandData> = new Set(
-    products.map((product, index) => {
-      return { ...product.brand, id: `filter-brand-${index}`, checked: false };
+    brands.map((brand, index) => {
+      return { ...brand, id: `filter-brand-${index}`, checked: false };
     }),
   );
 
@@ -16,10 +19,12 @@ export const findAllFilterBrands = (products: ProductData[] = []) => {
 };
 
 export const findAllFilterStorages = (products: ProductData[] = []) => {
+  const storages = findAllStorages(products);
+
   const storagesFilterSet: Set<FilterStorageData> = new Set(
-    products.map((product, index) => {
+    storages.map((storage, index) => {
       return {
-        ...product.storage,
+        ...storage,
         id: `filter-storage-${index}`,
         checked: false,
       };
@@ -30,10 +35,12 @@ export const findAllFilterStorages = (products: ProductData[] = []) => {
 };
 
 export const findAllFilterBluetooths = (products: ProductData[] = []) => {
+  const bluetooths = findAllBluetooths(products);
+
   const bluetoothsFilterSet: Set<FilterBluetoothData> = new Set(
-    products.map((product, index) => {
+    bluetooths.map((bluetooth, index) => {
       return {
-        ...product.bluetooth,
+        ...bluetooth,
         id: `filter-bluetooth-${index}`,
         checked: false,
       };
