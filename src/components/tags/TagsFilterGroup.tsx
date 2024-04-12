@@ -6,6 +6,10 @@ type Props = {
 };
 
 export default function TagsFilterGroup({ tagsFilter = [] }: Props) {
+  const removeTagFilter = (tag: FilterProductTag) => {
+    console.log('🚀 ~ removeTagFilter ~ tag:', tag);
+  };
+
   if (tagsFilter.length === 0) return null;
 
   return (
@@ -14,7 +18,7 @@ export default function TagsFilterGroup({ tagsFilter = [] }: Props) {
         <TagFilter
           key={tagFilter.id}
           tagFilter={tagFilter}
-          removeFilter={() => {}}
+          removeFilter={() => removeTagFilter(tagFilter)}
         />
       ))}
     </div>
