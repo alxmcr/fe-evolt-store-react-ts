@@ -4,7 +4,6 @@ export type ProductData = {
   name: string;
   priceValue: number;
   priceCurrency?: string;
-  brand: string;
   operatingSystem: string;
   color: string;
   model: string;
@@ -16,8 +15,9 @@ export type ProductData = {
   photoFilename: string;
   photoAlt: string;
   screenSize: string;
-  bluetoothVersion?: string;
-  storage?: string;
+  brand: BrandData;
+  bluetoothVersion: BluetoothData;
+  storage: StorageData;
 };
 
 export type BrandData = {

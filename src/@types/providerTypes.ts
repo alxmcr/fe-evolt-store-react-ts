@@ -1,9 +1,14 @@
-import { ProductData } from './appTypes';
+import { BluetoothData, BrandData, ProductData, StorageData } from './appTypes';
 import { TagFilter } from './filterTypes';
 
 export type ProductsContextData = {
   products: ProductData[];
   productsFiltered: ProductData[];
+  minPrice: number;
+  maxPrice: number;
+  brands: BrandData[];
+  storages: StorageData[];
+  bluetooths: BluetoothData[];
 };
 
 export type ProductFilterCriteriasContextData = {

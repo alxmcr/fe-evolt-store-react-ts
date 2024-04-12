@@ -1,4 +1,29 @@
 import { ProductData } from '../@types/appTypes';
+import {
+  bluetoothV5,
+  bluetoothV5_1,
+  bluetoothV5_2,
+  bluetoothV5_3,
+} from './mock-laptops-bluetooth';
+import {
+  ACER,
+  APPLE,
+  ASUS,
+  DELL,
+  HP,
+  LENOVO,
+  MICROSOFT,
+  MSI,
+  RAZER,
+  SAMSUNG,
+} from './mock-laptops-brands';
+import {
+  storage128GB,
+  storage1TB,
+  storage256GB,
+  storage2TB,
+  storage512GB,
+} from './mock-laptops-storages';
 
 export const computer001: ProductData = {
   id: 'product-000001',
@@ -6,7 +31,6 @@ export const computer001: ProductData = {
   name: 'Apple MacBook Air M2',
   priceValue: 1199.46,
   priceCurrency: 'MXN',
-  brand: 'Apple',
   operatingSystem: 'macOS Monterey',
   color: 'Space Gray',
   model: 'M2',
@@ -16,8 +40,9 @@ export const computer001: ProductData = {
   photoFilename: 'apple-macbook-air-m2.png',
   photoAlt: '[Image of Apple MacBook Air M2]',
   screenSize: '13.6-inch',
-  bluetoothVersion: "5.0",
-  storage: '128GB SSD + 128GB Micro SD',
+  brand: APPLE,
+  bluetoothVersion: bluetoothV5,
+  storage: storage128GB,
 };
 
 export const computer002: ProductData = {
@@ -26,7 +51,6 @@ export const computer002: ProductData = {
   name: 'Microsoft Surface Laptop Studio',
   priceValue: 1599.46,
   priceCurrency: 'MXN',
-  brand: 'Microsoft',
   operatingSystem: 'Windows 11 Home',
   color: 'Platinum',
   model: 'i7-1185G7',
@@ -36,8 +60,9 @@ export const computer002: ProductData = {
   photoFilename: 'microsoft-surface-laptop-studio.png',
   photoAlt: '[Image of Microsoft Surface Laptop Studio]',
   screenSize: '14.4-inch',
-  bluetoothVersion: "5.1",
-  storage: '512GB SSD',
+  brand: MICROSOFT,
+  bluetoothVersion: bluetoothV5_1,
+  storage: storage512GB,
 };
 
 export const computer003: ProductData = {
@@ -46,7 +71,6 @@ export const computer003: ProductData = {
   name: 'ASUS ROG Strix G15 Advantage Edition',
   priceValue: 1799.46,
   priceCurrency: 'MXN',
-  brand: 'ASUS',
   operatingSystem: 'Windows 11 Home',
   color: 'Black',
   model: 'Ryzen 9 6900HX',
@@ -56,8 +80,9 @@ export const computer003: ProductData = {
   photoFilename: 'asus-rog-strix-g15-advantage-edition.png',
   photoAlt: '[Image of ASUS ROG Strix G15 Advantage Edition]',
   screenSize: '15.6-inch',
-  bluetoothVersion: "5.0",
-  storage: '256GB SSD',
+  brand: ASUS,
+  bluetoothVersion: bluetoothV5,
+  storage: storage256GB,
 };
 
 export const computer004: ProductData = {
@@ -66,7 +91,6 @@ export const computer004: ProductData = {
   name: 'Acer Chromebook Spin 713',
   priceValue: 699.46,
   priceCurrency: 'MXN',
-  brand: 'Acer',
   operatingSystem: 'Chrome OS',
   color: 'Silver',
   model: 'i5-1235U',
@@ -76,8 +100,9 @@ export const computer004: ProductData = {
   photoFilename: 'acer-chromebook-spin-713.png',
   photoAlt: '[Image of Acer Chromebook Spin 713]',
   screenSize: '13.5-inch',
-  bluetoothVersion: "5.2",
-  storage: '1TB SSD',
+  brand: ACER,
+  bluetoothVersion: bluetoothV5_2,
+  storage: storage1TB,
 };
 
 export const computer005: ProductData = {
@@ -86,7 +111,6 @@ export const computer005: ProductData = {
   name: "Lenovo IdeaPad Flex 5 14'",
   priceValue: 799.46,
   priceCurrency: 'MXN',
-  brand: 'Lenovo',
   operatingSystem: 'Windows 11 Home',
   color: 'Grey',
   model: 'Ryzen 5 5500U',
@@ -96,8 +120,9 @@ export const computer005: ProductData = {
   photoFilename: 'lenovo-ideapad-flex-5-14inch.png',
   photoAlt: '[Image of Lenovo IdeaPad Flex 5 14]',
   screenSize: '14-inch',
-  bluetoothVersion: "5.1",
-  storage: '2TB SSD',
+  brand: LENOVO,
+  bluetoothVersion: bluetoothV5_1,
+  storage: storage2TB,
 };
 
 export const computer006: ProductData = {
@@ -106,7 +131,6 @@ export const computer006: ProductData = {
   name: "HP Spectre x360 14'",
   priceValue: 1299.46,
   priceCurrency: 'MXN',
-  brand: 'HP',
   operatingSystem: 'Windows 11 Home',
   color: 'Nightfall Teal',
   model: 'i7-1260P',
@@ -116,8 +140,9 @@ export const computer006: ProductData = {
   photoFilename: 'hp-spectre-x360-14.png',
   photoAlt: '[Image of HP Spectre x360 14]',
   screenSize: '14-inch',
-  bluetoothVersion: "5.3",
-  storage: '256GB SSD',
+  brand: HP,
+  bluetoothVersion: bluetoothV5_3,
+  storage: storage256GB,
 };
 
 export const computer007: ProductData = {
@@ -126,7 +151,6 @@ export const computer007: ProductData = {
   name: 'Dell XPS 13 Plus',
   priceValue: 999.46,
   priceCurrency: 'MXN',
-  brand: 'Dell',
   operatingSystem: 'Windows 11 Pro',
   color: 'Platinum White',
   model: 'i7-1250U',
@@ -136,8 +160,9 @@ export const computer007: ProductData = {
   photoFilename: 'dell-xps-13-plus.png',
   photoAlt: '[Image of Dell XPS 13 Plus]',
   screenSize: '13.4-inch',
-  bluetoothVersion: "5.1",
-  storage: '128GB SSD + 128GB Micro SD',
+  brand: DELL,
+  bluetoothVersion: bluetoothV5_1,
+  storage: storage128GB,
 };
 
 export const computer008: ProductData = {
@@ -146,7 +171,6 @@ export const computer008: ProductData = {
   name: 'Samsung Galaxy Book 2 Pro 360',
   priceValue: 1499.46,
   priceCurrency: 'MXN',
-  brand: 'Samsung',
   operatingSystem: 'Windows 11 Home',
   color: 'Mystic Silver',
   model: 'i7-1260P',
@@ -156,8 +180,9 @@ export const computer008: ProductData = {
   photoFilename: 'samsung-galaxy-book-2-pro-360.png',
   photoAlt: '[Image of Samsung Galaxy Book 2 Pro 360]',
   screenSize: '13.3-inch',
-  bluetoothVersion: "5.2",
-  storage: '1TB SSD',
+  brand: SAMSUNG,
+  bluetoothVersion: bluetoothV5_2,
+  storage: storage1TB,
 };
 
 export const computer009: ProductData = {
@@ -166,7 +191,6 @@ export const computer009: ProductData = {
   name: 'MSI GF65 Thin',
   priceValue: 1099.46,
   priceCurrency: 'MXN',
-  brand: 'MSI',
   operatingSystem: 'Windows 11 Home',
   color: 'Black',
   model: 'RTX 3060',
@@ -176,8 +200,9 @@ export const computer009: ProductData = {
   photoFilename: 'msi-gf65-thin.png',
   photoAlt: '[Image of MSI GF65 Thin]',
   screenSize: '15.6-inch',
-  bluetoothVersion: "5.0",
-  storage: '128GB SSD + 128GB Micro SD',
+  brand: MSI,
+  bluetoothVersion: bluetoothV5,
+  storage: storage128GB,
 };
 
 export const computer010: ProductData = {
@@ -186,7 +211,6 @@ export const computer010: ProductData = {
   name: 'Razer Blade 15',
   priceValue: 1999,
   priceCurrency: 'USD',
-  brand: 'Razer',
   operatingSystem: 'Windows 10',
   color: 'Mercury White',
   model: 'Blade 15',
@@ -198,8 +222,9 @@ export const computer010: ProductData = {
   photoFilename: 'razer-blade-15.png',
   photoAlt: '[Image of Razer Blade 15 Laptop]',
   screenSize: '15.6 inches',
-  bluetoothVersion: "5.0",
-  storage: '128GB SSD + 128GB Micro SD',
+  brand: RAZER,
+  bluetoothVersion: bluetoothV5,
+  storage: storage128GB,
 };
 
 export const MOCK_DATA_COMPUTERS: ProductData[] = [
