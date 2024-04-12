@@ -5,3 +5,9 @@ export enum LoadingStates {
 
   ERROR = 'ERROR',
 }
+
+export enum TagFilterKeys {
+  BRAND = 'filter-brand',
+  STORAGE = 'filter-storage',
+  BLUETOOTH = 'filter-bluetooth',
+}
