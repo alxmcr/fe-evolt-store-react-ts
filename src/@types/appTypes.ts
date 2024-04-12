@@ -16,7 +16,7 @@ export type ProductData = {
   photoAlt: string;
   screenSize: string;
   brand: BrandData;
-  bluetoothVersion: BluetoothData;
+  bluetooth: BluetoothData;
   storage: StorageData;
 };
 

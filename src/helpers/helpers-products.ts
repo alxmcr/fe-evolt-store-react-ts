@@ -30,7 +30,7 @@ export const findAllStorages = (products: ProductData[] = []) => {
 
 export const findAllBluetooths = (products: ProductData[] = []) => {
   const bluetoothsSet = new Set(
-    products.map((product) => product.bluetoothVersion),
+    products.map((product) => product.bluetooth),
   );
 
   return Array.from(bluetoothsSet);
