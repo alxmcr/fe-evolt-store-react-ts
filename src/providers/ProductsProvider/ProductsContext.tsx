@@ -4,8 +4,8 @@ import { ProductsContextData } from '../../@types/providerTypes';
 const initialState: ProductsContextData = {
   products: [],
   productsFiltered: [],
-  minPrice: 0,
-  maxPrice: 0,
+  startRangePrice: 0,
+  endRangePrice: 0,
   brands: [],
   bluetooths: [],
   storages: [],

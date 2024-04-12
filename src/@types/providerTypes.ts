@@ -4,8 +4,8 @@ import { FilterProductTag } from './filterTypes';
 export type ProductsContextData = {
   products: ProductData[];
   productsFiltered: ProductData[];
-  minPrice: number;
-  maxPrice: number;
+  startRangePrice: number;
+  endRangePrice: number;
   brands: BrandData[];
   storages: StorageData[];
   bluetooths: BluetoothData[];

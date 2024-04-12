@@ -9,7 +9,7 @@ import {
 import { ProductsContextData } from '../../@types/providerTypes';
 import {
   getMaxPricePossible,
-  getMinPricePossible
+  getMinPricePossible,
 } from '../../helpers/helpers-products';
 import {
   findAllFilterBluetooths,
@@ -24,8 +24,8 @@ type Props = {
 };
 
 export default function ProductsProvider({ children }: Props) {
-  const [minPrice, setMinPrice] = React.useState(0);
-  const [maxPrice, setMaxPrice] = React.useState(0);
+  const [startRangePrice, setStartRangePrice] = React.useState(0);
+  const [endRangePrice, setEndRangePrice] = React.useState(0);
   const [brands, setBrands] = React.useState<BrandData[]>([]);
   const [storages, setStorages] = React.useState<StorageData[]>([]);
   const [bluetooths, setBluetooths] = React.useState<BluetoothData[]>([]);
@@ -37,8 +37,8 @@ export default function ProductsProvider({ children }: Props) {
   const value: ProductsContextData = {
     products,
     productsFiltered,
-    minPrice,
-    maxPrice,
+    startRangePrice,
+    endRangePrice,
     brands,
     storages,
     bluetooths,
@@ -48,8 +48,8 @@ export default function ProductsProvider({ children }: Props) {
     if (LoadingStates.SUCCESS === statusProducts) {
       setProductsFiltered(products);
       // Extract data
-      setMinPrice(getMinPricePossible(products));
-      setMaxPrice(getMaxPricePossible(products));
+      setStartRangePrice(getMinPricePossible(products));
+      setEndRangePrice(getMaxPricePossible(products));
       setBrands(findAllFilterBrands(products));
       setStorages(findAllFilterStorages(products));
       setBluetooths(findAllFilterBluetooths(products));
