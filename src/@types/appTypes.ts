@@ -4,7 +4,6 @@ export type ProductData = {
   name: string;
   priceValue: number;
   priceCurrency?: string;
-  brand: string;
   operatingSystem: string;
   color: string;
   model: string;
@@ -16,6 +15,7 @@ export type ProductData = {
   photoFilename: string;
   photoAlt: string;
   screenSize: string;
+  brand: string;
   bluetoothVersion?: string;
   storage?: string;
 };
