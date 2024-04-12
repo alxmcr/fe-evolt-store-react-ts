@@ -6,17 +6,17 @@ import {
 } from '../@types/filterTypes';
 
 export const findAllFilterBrands = (products: ProductData[] = []) => {
-  const brandsSet: Set<FilterBrandData> = new Set(
+  const brandsFilterSet: Set<FilterBrandData> = new Set(
     products.map((product, index) => {
       return { ...product.brand, id: `filter-brand-${index}`, checked: false };
     }),
   );
 
-  return Array.from(brandsSet);
+  return Array.from(brandsFilterSet);
 };
 
 export const findAllFilterStorages = (products: ProductData[] = []) => {
-  const storagesSet: Set<FilterStorageData> = new Set(
+  const storagesFilterSet: Set<FilterStorageData> = new Set(
     products.map((product, index) => {
       return {
         ...product.storage,
@@ -26,11 +26,11 @@ export const findAllFilterStorages = (products: ProductData[] = []) => {
     }),
   );
 
-  return Array.from(storagesSet);
+  return Array.from(storagesFilterSet);
 };
 
 export const findAllFilterBluetooths = (products: ProductData[] = []) => {
-  const bluetoothsSet: Set<FilterBluetoothData> = new Set(
+  const bluetoothsFilterSet: Set<FilterBluetoothData> = new Set(
     products.map((product, index) => {
       return {
         ...product.bluetooth,
@@ -40,5 +40,5 @@ export const findAllFilterBluetooths = (products: ProductData[] = []) => {
     }),
   );
 
-  return Array.from(bluetoothsSet);
+  return Array.from(bluetoothsFilterSet);
 };
