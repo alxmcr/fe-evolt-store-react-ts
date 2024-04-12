@@ -7,7 +7,7 @@ export const APPLE: BrandData = {
 
 export const MICROSOFT: BrandData = {
   id: 'brand-0002',
-  name: 'Apple',
+  name: 'Microsoft',
 };
 
 export const ASUS: BrandData = {
