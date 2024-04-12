@@ -6,7 +6,7 @@ import {
   StorageData,
 } from '../../@types/appTypes';
 import { ProductsContextData } from '../../@types/providerTypes';
-import { LoadingStates } from '../../@types/serviceTypes';
+import { LoadingStates } from '../../@enums/appEnums';
 import {
   findAllBluetooths,
   findAllBrands,

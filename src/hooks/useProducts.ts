@@ -1,7 +1,7 @@
 import React from 'react';
 import { MOCK_DATA_COMPUTERS } from '../mocks/mock-laptops';
 import { ProductData } from '../@types/appTypes';
-import { LoadingStates } from '../@types/serviceTypes';
+import { LoadingStates } from '../@enums/appEnums';
 
 export default function useProducts() {
   const [products, setProducts] = React.useState<ProductData[]>([]);
