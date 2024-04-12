@@ -1,5 +1,4 @@
 import React from 'react';
-import { ProductFilterCriteriasContext } from '../../providers/ProductFilterCriteriasProvider/ProductFilterCriteriasContext';
 import { ProductsContext } from '../../providers/ProductsProvider/ProductsContext';
 import BoxFormFilterByRangePrices from '../boxes/BoxFormFilterByRangePrices';
 import CardAsideBase from '../cards/CardAsideBase';
@@ -9,9 +8,6 @@ import GroupCheckboxesStorages from '../groups-checkboxes/GroupCheckboxesStorage
 
 export default function AsideProductsFilter() {
   const contextProducts = React.useContext(ProductsContext);
-  const contextProductFilterCriterias = React.useContext(
-    ProductFilterCriteriasContext,
-  );
 
   return (
     <aside className="hidden rounded-xl bg-white p-4 lg:sticky lg:flex lg:h-[880px] lg:w-2/6 lg:flex-col lg:gap-4">
@@ -19,26 +15,13 @@ export default function AsideProductsFilter() {
         <BoxFormFilterByRangePrices />
       </CardAsideBase>
       <CardAsideBase title="Brands">
-        <GroupCheckboxesBrands
-          brands={contextProducts.brands}
-          setBrandsSelected={contextProductFilterCriterias.setBrandsSelected}
-        />
+        <GroupCheckboxesBrands brands={contextProducts.brands} />
       </CardAsideBase>
       <CardAsideBase title="Storage">
-        <GroupCheckboxesStorages
-          storages={contextProducts.storages}
-          setStoragesSelected={
-            contextProductFilterCriterias.setStoragesSelected
-          }
-        />
+        <GroupCheckboxesStorages storages={contextProducts.storages} />
       </CardAsideBase>
       <CardAsideBase title="Bluetooth">
-        <GroupCheckboxesBluetooths
-          bluetooths={contextProducts.bluetooths}
-          setBluetoothsSelected={
-            contextProductFilterCriterias.setBluetoothsSelected
-          }
-        />
+        <GroupCheckboxesBluetooths bluetooths={contextProducts.bluetooths} />
       </CardAsideBase>
     </aside>
   );

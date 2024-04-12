@@ -15,14 +15,7 @@ export default function BoxFormFilterByRangePrices() {
         <span>-</span>
         <span>$ {formatNumber(contextProductFilterCriterias.maxPrice)}</span>
       </div>
-      <FormFilterByRangePrices
-        minValue={contextProductFilterCriterias.minValue}
-        maxValue={contextProductFilterCriterias.maxValue}
-        minPrice={contextProductFilterCriterias.minPrice}
-        maxPrice={contextProductFilterCriterias.maxPrice}
-        setMinPrice={contextProductFilterCriterias.setMinPrice}
-        setMaxPrice={contextProductFilterCriterias.setMaxPrice}
-      />
+      <FormFilterByRangePrices />
     </div>
   );
 }

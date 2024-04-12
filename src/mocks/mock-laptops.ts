@@ -41,7 +41,7 @@ export const computer001: ProductData = {
   photoAlt: '[Image of Apple MacBook Air M2]',
   screenSize: '13.6-inch',
   brand: APPLE,
-  bluetoothVersion: bluetoothV5,
+  bluetooth: bluetoothV5,
   storage: storage128GB,
 };
 
@@ -61,7 +61,7 @@ export const computer002: ProductData = {
   photoAlt: '[Image of Microsoft Surface Laptop Studio]',
   screenSize: '14.4-inch',
   brand: MICROSOFT,
-  bluetoothVersion: bluetoothV5_1,
+  bluetooth: bluetoothV5_1,
   storage: storage512GB,
 };
 
@@ -81,7 +81,7 @@ export const computer003: ProductData = {
   photoAlt: '[Image of ASUS ROG Strix G15 Advantage Edition]',
   screenSize: '15.6-inch',
   brand: ASUS,
-  bluetoothVersion: bluetoothV5,
+  bluetooth: bluetoothV5,
   storage: storage256GB,
 };
 
@@ -101,7 +101,7 @@ export const computer004: ProductData = {
   photoAlt: '[Image of Acer Chromebook Spin 713]',
   screenSize: '13.5-inch',
   brand: ACER,
-  bluetoothVersion: bluetoothV5_2,
+  bluetooth: bluetoothV5_2,
   storage: storage1TB,
 };
 
@@ -121,7 +121,7 @@ export const computer005: ProductData = {
   photoAlt: '[Image of Lenovo IdeaPad Flex 5 14]',
   screenSize: '14-inch',
   brand: LENOVO,
-  bluetoothVersion: bluetoothV5_1,
+  bluetooth: bluetoothV5_1,
   storage: storage2TB,
 };
 
@@ -141,7 +141,7 @@ export const computer006: ProductData = {
   photoAlt: '[Image of HP Spectre x360 14]',
   screenSize: '14-inch',
   brand: HP,
-  bluetoothVersion: bluetoothV5_3,
+  bluetooth: bluetoothV5_3,
   storage: storage256GB,
 };
 
@@ -161,7 +161,7 @@ export const computer007: ProductData = {
   photoAlt: '[Image of Dell XPS 13 Plus]',
   screenSize: '13.4-inch',
   brand: DELL,
-  bluetoothVersion: bluetoothV5_1,
+  bluetooth: bluetoothV5_1,
   storage: storage128GB,
 };
 
@@ -181,7 +181,7 @@ export const computer008: ProductData = {
   photoAlt: '[Image of Samsung Galaxy Book 2 Pro 360]',
   screenSize: '13.3-inch',
   brand: SAMSUNG,
-  bluetoothVersion: bluetoothV5_2,
+  bluetooth: bluetoothV5_2,
   storage: storage1TB,
 };
 
@@ -201,7 +201,7 @@ export const computer009: ProductData = {
   photoAlt: '[Image of MSI GF65 Thin]',
   screenSize: '15.6-inch',
   brand: MSI,
-  bluetoothVersion: bluetoothV5,
+  bluetooth: bluetoothV5,
   storage: storage128GB,
 };
 
@@ -223,7 +223,7 @@ export const computer010: ProductData = {
   photoAlt: '[Image of Razer Blade 15 Laptop]',
   screenSize: '15.6 inches',
   brand: RAZER,
-  bluetoothVersion: bluetoothV5,
+  bluetooth: bluetoothV5,
   storage: storage128GB,
 };
 

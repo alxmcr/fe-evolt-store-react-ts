@@ -1,28 +1,18 @@
+import React from 'react';
+import { ProductFilterCriteriasContext } from '../../providers/ProductFilterCriteriasProvider/ProductFilterCriteriasContext';
 import FormFielPriceInput from '../forms-formfields/FormFielPriceInput';
 
-type Props = {
-  minValue: number;
-  maxValue: number;
-  minPrice: number;
-  maxPrice: number;
-  setMinPrice: React.Dispatch<React.SetStateAction<number>>;
-  setMaxPrice: React.Dispatch<React.SetStateAction<number>>;
-};
+export default function GroupInputsRangePrices() {
+  const contextProductFilterCriterias = React.useContext(
+    ProductFilterCriteriasContext,
+  );
 
-export default function GroupInputsRangePrices({
-  minValue = 0,
-  maxValue = 0,
-  minPrice = 0,
-  maxPrice = 0,
-  setMinPrice,
-  setMaxPrice,
-}: Props) {
   const onChangeMinPrice = (ev: React.ChangeEvent<HTMLInputElement>) => {
-    setMinPrice(Number(ev.target.value));
+    contextProductFilterCriterias.setMinPrice(Number(ev.target.value));
   };
 
   const onChangeMaxPrice = (ev: React.ChangeEvent<HTMLInputElement>) => {
-    setMaxPrice(Number(ev.target.value));
+    contextProductFilterCriterias.setMaxPrice(Number(ev.target.value));
   };
 
   return (
@@ -31,9 +21,9 @@ export default function GroupInputsRangePrices({
         labelText="Min price"
         inputName="min-range"
         inputId="min-range"
-        inputValue={minPrice}
-        minValue={minValue}
-        maxValue={maxPrice - 1}
+        inputValue={contextProductFilterCriterias.minPrice}
+        minValueInput={contextProductFilterCriterias.minValueInput}
+        maxValueInput={contextProductFilterCriterias.maxPrice - 1}
         onChange={onChangeMinPrice}
       />
       <span className="flex h-[2.875rem] w-[1.125rem] items-center justify-center text-[.875rem]">
@@ -43,9 +33,9 @@ export default function GroupInputsRangePrices({
         labelText="Max price"
         inputName="max-range"
         inputId="max-range"
-        inputValue={maxPrice}
-        minValue={minPrice + 1}
-        maxValue={maxValue}
+        inputValue={contextProductFilterCriterias.maxPrice}
+        minValueInput={contextProductFilterCriterias.minPrice + 1}
+        maxValueInput={contextProductFilterCriterias.maxValueInput}
         onChange={onChangeMaxPrice}
       />
     </div>

@@ -2,8 +2,8 @@ import React from 'react';
 import { ProductFilterCriteriasContextData } from '../../@types/providerTypes';
 
 const initialData: ProductFilterCriteriasContextData = {
-  minValue: 0,
-  maxValue: 0,
+  minValueInput: 0,
+  maxValueInput: 0,
   minPrice: 0,
   maxPrice: 0,
   brandsSelected: [],
@@ -14,6 +14,8 @@ const initialData: ProductFilterCriteriasContextData = {
   setBrandsSelected: () => {},
   setBluetoothsSelected: () => {},
   setStoragesSelected: () => {},
+  tagsFilter: [],
+  setTagsFilter: () => {},
 };
 
 export const ProductFilterCriteriasContext = React.createContext(initialData);

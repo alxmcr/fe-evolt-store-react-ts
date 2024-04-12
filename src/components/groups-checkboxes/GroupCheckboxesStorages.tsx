@@ -1,16 +1,11 @@
 import { StorageData } from '../../@types/appTypes';
-import { TagFilter } from '../../@types/filterTypes';
 import FormFieldStorageCheckbox from '../forms-formfields/FormFieldStorageCheckbox';
 
 type Props = {
   storages: StorageData[];
-  setStoragesSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
 };
 
-export default function GroupCheckboxesStorages({
-  storages = [],
-  setStoragesSelected,
-}: Props) {
+export default function GroupCheckboxesStorages({ storages = [] }: Props) {
   return (
     <div>
       {storages.map((storage) => (
@@ -20,7 +15,6 @@ export default function GroupCheckboxesStorages({
           labelText={storage.capacity}
           inputId={`storage-${storage.id}`}
           inputName="storage"
-          setStoragesSelected={setStoragesSelected}
         />
       ))}
     </div>

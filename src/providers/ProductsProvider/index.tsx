@@ -1,4 +1,5 @@
 import React from 'react';
+import { LoadingStates } from '../../@enums/appEnums';
 import {
   BluetoothData,
   BrandData,
@@ -6,14 +7,15 @@ import {
   StorageData,
 } from '../../@types/appTypes';
 import { ProductsContextData } from '../../@types/providerTypes';
-import { LoadingStates } from '../../@types/serviceTypes';
 import {
-  findAllBluetooths,
-  findAllBrands,
-  findAllStorages,
   getMaxPricePossible,
-  getMinPricePossible,
+  getMinPricePossible
 } from '../../helpers/helpers-products';
+import {
+  findAllFilterBluetooths,
+  findAllFilterBrands,
+  findAllFilterStorages,
+} from '../../helpers/helpers-products-filter';
 import useProducts from '../../hooks/useProducts';
 import { ProductsContext } from './ProductsContext';
 
@@ -48,9 +50,9 @@ export default function ProductsProvider({ children }: Props) {
       // Extract data
       setMinPrice(getMinPricePossible(products));
       setMaxPrice(getMaxPricePossible(products));
-      setBrands(findAllBrands(products));
-      setStorages(findAllStorages(products));
-      setBluetooths(findAllBluetooths(products));
+      setBrands(findAllFilterBrands(products));
+      setStorages(findAllFilterStorages(products));
+      setBluetooths(findAllFilterBluetooths(products));
     }
   }, [statusProducts, products]);
 

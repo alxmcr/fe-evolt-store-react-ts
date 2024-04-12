@@ -12,8 +12,8 @@ export type ProductsContextData = {
 };
 
 export type ProductFilterCriteriasContextData = {
-  minValue: number;
-  maxValue: number;
+  minValueInput: number;
+  maxValueInput: number;
   minPrice: number;
   maxPrice: number;
   brandsSelected: TagFilter[];
@@ -24,4 +24,6 @@ export type ProductFilterCriteriasContextData = {
   setBrandsSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
   setBluetoothsSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
   setStoragesSelected: React.Dispatch<React.SetStateAction<TagFilter[]>>;
+  tagsFilter: TagFilter[];
+  setTagsFilter: React.Dispatch<React.SetStateAction<TagFilter[]>>;
 };
