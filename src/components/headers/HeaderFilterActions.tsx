@@ -2,6 +2,7 @@ import React from 'react';
 import Icon16x16Close from '../@icons/16x16/Icon16x16Close';
 import Icon16x16Filter from '../@icons/16x16/Icon16x16Filter';
 import { ProductFilterCriteriasContext } from '../../providers/ProductFilterCriteriasProvider/ProductFilterCriteriasContext';
+import TagsFilterGroup from '../tags/TagsFilterGroup';
 
 export default function HeaderFilterActions() {
   const contextProductFilterCriterias = React.useContext(
@@ -12,6 +13,7 @@ export default function HeaderFilterActions() {
 
   return (
     <header className="flex items-center justify-between gap-2 rounded-lg bg-white p-[.5rem]">
+      <TagsFilterGroup tagsFilter={contextProductFilterCriterias.tagsFilter} />
       <div className="flex items-center justify-between gap-2">
         <button className="flex min-h-[1.875rem] max-w-[5.125rem] items-center gap-2 rounded-lg border border-light-950 px-4 lg:hidden">
           <span className="w-4">
