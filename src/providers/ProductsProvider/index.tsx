@@ -1,16 +1,10 @@
 import React from 'react';
+import { ProductData } from '../../@types/appTypes';
 import { ProductsContextData } from '../../@types/providerTypes';
+import { LoadingStates } from '../../@types/serviceTypes';
 import useProducts from '../../hooks/useProducts';
 import { ProductsContext } from './ProductsContext';
-import { LoadingStates } from '../../@types/serviceTypes';
-import { ProductData } from '../../@types/appTypes';
-import {
-  findAllBluetooths,
-  findAllBrands,
-  findAllStorages,
-  getMaxPricePossible,
-  getMinPricePossible,
-} from '../../helpers/helpers-products';
+import { findAllBrands } from '../../helpers/helpers-products';
 
 type Props = {
   children: React.ReactNode;
@@ -31,9 +25,12 @@ export default function ProductsProvider({ children }: Props) {
     if (LoadingStates.SUCCESS === statusProducts) {
       setProductsFiltered(products);
       // Extract data
+      const brands = findAllBrands(products);
+      console.log('🚀 ~ React.useEffect ~ products:', products);
+      console.log('🚀 ~ React.useEffect ~ brands:', brands);
+      /*
       const min = getMinPricePossible(products);
       const max = getMaxPricePossible(products);
-      const brands = findAllBrands(products);
       const storages = findAllStorages(products);
       const bluetooths = findAllBluetooths(products);
       console.log({
@@ -43,7 +40,10 @@ export default function ProductsProvider({ children }: Props) {
         storages,
         bluetooths,
       });
+      */
     }
+    console.log('🚀 ~ React.useEffect ~ products:', products);
+    console.log('🚀 ~ React.useEffect ~ products:', products);
   }, [statusProducts, products]);
 
   return (

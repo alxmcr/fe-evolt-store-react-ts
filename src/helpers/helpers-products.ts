@@ -17,19 +17,20 @@ export const getMaxPricePossible = (products: ProductData[] = []) => {
 };
 
 export const findAllBrands = (products: ProductData[] = []) => {
-  const brands = products.map((product) => product.brand);
+  // Extract brands and convert to set to remove duplicates
+  const brandsSet = new Set(products.map((product) => product.brand));
 
-  return brands;
+  return Array.from(brandsSet);
 };
 
 export const findAllStorages = (products: ProductData[] = []) => {
   const storages = products.map((product) => product.storage);
 
-  return storages;
+  return Array.from(new Set(storages));
 };
 
 export const findAllBluetooths = (products: ProductData[] = []) => {
   const bluetooths = products.map((product) => product.bluetoothVersion);
 
-  return bluetooths;
+  return Array.from(new Set(bluetooths));
 };
