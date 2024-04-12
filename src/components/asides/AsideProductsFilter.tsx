@@ -17,14 +17,7 @@ export default function AsideProductsFilter() {
   return (
     <aside className="hidden rounded-xl bg-white p-4 lg:sticky lg:flex lg:h-[810px] lg:w-2/6 lg:flex-col lg:gap-4">
       <CardAsideBase title="Pricing">
-        <BoxFormFilterByRangePrices
-          minValue={contextProductFilterCriterias.minValue}
-          maxValue={contextProductFilterCriterias.maxValue}
-          minPrice={contextProductFilterCriterias.minPrice}
-          maxPrice={contextProductFilterCriterias.maxPrice}
-          setMinPrice={contextProductFilterCriterias.setMinPrice}
-          setMaxPrice={contextProductFilterCriterias.setMaxPrice}
-        />
+        <BoxFormFilterByRangePrices />
       </CardAsideBase>
       <CardAsideBase title="Brands">
         <GroupCheckboxesBrands
