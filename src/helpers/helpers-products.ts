@@ -17,13 +17,19 @@ export const getMaxPricePossible = (products: ProductData[] = []) => {
 };
 
 export const findAllBrands = (products: ProductData[] = []) => {
-  return products.map((product) => product.brand);
+  const brands = products.map((product) => product.brand);
+
+  return brands;
 };
 
 export const findAllStorages = (products: ProductData[] = []) => {
-  return products.map((product) => product.storage);
+  const storages = products.map((product) => product.storage);
+
+  return storages;
 };
 
 export const findAllBluetooths = (products: ProductData[] = []) => {
-  return products.map((product) => product.bluetoothVersion);
+  const bluetooths = products.map((product) => product.bluetoothVersion);
+
+  return bluetooths;
 };
