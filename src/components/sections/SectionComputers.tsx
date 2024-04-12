@@ -1,23 +1,9 @@
 import React from 'react';
-import { TagFilter } from '../../@types/filterTypes';
+import { ProductsContext } from '../../providers/ProductsProvider/ProductsContext';
 import AsideProductsFilter from '../asides/AsideProductsFilter';
 import BoxGridProducts from '../boxes/BoxGridProducts';
-import { ProductsContext } from '../../providers/ProductsProvider/ProductsContext';
 
 export default function SectionComputers() {
-  const minValue = 1;
-  const maxValue = 1100;
-  const startMinValue = 500;
-  const startMaxValue = 900;
-  const [minPrice, setMinPrice] = React.useState(startMinValue);
-  const [maxPrice, setMaxPrice] = React.useState(startMaxValue);
-  const [brandsSelected, setBrandsSelected] = React.useState<TagFilter[]>([]);
-  const [bluetoothsSelected, setBluetoothsSelected] = React.useState<
-    TagFilter[]
-  >([]);
-  const [storagesSelected, setStoragesSelected] = React.useState<TagFilter[]>(
-    [],
-  );
   const context = React.useContext(ProductsContext);
 
   return (
@@ -26,22 +12,8 @@ export default function SectionComputers() {
         Computers ({context.productsFiltered?.length})
       </h2>
       <div className="lg:relative lg:flex lg:gap-4">
-        <AsideProductsFilter
-          minValue={minValue}
-          maxValue={maxValue}
-          minPrice={minPrice}
-          maxPrice={maxPrice}
-          setMinPrice={setMinPrice}
-          setMaxPrice={setMaxPrice}
-          setBrandsSelected={setBrandsSelected}
-          setBluetoothsSelected={setBluetoothsSelected}
-          setStoragesSelected={setStoragesSelected}
-        />
-        <BoxGridProducts
-          brandsSelected={brandsSelected}
-          bluetoothsSelected={bluetoothsSelected}
-          storagesSelected={storagesSelected}
-        />
+        <AsideProductsFilter />
+        <BoxGridProducts />
       </div>
     </section>
   );

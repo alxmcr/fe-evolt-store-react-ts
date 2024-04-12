@@ -1,28 +1,21 @@
 import React from 'react';
-import { TagFilter } from '../../@types/filterTypes';
+import { ProductFilterCriteriasContext } from '../../providers/ProductFilterCriteriasProvider/ProductFilterCriteriasContext';
 import { ProductsContext } from '../../providers/ProductsProvider/ProductsContext';
 import GridProducts from '../grids/GridProducts';
 import HeaderFilterActions from '../headers/HeaderFilterActions';
 
-type Props = {
-  brandsSelected: TagFilter[];
-  bluetoothsSelected: TagFilter[];
-  storagesSelected: TagFilter[];
-};
+export default function BoxGridProducts() {
+  const contextProducts = React.useContext(ProductsContext);
+  const contextProductFilterCriterias = React.useContext(
+    ProductFilterCriteriasContext,
+  );
 
-export default function BoxGridProducts({
-  brandsSelected,
-  bluetoothsSelected,
-  storagesSelected,
-}: Props) {
-  const context = React.useContext(ProductsContext);
-
-  console.log({ brandsSelected, bluetoothsSelected, storagesSelected });
+  console.log({ contextProductFilterCriterias });
 
   return (
     <div className="flex flex-col gap-4 lg:w-4/6">
       <HeaderFilterActions />
-      <GridProducts products={context.productsFiltered} />
+      <GridProducts products={contextProducts.productsFiltered} />
     </div>
   );
 }
