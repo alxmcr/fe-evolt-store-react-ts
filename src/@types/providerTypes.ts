@@ -1,6 +1,11 @@
 import { LoadingStates } from '../@enums/appEnums';
 import { ProductData } from './appTypes';
-import { FilterProductTag } from './filterTypes';
+import {
+  FilterBluetoothData,
+  FilterBrandData,
+  FilterProductTag,
+  FilterStorageData,
+} from './filterTypes';
 
 export type ProductsContextData = {
   products: ProductData[];
@@ -20,4 +25,7 @@ export type ProductFilterCriteriasContextData = {
   setMaxPrice: React.Dispatch<React.SetStateAction<number>>;
   tagsFilter: FilterProductTag[];
   setTagsFilter: React.Dispatch<React.SetStateAction<FilterProductTag[]>>;
+  brands: FilterBrandData[];
+  storages: FilterStorageData[];
+  bluetooths: FilterBluetoothData[];
 };

@@ -10,6 +10,11 @@ const initialData: ProductFilterCriteriasContextData = {
   setMaxPrice: () => {},
   tagsFilter: [],
   setTagsFilter: () => {},
+  productsFiltered: [],
+  setProductsFiltered: () => {},
+  brands: [],
+  storages: [],
+  bluetooths: [],
 };
 
 export const ProductFilterCriteriasContext = React.createContext(initialData);
