@@ -10,11 +10,12 @@ type Props = {
 export default function TagsFilterGroup({ tagsFilter = [] }: Props) {
   const contextFilterProducts = React.useContext(ProductFilterCriteriasContext);
 
-  const removeTagFilter = (tag: FilterProductTag) => {
-    console.log('🚀 ~ removeTagFilter ~ tag:', tag);
+  const removeTagFilter = (tagToRemove: FilterProductTag) => {
+    console.log('🚀 ~ removeTagFilter ~ tagToRemove:', tagToRemove);
     contextFilterProducts.setTagsFilter((prev) =>
-      prev.filter((tag) => tag.id !== tag.id),
+      prev.filter((tag) => tag.id !== tagToRemove.id),
     );
+    console.log(contextFilterProducts.tagsFilter);
   };
 
   if (tagsFilter.length === 0) return null;
