@@ -23,6 +23,7 @@ export default function FormFieldBrandCheckbox({
   const onChangeCheckbox = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(ev.target.checked);
 
+    // Add tag when the checkbox is checked
     contextProductFilterCriterias.setTagsFilter((prev) => {
       const tagId = `tag-${inputId}`;
       if (ev.target.checked) {

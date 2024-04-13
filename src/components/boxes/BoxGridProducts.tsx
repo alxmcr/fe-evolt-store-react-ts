@@ -1,11 +1,9 @@
 import React from 'react';
 import { ProductFilterCriteriasContext } from '../../providers/ProductFilterCriteriasProvider/ProductFilterCriteriasContext';
-import { ProductsContext } from '../../providers/ProductsProvider/ProductsContext';
 import GridProducts from '../grids/GridProducts';
 import BoxFilterActions from './BoxFilterActions';
 
 export default function BoxGridProducts() {
-  const contextProducts = React.useContext(ProductsContext);
   const contextProductFilterCriterias = React.useContext(
     ProductFilterCriteriasContext,
   );
@@ -15,7 +13,7 @@ export default function BoxGridProducts() {
       {contextProductFilterCriterias.tagsFilter.length > 0 ? (
         <BoxFilterActions />
       ) : null}
-      <GridProducts products={contextProducts.productsFiltered} />
+      <GridProducts products={contextProductFilterCriterias.productsFiltered} />
     </div>
   );
 }
