@@ -13,10 +13,7 @@ export default function AppHeaderActions() {
 
   return (
     <div className="flex items-center gap-2">
-      <button
-        className="flex size-[40px] items-center"
-        onClick={handleFavorites}
-      >
+      <button className="flex size-[40px] items-center" onClick={handleFavorites}>
         <AppBadgeIcon smallText="0">
           <Icon30x30Heart />
         </AppBadgeIcon>

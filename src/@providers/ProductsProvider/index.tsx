@@ -5,10 +5,7 @@ import {
   ProductsLimitsPriceContext,
   ProductsLoadingStateContext,
 } from './ProductsContext';
-import {
-  getMaxPricePossible,
-  getMinPricePossible,
-} from '../../helpers/helpers-products';
+import { getMaxPricePossible, getMinPricePossible } from '../../helpers/helpers-products';
 import { LoadingStates } from '../../@enums/appEnums';
 import { ProductsLimitsPrice } from '../../@reducers/filterProductsCriteriasReducer';
 

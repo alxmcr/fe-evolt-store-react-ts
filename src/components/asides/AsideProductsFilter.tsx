@@ -21,9 +21,7 @@ export default function AsideProductsFilter() {
         <GroupCheckboxesStorages storages={contextFilterCriterias.storages} />
       </CardAsideBase>
       <CardAsideBase title="Bluetooth">
-        <GroupCheckboxesBluetooths
-          bluetooths={contextFilterCriterias.bluetooths}
-        />
+        <GroupCheckboxesBluetooths bluetooths={contextFilterCriterias.bluetooths} />
       </CardAsideBase>
     </aside>
   );

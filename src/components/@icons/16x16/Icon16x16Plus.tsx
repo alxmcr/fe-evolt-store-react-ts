@@ -1,12 +1,6 @@
 export default function Icon16x16Plus() {
   return (
-    <svg
-      width={16}
-      height={17}
-      viewBox="0 0 16 17"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg width={16} height={17} viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M5.33333 8.34043H7.99999M7.99999 8.34043H10.6667M7.99999 8.34043V5.67376M7.99999 8.34043V11.0071"
         stroke="currentColor"

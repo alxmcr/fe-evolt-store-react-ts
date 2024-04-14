@@ -14,9 +14,7 @@ export default function CardProduct({ product }: Props) {
   return (
     <article className="rounded-md bg-white">
       <header className="min-h-14 px-[.375rem] py-[.625rem]">
-        <h3 className="text-[.625rem] uppercase text-perano-200">
-          {product.category}
-        </h3>
+        <h3 className="text-[.625rem] uppercase text-perano-200">{product.category}</h3>
         <h2 className="truncate text-[1rem] font-bold">{product.name}</h2>
       </header>
       <BoxProductImage
@@ -29,9 +27,7 @@ export default function CardProduct({ product }: Props) {
           {product.priceCurrency} {product.priceValue}
         </p>
         <button className="flex min-h-[1.875rem] items-center justify-center gap-2 rounded-lg border border-perano-200">
-          <span className="text-[.5625rem] font-semibold uppercase">
-            Add to cart
-          </span>
+          <span className="text-[.5625rem] font-semibold uppercase">Add to cart</span>
           <Icon16x16Plus />
         </button>
       </footer>

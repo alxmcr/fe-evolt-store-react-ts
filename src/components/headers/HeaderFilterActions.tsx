@@ -5,9 +5,7 @@ import { ProductFilterCriteriasContext } from '../../providersxxx/ProductFilterC
 import TagsFilterGroup from '../tags/TagsFilterGroup';
 
 export default function HeaderFilterActions() {
-  const contextProductFilterCriterias = React.useContext(
-    ProductFilterCriteriasContext,
-  );
+  const contextProductFilterCriterias = React.useContext(ProductFilterCriteriasContext);
 
   console.log({ contextProductFilterCriterias });
 

@@ -22,9 +22,7 @@ type Props = {
 
 export default function ProductFilterCriteriasProvider({ children }: Props) {
   const contextProducts = React.useContext(ProductsContext);
-  const [productsFiltered, setProductsFiltered] = React.useState<ProductData[]>(
-    [],
-  );
+  const [productsFiltered, setProductsFiltered] = React.useState<ProductData[]>([]);
   const [brands, setBrands] = React.useState<FilterBrandData[]>([]);
   const [storages, setStorages] = React.useState<FilterStorageData[]>([]);
   const [bluetooths, setBluetooths] = React.useState<FilterBluetoothData[]>([]);

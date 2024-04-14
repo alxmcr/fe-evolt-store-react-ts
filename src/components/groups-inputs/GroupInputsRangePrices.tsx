@@ -3,9 +3,7 @@ import { ProductFilterCriteriasContext } from '../../providersxxx/ProductFilterC
 import FormFielPriceInput from '../forms-formfields/FormFielPriceInput';
 
 export default function GroupInputsRangePrices() {
-  const contextProductFilterCriterias = React.useContext(
-    ProductFilterCriteriasContext,
-  );
+  const contextProductFilterCriterias = React.useContext(ProductFilterCriteriasContext);
 
   const onChangeMinPrice = (ev: React.ChangeEvent<HTMLInputElement>) => {
     contextProductFilterCriterias.setMinPrice(Number(ev.target.value));

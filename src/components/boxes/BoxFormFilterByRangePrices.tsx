@@ -4,9 +4,7 @@ import { ProductFilterCriteriasContext } from '../../providersxxx/ProductFilterC
 import FormFilterByRangePrices from '../forms/FormFilterByRangePrices';
 
 export default function BoxFormFilterByRangePrices() {
-  const contextProductFilterCriterias = React.useContext(
-    ProductFilterCriteriasContext,
-  );
+  const contextProductFilterCriterias = React.useContext(ProductFilterCriteriasContext);
 
   return (
     <div className="flex flex-col gap-2">

@@ -1,10 +1,7 @@
 import React from 'react';
 import { LoadingStates } from '../../@enums/appEnums';
 import { ProductsContextData } from '../../@types/providerTypes';
-import {
-  getMaxPricePossible,
-  getMinPricePossible,
-} from '../../helpers/helpers-products';
+import { getMaxPricePossible, getMinPricePossible } from '../../helpers/helpers-products';
 import useProducts from '../../hooks/useProducts';
 import { ProductsContext } from './ProductsContext';
 
@@ -32,9 +29,5 @@ export default function ProductsProvider({ children }: Props) {
     }
   }, [statusProducts, products]);
 
-  return (
-    <ProductsContext.Provider value={value}>
-      {children}
-    </ProductsContext.Provider>
-  );
+  return <ProductsContext.Provider value={value}>{children}</ProductsContext.Provider>;
 }

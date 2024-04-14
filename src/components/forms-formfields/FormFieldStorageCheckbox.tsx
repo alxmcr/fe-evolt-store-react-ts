@@ -15,9 +15,7 @@ export default function FormFieldStorageCheckbox({
   inputId = '',
   inputName = '',
 }: Props) {
-  const contextProductFilterCriterias = React.useContext(
-    ProductFilterCriteriasContext,
-  );
+  const contextProductFilterCriterias = React.useContext(ProductFilterCriteriasContext);
   const [checked, setChecked] = React.useState(false);
 
   const onChangeCheckbox = (ev: React.ChangeEvent<HTMLInputElement>) => {

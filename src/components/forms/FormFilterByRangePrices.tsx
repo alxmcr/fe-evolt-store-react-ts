@@ -6,9 +6,7 @@ import { FilterProductTag } from '../../@types/filterTypes';
 import { formatNumber } from '../../helpers/helpers-format';
 
 export default function FormFilterByRangePrices() {
-  const contextProductFilterCriterias = React.useContext(
-    ProductFilterCriteriasContext,
-  );
+  const contextProductFilterCriterias = React.useContext(ProductFilterCriteriasContext);
 
   const onSubmit = (ev: React.FormEvent) => {
     ev.preventDefault();

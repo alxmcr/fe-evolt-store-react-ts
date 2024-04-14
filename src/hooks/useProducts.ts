@@ -5,9 +5,7 @@ import { LoadingStates } from '../@enums/appEnums';
 
 export default function useProducts() {
   const [products, setProducts] = React.useState<ProductData[]>([]);
-  const [statusProducts, setStatusProducts] = React.useState(
-    LoadingStates.IDLE,
-  );
+  const [statusProducts, setStatusProducts] = React.useState(LoadingStates.IDLE);
 
   React.useEffect(() => {
     setStatusProducts(LoadingStates.PENDING);

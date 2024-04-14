@@ -1,9 +1,5 @@
 import { TagFilterKeys } from '../@enums/appEnums';
-import {
-  FilterBluetoothData,
-  FilterBrandData,
-  FilterStorageData,
-} from '../@types/filterTypes';
+import { FilterBluetoothData, FilterBrandData, FilterStorageData } from '../@types/filterTypes';
 
 type UpdateMinPriceAction = {
   type: 'update_min_price';

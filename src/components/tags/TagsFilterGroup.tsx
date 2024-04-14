@@ -12,9 +12,7 @@ export default function TagsFilterGroup({ tagsFilter = [] }: Props) {
 
   const removeTagFilter = (tagToRemove: FilterProductTag) => {
     console.log('🚀 ~ removeTagFilter ~ tagToRemove:', tagToRemove);
-    contextFilterProducts.setTagsFilter((prev) =>
-      prev.filter((tag) => tag.id !== tagToRemove.id),
-    );
+    contextFilterProducts.setTagsFilter((prev) => prev.filter((tag) => tag.id !== tagToRemove.id));
     console.log(contextFilterProducts.tagsFilter);
   };
 

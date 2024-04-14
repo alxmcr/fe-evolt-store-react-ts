@@ -4,9 +4,7 @@ import TagsFilterGroup from '../tags/TagsFilterGroup';
 import { ProductFilterCriteriasContext } from '../../providersxxx/ProductFilterCriteriasProviderxxxx/ProductFilterCriteriasContext';
 
 export default function BoxFilterActions() {
-  const contextProductFilterCriterias = React.useContext(
-    ProductFilterCriteriasContext,
-  );
+  const contextProductFilterCriterias = React.useContext(ProductFilterCriteriasContext);
 
   const clearTagsFilter = () => {
     contextProductFilterCriterias.setTagsFilter([]);
