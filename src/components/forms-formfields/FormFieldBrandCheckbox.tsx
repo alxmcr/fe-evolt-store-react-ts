@@ -7,8 +7,9 @@ type Props = {
 };
 
 export default function FormFieldBrandCheckbox({ brand }: Props) {
+  console.log('🚀 ~ FormFieldBrandCheckbox ~ brand:', brand);
   const dispatch = React.useContext(FilterCriteriasDispatchContext);
-  const [checked, setChecked] = React.useState(brand.checked);
+  const [checked, setChecked] = React.useState(false);
 
   const onChangeCheckbox = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(ev.target.checked);
@@ -30,7 +31,7 @@ export default function FormFieldBrandCheckbox({ brand }: Props) {
         id={brand.id}
         className="peer/draft hidden size-10"
         onChange={onChangeCheckbox}
-        checked={checked}
+        checked={brand.checked}
       />
       <span
         className="flex items-center gap-2 before:flex before:size-5 before:items-center before:justify-center before:rounded-full before:border before:border-solid before:border-perano-500 before:content-[''] peer-checked/draft:text-perano-500  peer-checked/draft:before:bg-perano-500
