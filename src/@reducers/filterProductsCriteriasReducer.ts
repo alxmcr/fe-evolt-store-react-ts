@@ -77,6 +77,11 @@ export type FilterProductsCriterias = {
   tagsFilter: TagFilterKeys[];
 };
 
+export type ProductsLimitsPrice = {
+  startPrice: number;
+  endPrice: number;
+};
+
 export default function filterProductsCriteriasReducer(
   state: FilterProductsCriterias,
   action: FilterAction,
