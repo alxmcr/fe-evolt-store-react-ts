@@ -1,6 +1,6 @@
 import React from 'react';
 import { formatNumber } from '../../helpers/helpers-format';
-import FormFilterByRangePrices from '../forms/FormFilterByRangePrices';
+import FormFilterByRangePricesxxx from '../forms/FormFilterByRangePricesxxxx';
 import { FilterCriteriasContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
 
 export default function BoxFormFilterByRangePrices() {
@@ -13,7 +13,7 @@ export default function BoxFormFilterByRangePrices() {
         <span>-</span>
         <span>$ {formatNumber(contextFilterCriterias.maxPrice)}</span>
       </div>
-      <FormFilterByRangePrices />
+      <FormFilterByRangePricesxxx />
     </div>
   );
 }
