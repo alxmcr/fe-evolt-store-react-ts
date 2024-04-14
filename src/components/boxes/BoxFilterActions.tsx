@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon16x16Close from '../@icons/16x16/Icon16x16Close';
 import TagsFilterGroup from '../tags/TagsFilterGroup';
-import { ProductFilterCriteriasContext } from '../../providers/ProductFilterCriteriasProvider/ProductFilterCriteriasContext';
+import { ProductFilterCriteriasContext } from '../../providersxxx/ProductFilterCriteriasProvider/ProductFilterCriteriasContext';
 
 export default function BoxFilterActions() {
   const contextProductFilterCriterias = React.useContext(

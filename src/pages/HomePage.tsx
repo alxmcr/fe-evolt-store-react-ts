@@ -1,7 +1,7 @@
 import AppHeader from '../components/common/header/AppHeader';
 import SectionComputers from '../components/sections/SectionComputers';
-import ProductFilterCriteriasProvider from '../providers/ProductFilterCriteriasProvider';
-import ProductsProvider from '../providers/ProductsProvider';
+import ProductFilterCriteriasProvider from '../providersxxx/ProductFilterCriteriasProvider';
+import ProductsProvider from '../providersxxx/ProductsProvider';
 
 export default function HomePage() {
   return (

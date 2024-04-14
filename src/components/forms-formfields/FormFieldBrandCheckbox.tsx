@@ -1,6 +1,6 @@
 import React from 'react';
 import { FilterProductTag } from '../../@types/filterTypes';
-import { ProductFilterCriteriasContext } from '../../providers/ProductFilterCriteriasProvider/ProductFilterCriteriasContext';
+import { ProductFilterCriteriasContext } from '../../providersxxx/ProductFilterCriteriasProvider/ProductFilterCriteriasContext';
 
 type Props = {
   labelText: string;

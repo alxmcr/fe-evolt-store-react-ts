@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProductFilterCriteriasContext } from '../../providers/ProductFilterCriteriasProvider/ProductFilterCriteriasContext';
+import { ProductFilterCriteriasContext } from '../../providersxxx/ProductFilterCriteriasProvider/ProductFilterCriteriasContext';
 import BoxFormFilterByRangePrices from '../boxes/BoxFormFilterByRangePrices';
 import CardAsideBase from '../cards/CardAsideBase';
 import GroupCheckboxesBluetooths from '../groups-checkboxes/GroupCheckboxesBluetooths';
