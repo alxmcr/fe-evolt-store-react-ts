@@ -1,6 +1,6 @@
 import React from 'react';
 import filterProductsCriteriasReducer from '../../@reducers/filterProductsCriteriasReducer';
-import { initialState } from '../../helpers/constants-providers';
+import { initialFilterProductsCriterias } from '../../helpers/constants-providers';
 import {
   FilterCriteriasContext,
   FilterCriteriasDispatchContext,
@@ -15,7 +15,7 @@ export default function FilterCriteriasProvider({ children }: Props) {
 
   const [filterCriterias, dispatch] = React.useReducer(
     filterProductsCriteriasReducer,
-    initialState,
+    initialFilterProductsCriterias,
   );
 
   return (

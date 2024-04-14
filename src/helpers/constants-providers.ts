@@ -3,7 +3,7 @@ import {
   ProductsLimitsPrice,
 } from '../@reducers/filterProductsCriteriasReducer';
 
-export const initialState: FilterProductsCriterias = {
+export const initialFilterProductsCriterias: FilterProductsCriterias = {
   minPrice: 0,
   maxPrice: 0,
   brands: [],

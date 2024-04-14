@@ -3,10 +3,10 @@ import {
   FilterAction,
   FilterProductsCriterias,
 } from '../../@reducers/filterProductsCriteriasReducer';
-import { initialState } from '../../helpers/constants-providers';
+import { initialFilterProductsCriterias } from '../../helpers/constants-providers';
 
 export const FilterCriteriasContext =
-  React.createContext<FilterProductsCriterias>(initialState);
+  React.createContext<FilterProductsCriterias>(initialFilterProductsCriterias);
 export const FilterCriteriasDispatchContext = React.createContext<
   React.Dispatch<FilterAction>
 >(() => {});
