@@ -1,15 +1,11 @@
-import { BluetoothData } from '../../@types/appTypes';
+import { FilterBluetoothData } from '../../@types/filterTypes';
+import FormFieldBluetoothCheckbox from '../forms-formfields/FormFieldBluetoothCheckbox';
 
 type Props = {
-  bluetooths: BluetoothData[];
+  bluetooths: FilterBluetoothData[];
 };
 
 export default function GroupCheckboxesBluetooths({ bluetooths = [] }: Props) {
-  console.log("🚀 ~ GroupCheckboxesBluetooths ~ bluetooths:", bluetooths)
-
-  return null
-
-  /*
   return (
     <div>
       {bluetooths.map((bluetooth) => (
@@ -23,5 +19,4 @@ export default function GroupCheckboxesBluetooths({ bluetooths = [] }: Props) {
       ))}
     </div>
   );
-  */
 }

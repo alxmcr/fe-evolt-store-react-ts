@@ -1,15 +1,11 @@
-import { BrandData } from '../../@types/appTypes';
+import { FilterBrandData } from '../../@types/filterTypes';
+import FormFieldBrandCheckbox from '../forms-formfields/FormFieldBrandCheckbox';
 
 type Props = {
-  brands: BrandData[];
+  brands: FilterBrandData[];
 };
 
 export default function GroupCheckboxesBrands({ brands = [] }: Props) {
-  console.log('🚀 ~ GroupCheckboxesBrands ~ brands:', brands);
-
-  return null;
-
-  /*
   return (
     <div>
       {brands.map((brand) => (
@@ -23,5 +19,4 @@ export default function GroupCheckboxesBrands({ brands = [] }: Props) {
       ))}
     </div>
   );
-  */
 }

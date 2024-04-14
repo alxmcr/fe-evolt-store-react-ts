@@ -1,14 +1,11 @@
-import { StorageData } from '../../@types/appTypes';
+import { FilterStorageData } from '../../@types/filterTypes';
+import FormFieldStorageCheckbox from '../forms-formfields/FormFieldStorageCheckbox';
 
 type Props = {
-  storages: StorageData[];
+  storages: FilterStorageData[];
 };
 
 export default function GroupCheckboxesStorages({ storages = [] }: Props) {
-  console.log('🚀 ~ GroupCheckboxesStorages ~ storages:', storages);
-  return null;
-
-  /*
   return (
     <div>
       {storages.map((storage) => (
@@ -22,5 +19,4 @@ export default function GroupCheckboxesStorages({ storages = [] }: Props) {
       ))}
     </div>
   );
-  */
 }
