@@ -10,9 +10,9 @@ export default function GroupCheckboxesBrands({ brands = [] }: Props) {
     <div>
       {brands.map((brand) => (
         <FormFieldBrandCheckbox
-          key={brand.id}
+          key={`${brand.id}`}
           htmlFor={`${brand.id}`}
-          labelText={brand.name}
+          labelText={`${brand.name}`}
           inputId={`${brand.id}`}
           inputName="brand"
         />
