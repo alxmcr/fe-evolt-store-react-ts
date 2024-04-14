@@ -6,6 +6,10 @@ type Props = {
 };
 
 export default function GroupCheckboxesStorages({ storages = [] }: Props) {
+  console.log('🚀 ~ GroupCheckboxesStorages ~ storages:', storages);
+  return null;
+
+  /*
   return (
     <div>
       {storages.map((storage) => (
@@ -19,4 +23,5 @@ export default function GroupCheckboxesStorages({ storages = [] }: Props) {
       ))}
     </div>
   );
+  */
 }

@@ -6,6 +6,11 @@ type Props = {
 };
 
 export default function GroupCheckboxesBrands({ brands = [] }: Props) {
+  console.log('🚀 ~ GroupCheckboxesBrands ~ brands:', brands);
+
+  return null;
+
+  /*
   return (
     <div>
       {brands.map((brand) => (
@@ -19,4 +24,5 @@ export default function GroupCheckboxesBrands({ brands = [] }: Props) {
       ))}
     </div>
   );
+  */
 }

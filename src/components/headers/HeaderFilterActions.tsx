@@ -7,8 +7,6 @@ import TagsFilterGroup from '../tags/TagsFilterGroup';
 export default function HeaderFilterActions() {
   const contextProductFilterCriterias = React.useContext(ProductFilterCriteriasContext);
 
-  console.log({ contextProductFilterCriterias });
-
   return (
     <header className="flex items-center justify-between gap-2 rounded-lg bg-white p-[.5rem]">
       <TagsFilterGroup tagsFilter={contextProductFilterCriterias.tagsFilter} />

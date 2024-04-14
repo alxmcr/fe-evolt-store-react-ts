@@ -6,6 +6,11 @@ type Props = {
 };
 
 export default function GroupCheckboxesBluetooths({ bluetooths = [] }: Props) {
+  console.log("🚀 ~ GroupCheckboxesBluetooths ~ bluetooths:", bluetooths)
+
+  return null
+
+  /*
   return (
     <div>
       {bluetooths.map((bluetooth) => (
@@ -19,4 +24,5 @@ export default function GroupCheckboxesBluetooths({ bluetooths = [] }: Props) {
       ))}
     </div>
   );
+  */
 }

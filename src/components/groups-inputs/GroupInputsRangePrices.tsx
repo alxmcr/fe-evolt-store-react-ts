@@ -12,7 +12,6 @@ export default function GroupInputsRangePrices() {
   const filterCriterias = React.useContext(FilterCriteriasContext);
 
   const onChangeMinPrice = (ev: React.ChangeEvent<HTMLInputElement>) => {
-    console.log('min', ev.target.valueAsNumber);
     setMinPrice(ev.target.valueAsNumber);
   };
 
