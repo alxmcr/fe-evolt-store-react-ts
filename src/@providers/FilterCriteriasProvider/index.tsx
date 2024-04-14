@@ -1,6 +1,6 @@
 import React from 'react';
 import filterProductsCriteriasReducer from '../../@reducers/filterProductsCriteriasReducer';
-import { initialState } from './constants';
+import { initialState } from '../../helpers/constants-providers';
 import {
   FilterCriteriasContext,
   FilterCriteriasDispatchContext,

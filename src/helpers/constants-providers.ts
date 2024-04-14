@@ -1,4 +1,4 @@
-import { FilterProductsCriterias } from '../../@reducers/filterProductsCriteriasReducer';
+import { FilterProductsCriterias } from '../@reducers/filterProductsCriteriasReducer';
 
 export const initialState: FilterProductsCriterias = {
   minPrice: 0,

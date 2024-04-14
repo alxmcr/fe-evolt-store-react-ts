@@ -3,7 +3,7 @@ import {
   FilterAction,
   FilterProductsCriterias,
 } from '../../@reducers/filterProductsCriteriasReducer';
-import { initialState } from './constants';
+import { initialState } from '../../helpers/constants-providers';
 
 export const FilterCriteriasContext =
   React.createContext<FilterProductsCriterias>(initialState);
