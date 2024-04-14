@@ -8,7 +8,7 @@ import {
   FilterStorageData,
 } from '../../@types/filterTypes';
 import { ProductFilterCriteriasContextData } from '../../@types/providerTypes';
-import { ProductsContext } from '../ProductsProvider/ProductsContext';
+import { ProductsContext } from '../ProductsProviderxxx/ProductsContext';
 import { ProductFilterCriteriasContext } from './ProductFilterCriteriasContext';
 import {
   findAllFilterBluetooths,

@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon16x16ArrowRight from '../@icons/16x16/Icon16x16ArrowRight';
 import GroupInputsRangePrices from '../groups-inputs/GroupInputsRangePrices';
-import { ProductFilterCriteriasContext } from '../../providersxxx/ProductFilterCriteriasProvider/ProductFilterCriteriasContext';
+import { ProductFilterCriteriasContext } from '../../providersxxx/ProductFilterCriteriasProviderxxxx/ProductFilterCriteriasContext';
 import { FilterProductTag } from '../../@types/filterTypes';
 import { formatNumber } from '../../helpers/helpers-format';
 

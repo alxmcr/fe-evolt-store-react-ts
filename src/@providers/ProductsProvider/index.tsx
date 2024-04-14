@@ -1,6 +1,10 @@
 import React from 'react';
 import useProducts from '../../hooks/useProducts';
-import { ProductsContext, ProductsLimitsPriceContext } from './ProductsContext';
+import {
+  ProductsContext,
+  ProductsLimitsPriceContext,
+  ProductsLoadingStateContext,
+} from './ProductsContext';
 import {
   getMaxPricePossible,
   getMinPricePossible,
@@ -32,9 +36,11 @@ export default function ProductsProvider({ children }: Props) {
 
   return (
     <ProductsContext.Provider value={products}>
-      <ProductsLimitsPriceContext.Provider value={limitsPrice}>
-        {children}
-      </ProductsLimitsPriceContext.Provider>
+      <ProductsLoadingStateContext.Provider value={statusProducts}>
+        <ProductsLimitsPriceContext.Provider value={limitsPrice}>
+          {children}
+        </ProductsLimitsPriceContext.Provider>
+      </ProductsLoadingStateContext.Provider>
     </ProductsContext.Provider>
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProductFilterCriteriasContext } from '../../providersxxx/ProductFilterCriteriasProvider/ProductFilterCriteriasContext';
+import { ProductFilterCriteriasContext } from '../../providersxxx/ProductFilterCriteriasProviderxxxx/ProductFilterCriteriasContext';
 import FormFielPriceInput from '../forms-formfields/FormFielPriceInput';
 
 export default function GroupInputsRangePrices() {

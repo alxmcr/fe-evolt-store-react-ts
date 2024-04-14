@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProductFilterCriteriasContext } from '../../providersxxx/ProductFilterCriteriasProvider/ProductFilterCriteriasContext';
+import { ProductFilterCriteriasContext } from '../../providersxxx/ProductFilterCriteriasProviderxxxx/ProductFilterCriteriasContext';
 import GridProducts from '../grids/GridProducts';
 import BoxFilterActions from './BoxFilterActions';
 

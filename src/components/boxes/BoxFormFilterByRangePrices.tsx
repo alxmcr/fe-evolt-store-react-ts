@@ -1,6 +1,6 @@
 import React from 'react';
 import { formatNumber } from '../../helpers/helpers-format';
-import { ProductFilterCriteriasContext } from '../../providersxxx/ProductFilterCriteriasProvider/ProductFilterCriteriasContext';
+import { ProductFilterCriteriasContext } from '../../providersxxx/ProductFilterCriteriasProviderxxxx/ProductFilterCriteriasContext';
 import FormFilterByRangePrices from '../forms/FormFilterByRangePrices';
 
 export default function BoxFormFilterByRangePrices() {
