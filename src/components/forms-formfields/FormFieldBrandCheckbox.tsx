@@ -1,6 +1,5 @@
 import React from 'react';
-import { FilterProductTag } from '../../@types/filterTypes';
-import { ProductFilterCriteriasContext } from '../../providersxxx/ProductFilterCriteriasProviderxxxx/ProductFilterCriteriasContext';
+import { FilterCriteriasDispatchContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
 
 type Props = {
   labelText: string;
@@ -15,25 +14,18 @@ export default function FormFieldBrandCheckbox({
   inputId = '',
   inputName = '',
 }: Props) {
-  const contextProductFilterCriterias = React.useContext(ProductFilterCriteriasContext);
+  const dispatch = React.useContext(FilterCriteriasDispatchContext);
   const [checked, setChecked] = React.useState(false);
 
   const onChangeCheckbox = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(ev.target.checked);
 
-    // Add tag when the checkbox is checked
-    contextProductFilterCriterias.setTagsFilter((prev) => {
-      const tagId = `tag-${inputId}`;
-      if (ev.target.checked) {
-        const tag: FilterProductTag = {
-          id: tagId,
-          key: 'brand',
-          value: labelText,
-          typeValue: 'string',
-        };
-        return [...prev, tag];
-      }
-      return prev.filter((tag) => tag.id !== tagId);
+    dispatch({
+      type: 'checked_brand',
+      payload: {
+        id: inputId,
+        checked: ev.target.checked,
+      },
     });
   };
 
