@@ -10,6 +10,11 @@ import {
   FilterCriteriasContext,
   FilterCriteriasDispatchContext,
 } from './FilterCriteriasContext';
+import {
+  findAllFilterBluetooths,
+  findAllFilterBrands,
+  findAllFilterStorages,
+} from '../../helpers/helpers-products-filter';
 
 type Props = {
   children: React.ReactNode;
@@ -19,15 +24,31 @@ export default function FilterCriteriasProvider({ children }: Props) {
   // Get info products
   const products = React.useContext(ProductsContext);
   const loadingStateProducts = React.useContext(ProductsLoadingStateContext);
+  const [initFilterData, setInitFilterData] = React.useState(
+    initialFilterProductsCriterias,
+  );
 
   const [filterCriterias, dispatch] = React.useReducer(
     filterProductsCriteriasReducer,
-    initialFilterProductsCriterias,
+    initFilterData,
   );
 
   React.useEffect(() => {
     if (LoadingStates.SUCCESS === loadingStateProducts) {
-      //dispatch
+      // Get info filter data
+      // Filter criterias
+      const filterBrands = findAllFilterBrands(products);
+      const filterStorages = findAllFilterStorages(products);
+      const filterBluetooths = findAllFilterBluetooths(products);
+      // update init filter data
+      setInitFilterData((prev) => {
+        return {
+          ...prev,
+          brands: filterBrands,
+          storages: filterStorages,
+          bluetooths: filterBluetooths,
+        };
+      });
     }
   }, [loadingStateProducts, products]);
 
