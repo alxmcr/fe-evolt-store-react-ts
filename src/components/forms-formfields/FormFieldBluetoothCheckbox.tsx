@@ -1,39 +1,39 @@
 import React from 'react';
+import { FilterCriteriasDispatchContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
+import { FilterBluetoothData } from '../../@types/filterTypes';
 
 type Props = {
-  labelText: string;
-  htmlFor: string;
-  inputId: string;
-  inputName: string;
+  bluetooth: FilterBluetoothData;
 };
 
-export default function FormFieldBluetoothCheckbox({
-  labelText = '',
-  htmlFor = '',
-  inputId = '',
-  inputName = '',
-}: Props) {
-  const [checked, setChecked] = React.useState(false);
+export default function FormFieldBluetoothCheckbox({ bluetooth }: Props) {
+  const dispatch = React.useContext(FilterCriteriasDispatchContext);
 
   const onChangeCheckbox = (ev: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked(ev.target.checked);
+    dispatch({
+      type: 'checked_bluetooth',
+      payload: {
+        id: bluetooth.id,
+        checked: ev.target.checked,
+      },
+    });
   };
 
   return (
-    <label htmlFor={htmlFor} className={`flex items-center gap-x-2 text-lg`}>
+    <label htmlFor={bluetooth.id} className={`flex items-center gap-x-2 text-lg`}>
       <input
         type="checkbox"
-        name={inputName}
-        id={inputId}
+        name="bluetooth"
+        id={bluetooth.id}
         className="peer/draft hidden size-10"
         onChange={onChangeCheckbox}
-        checked={checked}
+        checked={bluetooth.checked}
       />
       <span
         className="flex items-center gap-2 before:flex before:size-5 before:items-center before:justify-center before:rounded-full before:border before:border-solid before:border-perano-500 before:content-[''] peer-checked/draft:text-perano-500  peer-checked/draft:before:bg-perano-500
           peer-checked/draft:before:bg-[url(icons/16x16/Icon16x16Check.svg)] peer-checked/draft:before:bg-center peer-checked/draft:before:bg-no-repeat"
       >
-        {labelText}
+        {bluetooth.version}
       </span>
     </label>
   );

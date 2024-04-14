@@ -7,7 +7,6 @@ type Props = {
 };
 
 export default function FormFieldBrandCheckbox({ brand }: Props) {
-  console.log('🚀 ~ FormFieldBrandCheckbox ~ brand:', brand);
   const dispatch = React.useContext(FilterCriteriasDispatchContext);
 
   const onChangeCheckbox = (ev: React.ChangeEvent<HTMLInputElement>) => {
