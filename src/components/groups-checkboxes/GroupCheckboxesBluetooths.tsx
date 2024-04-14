@@ -11,9 +11,9 @@ export default function GroupCheckboxesBluetooths({ bluetooths = [] }: Props) {
       {bluetooths.map((bluetooth) => (
         <FormFieldBluetoothCheckbox
           key={bluetooth.id}
-          htmlFor={`bluetooth-${bluetooth.id}`}
+          htmlFor={`${bluetooth.id}`}
           labelText={String(bluetooth.version)}
-          inputId={`bluetooth-${bluetooth.id}`}
+          inputId={`${bluetooth.id}`}
           inputName="bluetooth"
         />
       ))}

@@ -11,9 +11,9 @@ export default function GroupCheckboxesStorages({ storages = [] }: Props) {
       {storages.map((storage) => (
         <FormFieldStorageCheckbox
           key={storage.id}
-          htmlFor={`storage-${storage.id}`}
+          htmlFor={`${storage.id}`}
           labelText={storage.capacity}
-          inputId={`storage-${storage.id}`}
+          inputId={`${storage.id}`}
           inputName="storage"
         />
       ))}
