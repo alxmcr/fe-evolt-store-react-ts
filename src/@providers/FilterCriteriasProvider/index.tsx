@@ -3,7 +3,10 @@ import { LoadingStates } from '../../@enums/appEnums';
 import filterProductsCriteriasReducer from '../../@reducers/filterProductsCriteriasReducer';
 import { initialFilterProductsCriterias } from '../../helpers/constants-providers';
 import initializationFilterProductsCriterias from '../../helpers/helpers-providers';
-import { ProductsContext, ProductsLoadingStateContext } from '../ProductsProvider/ProductsContext';
+import {
+  ProductsContext,
+  ProductsLoadingStateContext
+} from '../ProductsProvider/ProductsContext';
 import { FilterCriteriasContext, FilterCriteriasDispatchContext } from './FilterCriteriasContext';
 
 type Props = {
