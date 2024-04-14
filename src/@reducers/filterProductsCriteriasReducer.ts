@@ -43,7 +43,25 @@ type CheckedBluetoothAction = {
   };
 };
 
+type AddBrandAction = {
+  type: 'add_brand';
+  payload: FilterBrandData;
+};
+
+type AddStorageAction = {
+  type: 'add_storage';
+  payload: FilterStorageData;
+};
+
+type AddBluetoothAction = {
+  type: 'add_bluetooth';
+  payload: FilterBluetoothData;
+};
+
 export type FilterAction =
+  | AddBrandAction
+  | AddStorageAction
+  | AddBluetoothAction
   | UpdateMinPriceAction
   | UpdateMaxPriceAction
   | CheckedBrandAction
@@ -64,6 +82,16 @@ export default function filterProductsCriteriasReducer(
   action: FilterAction,
 ): FilterProductsCriterias {
   switch (action.type) {
+    case 'add_brand': {
+      return { ...state, brands: [...state.brands, action.payload] };
+    }
+    case 'add_storage': {
+      return { ...state, storages: [...state.storages, action.payload] };
+    }
+    case 'add_bluetooth': {
+      return { ...state, bluetooths: [...state.bluetooths, action.payload] };
+    }
+
     case 'update_min_price': {
       return { ...state, minPrice: action.payload.min };
     }

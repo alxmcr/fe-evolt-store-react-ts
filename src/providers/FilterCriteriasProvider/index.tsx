@@ -11,6 +11,8 @@ type Props = {
 };
 
 export default function FilterCriteriasProvider({ children }: Props) {
+  // Get info products
+
   const [filterCriterias, dispatch] = React.useReducer(
     filterProductsCriteriasReducer,
     initialState,
