@@ -13,6 +13,7 @@ export default function initializationFilterProductsCriterias(
 ) {
   // Filter criterias
   const brandsForFilter = findAllFilterBrands(products);
+  console.log("🚀 ~ brandsForFilter:", brandsForFilter)
   const storagesForFilter = findAllFilterStorages(products);
   const bluetoothsForFilter = findAllFilterBluetooths(products);
   // -- Dispatch actions

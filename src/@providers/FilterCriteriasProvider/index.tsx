@@ -26,6 +26,7 @@ export default function FilterCriteriasProvider({ children }: Props) {
   );
 
   React.useEffect(() => {
+    console.log("hola")
     if (LoadingStates.SUCCESS === loadingStateProducts) {
       initializationFilterProductsCriterias(products, limitsPrice, dispatch);
     }
