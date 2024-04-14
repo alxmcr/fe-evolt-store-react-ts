@@ -1,32 +1,23 @@
 import React from 'react';
 import {
-  FilterCriteriasContext,
-  FilterCriteriasDispatchContext,
+  FilterCriteriasContext
 } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
 import { ProductsLimitsPriceContext } from '../../@providers/ProductsProvider/ProductsContext';
 import FormFielPriceInput from '../forms-formfields/FormFielPriceInput';
 
 export default function GroupInputsRangePrices() {
+  const [minPrice, setMinPrice] = React.useState(0);
+  const [maxPrice, setMaxPrice] = React.useState(0);
   const limitsPrice = React.useContext(ProductsLimitsPriceContext);
   const filterCriterias = React.useContext(FilterCriteriasContext);
-  const dispatch = React.useContext(FilterCriteriasDispatchContext);
 
   const onChangeMinPrice = (ev: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch({
-      type: 'update_min_price',
-      payload: {
-        min: ev.target.valueAsNumber,
-      },
-    });
+    console.log('min', ev.target.valueAsNumber);
+    setMinPrice(ev.target.valueAsNumber);
   };
 
   const onChangeMaxPrice = (ev: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch({
-      type: 'update_max_price',
-      payload: {
-        max: ev.target.valueAsNumber,
-      },
-    });
+    setMaxPrice(ev.target.valueAsNumber);
   };
 
   return (
@@ -35,7 +26,7 @@ export default function GroupInputsRangePrices() {
         labelText="Min price"
         inputName="min-range"
         inputId="min-range"
-        inputValue={filterCriterias.minPrice}
+        inputValue={minPrice}
         minValueInput={limitsPrice.startPrice}
         maxValueInput={filterCriterias.maxPrice - 1}
         onChange={onChangeMinPrice}
@@ -47,7 +38,7 @@ export default function GroupInputsRangePrices() {
         labelText="Max price"
         inputName="max-range"
         inputId="max-range"
-        inputValue={filterCriterias.maxPrice}
+        inputValue={maxPrice}
         minValueInput={filterCriterias.minPrice + 1}
         maxValueInput={limitsPrice.endPrice}
         onChange={onChangeMaxPrice}

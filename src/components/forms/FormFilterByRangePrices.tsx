@@ -1,35 +1,26 @@
 import React from 'react';
+import { FilterCriteriasDispatchContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
 import Icon16x16ArrowRight from '../@icons/16x16/Icon16x16ArrowRight';
 import GroupInputsRangePrices from '../groups-inputs/GroupInputsRangePrices';
-import { ProductFilterCriteriasContext } from '../../providersxxx/ProductFilterCriteriasProviderxxxx/ProductFilterCriteriasContext';
-import { FilterProductTag } from '../../@types/filterTypes';
-import { formatNumber } from '../../helpers/helpers-format';
 
 export default function FormFilterByRangePrices() {
-  const contextProductFilterCriterias = React.useContext(ProductFilterCriteriasContext);
+  const dispatch = React.useContext(FilterCriteriasDispatchContext);
 
   const onSubmit = (ev: React.FormEvent) => {
     ev.preventDefault();
 
-    contextProductFilterCriterias.setTagsFilter((prev) => {
-      const tagId = `tag-range-pricing`;
-      const minPrice = contextProductFilterCriterias.minPrice;
-      const maxPrice = contextProductFilterCriterias.maxPrice;
+    dispatch({
+      type: 'update_min_price',
+      payload: {
+        min: 0,
+      },
+    });
 
-      // Format data
-      const minPriceStr = formatNumber(minPrice);
-      const maxPriceStr = formatNumber(maxPrice);
-
-      const rangePricing = `$${minPriceStr} - $${maxPriceStr}`;
-
-      // create a tag
-      const tag: FilterProductTag = {
-        id: tagId,
-        key: 'range-pricing',
-        value: rangePricing,
-        typeValue: 'string',
-      };
-      return [...prev, tag];
+    dispatch({
+      type: 'update_max_price',
+      payload: {
+        max: 0,
+      },
     });
   };
 
