@@ -1,6 +1,4 @@
 import React from 'react';
-import { FilterProductTag } from '../../@types/filterTypes';
-import { ProductFilterCriteriasContext } from '../../providersxxx/ProductFilterCriteriasProviderxxxx/ProductFilterCriteriasContext';
 
 type Props = {
   labelText: string;
@@ -15,25 +13,10 @@ export default function FormFieldStorageCheckbox({
   inputId = '',
   inputName = '',
 }: Props) {
-  const contextProductFilterCriterias = React.useContext(ProductFilterCriteriasContext);
   const [checked, setChecked] = React.useState(false);
 
   const onChangeCheckbox = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(ev.target.checked);
-
-    contextProductFilterCriterias.setTagsFilter((prev) => {
-      const tagId = `tag-${inputId}`;
-      if (ev.target.checked) {
-        const tag: FilterProductTag = {
-          id: tagId,
-          key: 'storage',
-          value: labelText,
-          typeValue: 'string',
-        };
-        return [...prev, tag];
-      }
-      return prev.filter((tag) => tag.id !== tagId);
-    });
   };
 
   return (

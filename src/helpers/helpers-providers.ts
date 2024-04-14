@@ -11,6 +11,7 @@ export default function initializationFilterProductsCriterias(
   limitsPrice: ProductsLimitsPrice,
   dispatch: React.Dispatch<FilterAction>,
 ) {
+  console.log('here!!!!')
   // Filter criterias
   const brandsForFilter = findAllFilterBrands(products);
   const storagesForFilter = findAllFilterStorages(products);

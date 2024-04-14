@@ -1,5 +1,4 @@
 import { BrandData } from '../../@types/appTypes';
-import FormFieldBrandCheckbox from '../forms-formfields/FormFieldBrandCheckbox';
 
 type Props = {
   brands: BrandData[];

@@ -1,5 +1,4 @@
 import { StorageData } from '../../@types/appTypes';
-import FormFieldStorageCheckbox from '../forms-formfields/FormFieldStorageCheckbox';
 
 type Props = {
   storages: StorageData[];

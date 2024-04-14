@@ -1,5 +1,4 @@
 import { BluetoothData } from '../../@types/appTypes';
-import FormFieldBluetoothCheckbox from '../forms-formfields/FormFieldBluetoothCheckbox';
 
 type Props = {
   bluetooths: BluetoothData[];
