@@ -24,9 +24,6 @@ export default function ProductsProvider({ children }: Props) {
       // Find out limits price
       const productCheapest = findProductCheapest(products);
       const productMostExpensive = findProductMostExpensive(products);
-      console.log("🚀 ~ React.useEffect ~ products:", products)
-      console.log('🚀 ~ React.useEffect ~ productCheapest:', productCheapest);
-      console.log('🚀 ~ React.useEffect ~ productMostExpensive:', productMostExpensive);
 
       if (productCheapest !== null && productMostExpensive !== null) {
         setStartPrice(Math.floor(productCheapest.priceValue));
