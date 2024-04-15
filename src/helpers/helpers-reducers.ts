@@ -1,7 +1,6 @@
 import { TagFilterAction, TagFilterProduct } from '../@types/filterTypes';
 
 export const checkExistsRangePriceByCategory = (tags: TagFilterProduct[] = [], categoryTag = '') => {
-  console.log('🚀 ~ checkExists ~ textTag:', categoryTag);
   if (tags.length === 0) return true;
 
   return tags.findIndex((t) => t.category === categoryTag) === -1;
@@ -21,7 +20,7 @@ export const handleAddTagRangePrice = (
     id: 'tag-price-range-001',
     category: 'range-price',
     valueText: textTag,
-    valueId: 'range-price'
+    valueId: 'range-price',
   };
 
   if (isNewTag) {

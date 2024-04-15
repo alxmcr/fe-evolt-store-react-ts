@@ -57,8 +57,6 @@ export default function FormFilterByRangePrices() {
         productCheapest.priceValue,
         productMostExpensive.priceValue,
       );
-      console.log([minValue, maxValue]);
-
       setMinPrice(Math.floor(minValue));
       setMaxPrice(Math.floor(maxValue));
     }
