@@ -2,7 +2,7 @@ import React from 'react';
 import { FilterCriteriasDispatchContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
 import { FilterProductsTagsDispatchContext } from '../../@providers/TagsFilterProvider/TagsFilterContext';
 import { TagFilterProduct } from '../../@types/filterTypes';
-import { uncheckedByCategory } from '../../helpers/helpers-tags-filter';
+import { resetRangePriceFilter, uncheckedByCategory } from '../../helpers/helpers-tags-filter';
 import TagFilter from './TagFilter';
 
 type Props = {
@@ -23,19 +23,7 @@ export default function TagsFilterGroup({ tagsFilter = [] }: Props) {
       uncheckedByCategory(tagToRemove, dispatch);
     } else {
       // reset range price filter
-      dispatch({
-        type: 'update_min_price',
-        payload: {
-          min: 0,
-        },
-      });
-
-      dispatch({
-        type: 'update_max_price',
-        payload: {
-          max: 0,
-        },
-      });
+      resetRangePriceFilter(dispatch)
     }
 
     // Remove tag
