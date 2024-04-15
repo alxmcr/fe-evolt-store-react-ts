@@ -55,8 +55,9 @@ export const initializationFilterProductsCriterias = (
   }
 };
 
-export const checkExists = (tags: FilterProductTag[] = [], textTag = '') => {
+export const checkExistsRangePrice = (tags: FilterProductTag[] = [], keyTag = '') => {
+  console.log('🚀 ~ checkExists ~ textTag:', keyTag);
   if (tags.length === 0) return true;
 
-  return tags.findIndex((t) => t.value === textTag) === -1;
+  return tags.findIndex((t) => t.key === keyTag) === -1;
 };
