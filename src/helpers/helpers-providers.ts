@@ -1,5 +1,5 @@
 import { ProductData } from '../@types/appTypes';
-import { FilterAction, FilterProductsCriterias, ProductsLimitsPrice } from '../@types/reducerTypes';
+import { FilterAction, FilterProductsCriterias } from '../@types/reducerTypes';
 import {
   findAllFilterBluetooths,
   findAllFilterBrands,
@@ -8,7 +8,6 @@ import {
 
 export const initializationFilterProductsCriterias = (
   products: ProductData[],
-  limitsPrice: ProductsLimitsPrice,
   filterCriterias: FilterProductsCriterias,
   dispatch: React.Dispatch<FilterAction>,
 ) => {
@@ -17,19 +16,7 @@ export const initializationFilterProductsCriterias = (
     const brandsForFilter = findAllFilterBrands(products);
     const storagesForFilter = findAllFilterStorages(products);
     const bluetoothsForFilter = findAllFilterBluetooths(products);
-    // -- Dispatch actions
-    dispatch({
-      type: 'update_min_price',
-      payload: {
-        min: Math.floor(limitsPrice.endPrice / 4),
-      },
-    });
-    dispatch({
-      type: 'update_max_price',
-      payload: {
-        max: Math.floor(limitsPrice.endPrice / 2),
-      },
-    });
+
     // add brands
     brandsForFilter.forEach((b) =>
       dispatch({

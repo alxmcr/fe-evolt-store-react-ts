@@ -1,17 +1,19 @@
 import React from 'react';
 import { FilterCriteriasDispatchContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
-import { ProductsLimitsPriceContext } from '../../@providers/ProductsProvider/ProductsContext';
+import { ProductCheapestContext } from '../../@providers/ProductsProvider/ProductsContext';
 import {
   FilterProductsTagsContext,
   FilterProductsTagsDispatchContext,
 } from '../../@providers/TagsFilterProvider/TagsFilterContext';
+import { createNewRange } from '../../helpers/helpers-hooks';
 import { handleAddTagRangePrice } from '../../helpers/helpers-reducers';
 import Icon16x16ArrowRight from '../@icons/16x16/Icon16x16ArrowRight';
 
 export default function FormFilterByRangePrices() {
-  const limitsPrice = React.useContext(ProductsLimitsPriceContext);
   const [minPrice, setMinPrice] = React.useState(0);
   const [maxPrice, setMaxPrice] = React.useState(0);
+  const productCheapest = React.useContext(ProductCheapestContext);
+  const productMostExpensive = React.useContext(ProductCheapestContext);
   const tagFilters = React.useContext(FilterProductsTagsContext);
   const dispatchTagsFilter = React.useContext(FilterProductsTagsDispatchContext);
   const dispatchFilterCriterias = React.useContext(FilterCriteriasDispatchContext);
@@ -47,9 +49,20 @@ export default function FormFilterByRangePrices() {
   };
 
   React.useEffect(() => {
-    setMinPrice(Math.floor(limitsPrice.startPrice / 2));
-    setMaxPrice(limitsPrice.startPrice);
-  }, [limitsPrice.startPrice]);
+    if (productCheapest !== null && productMostExpensive !== null) {
+      const [minValue, maxValue] = createNewRange(
+        productCheapest.priceValue,
+        productMostExpensive.priceValue,
+      );
+
+      setMinPrice(Math.floor(minValue));
+      setMaxPrice(Math.floor(maxValue));
+    }
+  }, [productCheapest, productMostExpensive]);
+
+  if (productCheapest === null) return null;
+
+  if (productMostExpensive === null) return null;
 
   return (
     <form onSubmit={onSubmit} className="flex items-start gap-3">
@@ -66,8 +79,7 @@ export default function FormFilterByRangePrices() {
               id="min-price-range"
               value={minPrice}
               onChange={onChangeMinPrice}
-              min={Math.floor(limitsPrice.startPrice / 2)}
-              max={limitsPrice.startPrice - 1}
+              min={productCheapest !== null ? Math.floor(productCheapest.priceValue) : 1}
               required
             />
             <span className="flex h-[2.875rem] w-12 items-center justify-center rounded-r-md bg-perano-500 text-xl text-white">
@@ -76,9 +88,7 @@ export default function FormFilterByRangePrices() {
           </div>
           <span className="text-center text-[.75rem] text-perano-500">Min. Price</span>
         </label>
-        <span className="flex h-[2.875rem] w-[1.125rem] items-center justify-center text-[.875rem]">
-          to
-        </span>
+        <span className="flex h-[2.875rem] w-[1.125rem] items-center justify-center text-[.875rem]">to</span>
         <label
           htmlFor="max-price-range"
           className="flex h-[4.5rem] min-w-[5.875rem] flex-col gap-1  text-perano-500"
@@ -91,8 +101,7 @@ export default function FormFilterByRangePrices() {
               id="max-price-range"
               value={maxPrice}
               onChange={onChangeMaxPrice}
-              min={limitsPrice.startPrice}
-              max={limitsPrice.endPrice}
+              max={productMostExpensive !== null ? Math.floor(productMostExpensive.priceValue) : 100}
               required
             />
             <span className="flex h-[2.875rem] w-12 items-center justify-center rounded-r-md bg-perano-500 text-xl text-white">
