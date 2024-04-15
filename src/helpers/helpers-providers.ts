@@ -16,8 +16,6 @@ export default function initializationFilterProductsCriterias(
   filterCriterias: FilterProductsCriterias,
   dispatch: React.Dispatch<FilterAction>,
 ) {
-  console.log('here!!!!');
-
   if (filterCriterias.brands.length === 0) {
     // Filter criterias
     const brandsForFilter = findAllFilterBrands(products);

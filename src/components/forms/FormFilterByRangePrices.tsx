@@ -7,14 +7,11 @@ import Icon16x16ArrowRight from '../@icons/16x16/Icon16x16ArrowRight';
 
 export default function FormFilterByRangePrices() {
   const limitsPrice = React.useContext(ProductsLimitsPriceContext);
-  console.log('🚀 ~ FormFilterByRangePrices ~ limitsPrice:', limitsPrice);
   const [minPrice, setMinPrice] = React.useState(Math.floor(limitsPrice.startPrice / 2));
   const [maxPrice, setMaxPrice] = React.useState(limitsPrice.startPrice);
   const dispatch = React.useContext(FilterCriteriasDispatchContext);
 
   const onChangeMinPrice = (ev: React.ChangeEvent<HTMLInputElement>) => {
-    console.log('ev.target.valueAsNumber', ev.target.valueAsNumber);
-
     setMinPrice(ev.target.valueAsNumber);
   };
 
