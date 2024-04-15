@@ -1,9 +1,3 @@
-export type FilterProductTag = {
-  id: string;
-  key: string;
-  value: string;
-};
-
 export type FilterBrandData = {
   id: string;
   name: string;
@@ -22,9 +16,21 @@ export type FilterBluetoothData = {
   checked: boolean;
 };
 
+export type TagFilterProduct = {
+  id: string;
+  category: 'range-price' | 'brand' | 'storage' | 'bluetooth';
+  valueText: string;
+  valueId?: string;
+};
+
 export type AddTagFilterAction = {
   type: 'added_tag_filter';
-  payload: FilterProductTag;
+  payload: TagFilterProduct;
+};
+
+export type UpdateTagFilterAction = {
+  type: 'updated_tag_filter';
+  payload: TagFilterProduct;
 };
 
 export type DeleteTagFilterAction = {
@@ -32,11 +38,6 @@ export type DeleteTagFilterAction = {
   payload: {
     id: string;
   };
-};
-
-export type UpdateTagFilterAction = {
-  type: 'updated_tag_filter';
-  payload: FilterProductTag;
 };
 
 export type TagFilterAction = AddTagFilterAction | DeleteTagFilterAction | UpdateTagFilterAction;

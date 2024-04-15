@@ -1,27 +1,26 @@
-import { FilterProductTag, TagFilterAction } from '../@types/filterTypes';
+import { TagFilterAction, TagFilterProduct } from '../@types/filterTypes';
 
-export const checkExistsRangePriceByKey = (tags: FilterProductTag[] = [], keyTag = '') => {
-  console.log('🚀 ~ checkExists ~ textTag:', keyTag);
+export const checkExistsRangePriceByCategory = (tags: TagFilterProduct[] = [], categoryTag = '') => {
+  console.log('🚀 ~ checkExists ~ textTag:', categoryTag);
   if (tags.length === 0) return true;
 
-  return tags.findIndex((t) => t.key === keyTag) === -1;
+  return tags.findIndex((t) => t.category === categoryTag) === -1;
 };
 
 export const handleAddTagRangePrice = (
-  tagFilters: FilterProductTag[] = [],
+  tagFilters: TagFilterProduct[] = [],
   minPrice = 0,
   maxPrice = 0,
   dispatchTagsFilter: (value: TagFilterAction) => void,
 ) => {
-  const keyTag = 'price-range';
   const textTag = `${minPrice} - ${maxPrice}`;
-  const isNewTag = checkExistsRangePriceByKey(tagFilters, keyTag);
+  const isNewTag = checkExistsRangePriceByCategory(tagFilters, 'range-price');
 
   // Build tag
-  const tag: FilterProductTag = {
+  const tag: TagFilterProduct = {
     id: 'tag-price-range-001',
-    key: keyTag,
-    value: textTag,
+    category: 'range-price',
+    valueText: textTag,
   };
 
   if (isNewTag) {
@@ -32,7 +31,7 @@ export const handleAddTagRangePrice = (
   } else {
     dispatchTagsFilter({
       type: 'updated_tag_filter',
-      payload: { ...tag, value: textTag },
+      payload: { ...tag, valueText: textTag },
     });
   }
 };

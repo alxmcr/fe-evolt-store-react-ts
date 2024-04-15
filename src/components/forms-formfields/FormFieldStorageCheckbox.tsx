@@ -1,6 +1,6 @@
 import React from 'react';
 import { FilterCriteriasDispatchContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
-import { FilterStorageData } from '../../@types/filterTypes';
+import { FilterStorageData, TagFilterProduct } from '../../@types/filterTypes';
 import { FilterProductsTagsDispatchContext } from '../../@providers/TagsFilterProvider/TagsFilterContext';
 
 type Props = {
@@ -21,10 +21,11 @@ export default function FormFieldStorageCheckbox({ storage }: Props) {
     });
 
     // tag
-    const tag = {
+    const tag: TagFilterProduct = {
       id: `tag-brand-${storage.id}`,
-      key: 'storage',
-      value: storage.capacity,
+      category: 'storage',
+      valueText: storage.capacity,
+      valueId: storage.id,
     };
     if (ev.target.checked) {
       dispatchTagsFilter({

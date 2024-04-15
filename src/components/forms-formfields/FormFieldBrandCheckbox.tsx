@@ -1,7 +1,7 @@
 import React from 'react';
 import { FilterCriteriasDispatchContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
-import { FilterBrandData } from '../../@types/filterTypes';
 import { FilterProductsTagsDispatchContext } from '../../@providers/TagsFilterProvider/TagsFilterContext';
+import { FilterBrandData, TagFilterProduct } from '../../@types/filterTypes';
 
 type Props = {
   brand: FilterBrandData;
@@ -21,10 +21,11 @@ export default function FormFieldBrandCheckbox({ brand }: Props) {
     });
 
     // tag
-    const tag = {
+    const tag: TagFilterProduct = {
       id: `tag-brand-${brand.id}`,
-      key: 'brand',
-      value: brand.name,
+      category: 'brand',
+      valueText: brand.name,
+      valueId: brand.id,
     };
     if (ev.target.checked) {
       dispatchTagsFilter({

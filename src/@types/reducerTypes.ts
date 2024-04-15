@@ -1,4 +1,4 @@
-import { FilterBluetoothData, FilterBrandData, FilterProductTag, FilterStorageData } from "./filterTypes";
+import { FilterBluetoothData, FilterBrandData, TagFilterProduct, FilterStorageData } from "./filterTypes";
 
 type UpdateMinPriceAction = {
   type: 'update_min_price';
@@ -72,7 +72,7 @@ export type FilterProductsCriterias = {
 };
 
 export type FilterProductsTags = {
-  tags: FilterProductTag[];
+  tags: TagFilterProduct[];
 };
 
 export type ProductsLimitsPrice = {

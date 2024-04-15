@@ -1,17 +1,17 @@
 import React from 'react';
 import { FilterProductsTagsDispatchContext } from '../../@providers/TagsFilterProvider/TagsFilterContext';
-import { FilterProductTag } from '../../@types/filterTypes';
+import { TagFilterProduct } from '../../@types/filterTypes';
 import TagFilter from './TagFilter';
 
 type Props = {
-  tagsFilter: FilterProductTag[];
+  tagsFilter: TagFilterProduct[];
 };
 
 export default function TagsFilterGroup({ tagsFilter = [] }: Props) {
   // const dispatch = React.useContext(FilterCriteriasDispatchContext);
   const dispatchTagsFilter = React.useContext(FilterProductsTagsDispatchContext);
 
-  const removeTagFilter = (tagToRemove: FilterProductTag) => {
+  const removeTagFilter = (tagToRemove: TagFilterProduct) => {
     // Unchecked
     /*
     dispatch({

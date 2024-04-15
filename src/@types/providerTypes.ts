@@ -3,7 +3,7 @@ import { ProductData } from './appTypes';
 import {
   FilterBluetoothData,
   FilterBrandData,
-  FilterProductTag,
+  TagFilterProduct,
   FilterStorageData,
 } from './filterTypes';
 
@@ -23,8 +23,8 @@ export type ProductFilterCriteriasContextData = {
   maxPrice: number;
   setMinPrice: React.Dispatch<React.SetStateAction<number>>;
   setMaxPrice: React.Dispatch<React.SetStateAction<number>>;
-  tagsFilter: FilterProductTag[];
-  setTagsFilter: React.Dispatch<React.SetStateAction<FilterProductTag[]>>;
+  tagsFilter: TagFilterProduct[];
+  setTagsFilter: React.Dispatch<React.SetStateAction<TagFilterProduct[]>>;
   brands: FilterBrandData[];
   storages: FilterStorageData[];
   bluetooths: FilterBluetoothData[];
