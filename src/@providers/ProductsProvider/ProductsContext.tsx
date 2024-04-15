@@ -5,5 +5,5 @@ import { LoadingStates } from '../../@enums/appEnums';
 
 export const ProductsContext = React.createContext<ProductData[]>([]);
 export const ProductsLoadingStateContext = React.createContext(LoadingStates.IDLE);
-export const ProductsLimitsPriceContext = React.createContext(initialLimitsPrice);
+export const ProductsLimitsPriceContextxxxx = React.createContext(initialLimitsPrice);
 export const RangePriceProductsContext = React.createContext(initialRangePriceProducts);

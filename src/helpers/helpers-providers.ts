@@ -1,5 +1,6 @@
 import { ProductData } from '../@types/appTypes';
-import { FilterAction, FilterProductsCriterias, ProductsLimitsPrice } from '../@types/reducerTypes';
+import { RangePriceProducts } from '../@types/providerTypes';
+import { FilterAction, FilterProductsCriterias } from '../@types/reducerTypes';
 import {
   findAllFilterBluetooths,
   findAllFilterBrands,
@@ -8,7 +9,7 @@ import {
 
 export const initializationFilterProductsCriterias = (
   products: ProductData[],
-  limitsPrice: ProductsLimitsPrice,
+  rangePrices: RangePriceProducts,
   filterCriterias: FilterProductsCriterias,
   dispatch: React.Dispatch<FilterAction>,
 ) => {
@@ -21,13 +22,13 @@ export const initializationFilterProductsCriterias = (
     dispatch({
       type: 'update_min_price',
       payload: {
-        min: Math.floor(limitsPrice.endPrice / 4),
+        min: rangePrices.minPriceAllowed,
       },
     });
     dispatch({
       type: 'update_max_price',
       payload: {
-        max: Math.floor(limitsPrice.endPrice / 2),
+        max: rangePrices.maxPriceAllowed,
       },
     });
     // add brands

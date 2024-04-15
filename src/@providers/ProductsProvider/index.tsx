@@ -1,15 +1,9 @@
 import React from 'react';
 import { LoadingStates } from '../../@enums/appEnums';
-import { ProductsLimitsPrice } from '../../@types/reducerTypes';
+import { RangePriceProducts } from '../../@types/providerTypes';
 import { findProductCheapest, findProductMostExpensive } from '../../helpers/helpers-hooks';
 import useProducts from '../../hooks/useProducts';
-import {
-  ProductsContext,
-  ProductsLimitsPriceContext,
-  ProductsLoadingStateContext,
-  RangePriceProductsContext,
-} from './ProductsContext';
-import { RangePriceProducts } from '../../@types/providerTypes';
+import { ProductsContext, ProductsLoadingStateContext, RangePriceProductsContext } from './ProductsContext';
 
 type Props = {
   children: React.ReactNode;
@@ -19,11 +13,6 @@ export default function ProductsProvider({ children }: Props) {
   const { products, statusProducts } = useProducts();
   const [startPrice, setStartPrice] = React.useState(0);
   const [endPrice, setEndPrice] = React.useState(0);
-
-  const limitsPrice: ProductsLimitsPrice = {
-    startPrice,
-    endPrice,
-  };
 
   const rangePrice: RangePriceProducts = {
     minPriceAllowed: startPrice,
@@ -46,11 +35,7 @@ export default function ProductsProvider({ children }: Props) {
   return (
     <ProductsContext.Provider value={products}>
       <ProductsLoadingStateContext.Provider value={statusProducts}>
-        <ProductsLimitsPriceContext.Provider value={limitsPrice}>
-          <RangePriceProductsContext.Provider value={rangePrice}>
-            {children}
-          </RangePriceProductsContext.Provider>
-        </ProductsLimitsPriceContext.Provider>
+        <RangePriceProductsContext.Provider value={rangePrice}>{children}</RangePriceProductsContext.Provider>
       </ProductsLoadingStateContext.Provider>
     </ProductsContext.Provider>
   );

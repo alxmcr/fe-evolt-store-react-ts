@@ -1,6 +1,6 @@
 import React from 'react';
 import { FilterCriteriasDispatchContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
-import { ProductsLimitsPriceContext } from '../../@providers/ProductsProvider/ProductsContext';
+import { RangePriceProductsContext } from '../../@providers/ProductsProvider/ProductsContext';
 import {
   FilterProductsTagsContext,
   FilterProductsTagsDispatchContext,
@@ -9,7 +9,7 @@ import { handleAddTagRangePrice } from '../../helpers/helpers-reducers';
 import Icon16x16ArrowRight from '../@icons/16x16/Icon16x16ArrowRight';
 
 export default function FormFilterByRangePrices() {
-  const limitsPrice = React.useContext(ProductsLimitsPriceContext);
+  const rangePrices = React.useContext(RangePriceProductsContext);
   const [minPrice, setMinPrice] = React.useState(0);
   const [maxPrice, setMaxPrice] = React.useState(0);
   const tagFilters = React.useContext(FilterProductsTagsContext);
@@ -47,9 +47,9 @@ export default function FormFilterByRangePrices() {
   };
 
   React.useEffect(() => {
-    setMinPrice(Math.floor(limitsPrice.startPrice / 2));
-    setMaxPrice(limitsPrice.startPrice);
-  }, [limitsPrice.startPrice]);
+    setMinPrice(rangePrices.minPriceAllowed);
+    setMaxPrice(rangePrices.maxPriceAllowed);
+  }, [rangePrices.minPriceAllowed, rangePrices.maxPriceAllowed]);
 
   return (
     <form onSubmit={onSubmit} className="flex items-start gap-3">
@@ -76,9 +76,7 @@ export default function FormFilterByRangePrices() {
           </div>
           <span className="text-center text-[.75rem] text-perano-500">Min. Price</span>
         </label>
-        <span className="flex h-[2.875rem] w-[1.125rem] items-center justify-center text-[.875rem]">
-          to
-        </span>
+        <span className="flex h-[2.875rem] w-[1.125rem] items-center justify-center text-[.875rem]">to</span>
         <label
           htmlFor="max-price-range"
           className="flex h-[4.5rem] min-w-[5.875rem] flex-col gap-1  text-perano-500"

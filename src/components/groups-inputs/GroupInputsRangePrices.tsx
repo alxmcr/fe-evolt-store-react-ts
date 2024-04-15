@@ -2,13 +2,13 @@ import React from 'react';
 import {
   FilterCriteriasContext
 } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
-import { ProductsLimitsPriceContext } from '../../@providers/ProductsProvider/ProductsContext';
+import { ProductsLimitsPriceContextxxxx } from '../../@providers/ProductsProvider/ProductsContext';
 import FormFielPriceInput from '../forms-formfields/FormFielPriceInput';
 
 export default function GroupInputsRangePrices() {
   const [minPrice, setMinPrice] = React.useState(0);
   const [maxPrice, setMaxPrice] = React.useState(0);
-  const limitsPrice = React.useContext(ProductsLimitsPriceContext);
+  const limitsPrice = React.useContext(ProductsLimitsPriceContextxxxx);
   const filterCriterias = React.useContext(FilterCriteriasContext);
 
   const onChangeMinPrice = (ev: React.ChangeEvent<HTMLInputElement>) => {
