@@ -3,6 +3,7 @@ import { FilterCriteriasDispatchContext } from '../../@providers/FilterCriterias
 import { FilterProductsTagsDispatchContext } from '../../@providers/TagsFilterProvider/TagsFilterContext';
 import { TagFilterProduct } from '../../@types/filterTypes';
 import TagFilter from './TagFilter';
+import { uncheckedByCategory } from '../../helpers/helpers-tags-filter';
 
 type Props = {
   tagsFilter: TagFilterProduct[];
@@ -14,42 +15,7 @@ export default function TagsFilterGroup({ tagsFilter = [] }: Props) {
 
   const removeTagFilter = (tagToRemove: TagFilterProduct) => {
     // Unchecked by category
-
-    const { category, valueId } = tagToRemove;
-
-    switch (category) {
-      case 'brand':
-        dispatch({
-          type: 'checked_brand',
-          payload: {
-            id: valueId,
-            checked: false,
-          },
-        });
-        break;
-      case 'storage':
-        dispatch({
-          type: 'checked_storage',
-          payload: {
-            id: valueId,
-            checked: false,
-          },
-        });
-        break;
-
-      case 'bluetooth':
-        dispatch({
-          type: 'checked_bluetooth',
-          payload: {
-            id: valueId,
-            checked: false,
-          },
-        });
-        break;
-
-      default:
-        throw Error('Unknown tag category');
-    }
+    uncheckedByCategory(tagToRemove, dispatch);
 
     // Remove tag
     dispatchTagsFilter({
