@@ -5,7 +5,6 @@ import { initialFilterProductsCriterias } from '../../helpers/constants-provider
 import { initializationFilterProductsCriterias } from '../../helpers/helpers-providers';
 import {
   ProductsContext,
-  ProductsLimitsPriceContext,
   ProductsLoadingStateContext,
 } from '../ProductsProvider/ProductsContext';
 import { FilterCriteriasContext, FilterCriteriasDispatchContext } from './FilterCriteriasContext';
@@ -18,7 +17,6 @@ export default function FilterCriteriasProvider({ children }: Props) {
   // Get info products
   const products = React.useContext(ProductsContext);
   const loadingStateProducts = React.useContext(ProductsLoadingStateContext);
-  const limitsPrice = React.useContext(ProductsLimitsPriceContext);
 
   const [filterCriterias, dispatch] = React.useReducer(
     filterProductsCriteriasReducer,
@@ -27,9 +25,9 @@ export default function FilterCriteriasProvider({ children }: Props) {
 
   React.useEffect(() => {
     if (LoadingStates.SUCCESS === loadingStateProducts) {
-      initializationFilterProductsCriterias(products, limitsPrice, filterCriterias, dispatch);
+      initializationFilterProductsCriterias(products, filterCriterias, dispatch);
     }
-  }, [loadingStateProducts, products, limitsPrice, filterCriterias]);
+  }, [loadingStateProducts, products, filterCriterias]);
 
   return (
     <FilterCriteriasContext.Provider value={filterCriterias}>
