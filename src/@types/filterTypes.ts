@@ -35,4 +35,9 @@ export type DeleteTagFilterAction = {
   };
 };
 
-export type TagFilterAction = AddTagFilterAction | DeleteTagFilterAction;
+export type UpdateTagFilterAction = {
+  type: 'updated_tag_filter';
+  payload: FilterProductTag;
+};
+
+export type TagFilterAction = AddTagFilterAction | DeleteTagFilterAction | UpdateTagFilterAction;

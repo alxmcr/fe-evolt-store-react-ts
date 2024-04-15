@@ -17,6 +17,18 @@ export default function tagsFilterReducer(
       return { ...state, tagsFilter: state.tagsFilter.filter((t) => t.id !== action.payload.id) };
     }
 
+    case 'updated_tag_filter': {
+      return {
+        ...state,
+        tagsFilter: state.tagsFilter.map((t) => {
+          if (t.id === action.payload.id) {
+            return action.payload;
+          }
+          return t;
+        }),
+      };
+    }
+
     default: {
       throw Error(`Unknown action`);
     }
