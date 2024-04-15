@@ -9,7 +9,7 @@ export default function FormFilterByRangePrices() {
   const limitsPrice = React.useContext(ProductsLimitsPriceContext);
   const [minPrice, setMinPrice] = React.useState(Math.floor(limitsPrice.startPrice / 2));
   const [maxPrice, setMaxPrice] = React.useState(limitsPrice.startPrice);
-  const dispatch = React.useContext(FilterCriteriasDispatchContext);
+  const dispatchFilterCriterias = React.useContext(FilterCriteriasDispatchContext);
 
   const onChangeMinPrice = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setMinPrice(ev.target.valueAsNumber);
@@ -22,14 +22,14 @@ export default function FormFilterByRangePrices() {
   const onSubmit = (ev: React.FormEvent) => {
     ev.preventDefault();
 
-    dispatch({
+    dispatchFilterCriterias({
       type: 'update_min_price',
       payload: {
         min: minPrice,
       },
     });
 
-    dispatch({
+    dispatchFilterCriterias({
       type: 'update_max_price',
       payload: {
         max: maxPrice,
