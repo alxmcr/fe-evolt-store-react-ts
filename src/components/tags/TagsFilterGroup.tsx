@@ -1,4 +1,5 @@
 import React from 'react';
+import { FilterCriteriasDispatchContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
 import { FilterProductsTagsDispatchContext } from '../../@providers/TagsFilterProvider/TagsFilterContext';
 import { TagFilterProduct } from '../../@types/filterTypes';
 import TagFilter from './TagFilter';
@@ -8,20 +9,41 @@ type Props = {
 };
 
 export default function TagsFilterGroup({ tagsFilter = [] }: Props) {
-  // const dispatch = React.useContext(FilterCriteriasDispatchContext);
+  const dispatch = React.useContext(FilterCriteriasDispatchContext);
   const dispatchTagsFilter = React.useContext(FilterProductsTagsDispatchContext);
 
   const removeTagFilter = (tagToRemove: TagFilterProduct) => {
-    // Unchecked
-    /*
-    dispatch({
-      type: 'checked_brand',
-      payload: {
-        id: brand.id,
-        checked: false,
-      },
-    });
-    */
+    // Unchecked by category
+
+    const { category, valueId } = tagToRemove;
+
+    if (category === 'brand') {
+      dispatch({
+        type: 'checked_brand',
+        payload: {
+          id: valueId,
+          checked: false,
+        },
+      });
+    } else if (category === 'storage') {
+      dispatch({
+        type: 'checked_storage',
+        payload: {
+          id: valueId,
+          checked: false,
+        },
+      });
+    } else if (category === 'bluetooth') {
+      dispatch({
+        type: 'checked_bluetooth',
+        payload: {
+          id: valueId,
+          checked: false,
+        },
+      });
+    } else {
+      throw Error('Unknown tag category');
+    }
 
     // Remove tag
     dispatchTagsFilter({

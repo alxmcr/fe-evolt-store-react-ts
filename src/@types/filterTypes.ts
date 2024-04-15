@@ -20,7 +20,7 @@ export type TagFilterProduct = {
   id: string;
   category: 'range-price' | 'brand' | 'storage' | 'bluetooth';
   valueText: string;
-  valueId?: string;
+  valueId: string;
 };
 
 export type AddTagFilterAction = {

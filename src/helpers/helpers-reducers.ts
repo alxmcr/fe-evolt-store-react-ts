@@ -21,6 +21,7 @@ export const handleAddTagRangePrice = (
     id: 'tag-price-range-001',
     category: 'range-price',
     valueText: textTag,
+    valueId: 'range-price'
   };
 
   if (isNewTag) {
