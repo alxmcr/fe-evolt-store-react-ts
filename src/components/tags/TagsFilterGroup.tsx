@@ -1,6 +1,4 @@
-import React from 'react';
 import { FilterProductTag } from '../../@types/filterTypes';
-import { ProductFilterCriteriasContext } from '../../providers/ProductFilterCriteriasProvider/ProductFilterCriteriasContext';
 import TagFilter from './TagFilter';
 
 type Props = {
@@ -8,14 +6,8 @@ type Props = {
 };
 
 export default function TagsFilterGroup({ tagsFilter = [] }: Props) {
-  const contextFilterProducts = React.useContext(ProductFilterCriteriasContext);
-
   const removeTagFilter = (tagToRemove: FilterProductTag) => {
-    console.log('🚀 ~ removeTagFilter ~ tagToRemove:', tagToRemove);
-    contextFilterProducts.setTagsFilter((prev) =>
-      prev.filter((tag) => tag.id !== tagToRemove.id),
-    );
-    console.log(contextFilterProducts.tagsFilter);
+    console.log(tagToRemove);
   };
 
   if (tagsFilter.length === 0) return null;

@@ -1,10 +1,5 @@
 import { ProductData } from '../@types/appTypes';
-import {
-  bluetoothV5,
-  bluetoothV5_1,
-  bluetoothV5_2,
-  bluetoothV5_3,
-} from './mock-laptops-bluetooth';
+import { bluetoothV5, bluetoothV5_1, bluetoothV5_2, bluetoothV5_3 } from './mock-laptops-bluetooth';
 import {
   ACER,
   APPLE,

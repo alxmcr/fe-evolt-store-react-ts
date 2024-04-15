@@ -3,8 +3,8 @@ type FormFieldPriceInputProps = {
   inputId: string;
   inputName: string;
   inputValue: number;
-  minValueInput: number;
-  maxValueInput: number;
+  minValueInput?: number;
+  maxValueInput?: number;
   onChange: (ev: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -38,9 +38,7 @@ export default function FormFielPriceInput({
           $
         </span>
       </div>
-      <span className="text-center text-[.75rem] text-perano-500">
-        {labelText}
-      </span>
+      <span className="text-center text-[.75rem] text-perano-500">{labelText}</span>
     </label>
   );
 }

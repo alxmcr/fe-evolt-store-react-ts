@@ -1,9 +1,5 @@
 import { ProductData } from '../@types/appTypes';
-import {
-  FilterBluetoothData,
-  FilterBrandData,
-  FilterStorageData,
-} from '../@types/filterTypes';
+import { FilterBluetoothData, FilterBrandData, FilterStorageData } from '../@types/filterTypes';
 import { findAllBluetooths, findAllBrands, findAllStorages } from './helpers-products';
 
 export const findAllFilterBrands = (products: ProductData[] = []) => {

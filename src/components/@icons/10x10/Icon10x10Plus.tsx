@@ -1,12 +1,6 @@
 export default function Icon10x10Plus() {
   return (
-    <svg
-      width={10}
-      height={10}
-      viewBox="0 0 10 10"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg width={10} height={10} viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_2068_665)">
         <path
           d="M3.33334 4.99999H5.00001M5.00001 4.99999H6.66668M5.00001 4.99999V3.33333M5.00001 4.99999V6.66666"

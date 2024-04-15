@@ -10,10 +10,7 @@ export const getMinPricePossible = (products: ProductData[] = []) => {
 };
 
 export const getMaxPricePossible = (products: ProductData[] = []) => {
-  return products.reduce(
-    (acc, product) => Math.max(acc, product.priceValue),
-    0,
-  );
+  return products.reduce((acc, product) => Math.max(acc, product.priceValue), 0);
 };
 
 export const findAllBrands = (products: ProductData[] = []) => {
@@ -29,9 +26,7 @@ export const findAllStorages = (products: ProductData[] = []) => {
 };
 
 export const findAllBluetooths = (products: ProductData[] = []) => {
-  const bluetoothsSet = new Set(
-    products.map((product) => product.bluetooth),
-  );
+  const bluetoothsSet = new Set(products.map((product) => product.bluetooth));
 
   return Array.from(bluetoothsSet);
 };
