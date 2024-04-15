@@ -2,7 +2,7 @@ import React from 'react';
 import { LoadingStates } from '../../@enums/appEnums';
 import filterProductsCriteriasReducer from '../../@reducers/filterProductsCriteriasReducer';
 import { initialFilterProductsCriterias } from '../../helpers/constants-providers';
-import initializationFilterProductsCriterias from '../../helpers/helpers-providers';
+import { initializationFilterProductsCriterias } from '../../helpers/helpers-providers';
 import {
   ProductsContext,
   ProductsLimitsPriceContext,
@@ -29,7 +29,7 @@ export default function FilterCriteriasProvider({ children }: Props) {
     if (LoadingStates.SUCCESS === loadingStateProducts) {
       initializationFilterProductsCriterias(products, limitsPrice, filterCriterias, dispatch);
     }
-  }, [loadingStateProducts, products, limitsPrice]);
+  }, [loadingStateProducts, products, limitsPrice, filterCriterias]);
 
   return (
     <FilterCriteriasContext.Provider value={filterCriterias}>

@@ -1,23 +1,17 @@
-import {
-  FilterAction,
-  FilterProductsCriterias,
-  ProductsLimitsPrice,
-} from '../@reducers/filterProductsCriteriasReducer';
 import { ProductData } from '../@types/appTypes';
+import { FilterAction, FilterProductsCriterias, ProductsLimitsPrice } from '../@types/reducerTypes';
 import {
   findAllFilterBluetooths,
   findAllFilterBrands,
   findAllFilterStorages,
 } from './helpers-products-filter';
 
-export default function initializationFilterProductsCriterias(
+export const initializationFilterProductsCriterias = (
   products: ProductData[],
   limitsPrice: ProductsLimitsPrice,
   filterCriterias: FilterProductsCriterias,
   dispatch: React.Dispatch<FilterAction>,
-) {
-  console.log('here!!!!');
-
+) => {
   if (filterCriterias.brands.length === 0) {
     // Filter criterias
     const brandsForFilter = findAllFilterBrands(products);
@@ -58,4 +52,4 @@ export default function initializationFilterProductsCriterias(
       }),
     );
   }
-}
+};

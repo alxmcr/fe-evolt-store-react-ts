@@ -1,13 +1,13 @@
 import React from 'react';
+import { LoadingStates } from '../../@enums/appEnums';
+import { ProductsLimitsPrice } from '../../@types/reducerTypes';
+import { getMaxPricePossible, getMinPricePossible } from '../../helpers/helpers-products';
 import useProducts from '../../hooks/useProducts';
 import {
   ProductsContext,
   ProductsLimitsPriceContext,
   ProductsLoadingStateContext,
 } from './ProductsContext';
-import { getMaxPricePossible, getMinPricePossible } from '../../helpers/helpers-products';
-import { LoadingStates } from '../../@enums/appEnums';
-import { ProductsLimitsPrice } from '../../@reducers/filterProductsCriteriasReducer';
 
 type Props = {
   children: React.ReactNode;

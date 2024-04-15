@@ -1,7 +1,4 @@
-import {
-  FilterProductsCriterias,
-  ProductsLimitsPrice,
-} from '../@reducers/filterProductsCriteriasReducer';
+import { FilterProductsCriterias, FilterProductsTags, ProductsLimitsPrice } from "../@types/reducerTypes";
 
 export const initialFilterProductsCriterias: FilterProductsCriterias = {
   minPrice: 0,
@@ -9,7 +6,10 @@ export const initialFilterProductsCriterias: FilterProductsCriterias = {
   brands: [],
   storages: [],
   bluetooths: [],
-  tagsFilter: [],
+};
+
+export const initialFilterProductsTags: FilterProductsTags = {
+  tags: [],
 };
 
 export const initialLimitsPrice: ProductsLimitsPrice = {
