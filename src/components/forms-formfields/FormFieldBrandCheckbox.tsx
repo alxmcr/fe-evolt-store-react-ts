@@ -1,6 +1,7 @@
 import React from 'react';
 import { FilterCriteriasDispatchContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
 import { FilterBrandData } from '../../@types/filterTypes';
+import { FilterProductsTagsDispatchContext } from '../../@providers/TagsFilterProvider/TagsFilterContext';
 
 type Props = {
   brand: FilterBrandData;
@@ -8,6 +9,7 @@ type Props = {
 
 export default function FormFieldBrandCheckbox({ brand }: Props) {
   const dispatch = React.useContext(FilterCriteriasDispatchContext);
+  const dispatchTagsFilter = React.useContext(FilterProductsTagsDispatchContext);
 
   const onChangeCheckbox = (ev: React.ChangeEvent<HTMLInputElement>) => {
     dispatch({
@@ -17,6 +19,26 @@ export default function FormFieldBrandCheckbox({ brand }: Props) {
         checked: ev.target.checked,
       },
     });
+
+    // tag
+    const tag = {
+      id: `tag-brand-${brand.id}`,
+      key: 'brand',
+      value: brand.name,
+    };
+    if (ev.target.checked) {
+      dispatchTagsFilter({
+        type: 'added_tag_filter',
+        payload: tag,
+      });
+    } else {
+      dispatchTagsFilter({
+        type: 'deleted_tag_filter',
+        payload: {
+          id: tag.id,
+        },
+      });
+    }
   };
 
   return (
