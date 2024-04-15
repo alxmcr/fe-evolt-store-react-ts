@@ -17,32 +17,38 @@ export default function TagsFilterGroup({ tagsFilter = [] }: Props) {
 
     const { category, valueId } = tagToRemove;
 
-    if (category === 'brand') {
-      dispatch({
-        type: 'checked_brand',
-        payload: {
-          id: valueId,
-          checked: false,
-        },
-      });
-    } else if (category === 'storage') {
-      dispatch({
-        type: 'checked_storage',
-        payload: {
-          id: valueId,
-          checked: false,
-        },
-      });
-    } else if (category === 'bluetooth') {
-      dispatch({
-        type: 'checked_bluetooth',
-        payload: {
-          id: valueId,
-          checked: false,
-        },
-      });
-    } else {
-      throw Error('Unknown tag category');
+    switch (category) {
+      case 'brand':
+        dispatch({
+          type: 'checked_brand',
+          payload: {
+            id: valueId,
+            checked: false,
+          },
+        });
+        break;
+      case 'storage':
+        dispatch({
+          type: 'checked_storage',
+          payload: {
+            id: valueId,
+            checked: false,
+          },
+        });
+        break;
+
+      case 'bluetooth':
+        dispatch({
+          type: 'checked_bluetooth',
+          payload: {
+            id: valueId,
+            checked: false,
+          },
+        });
+        break;
+
+      default:
+        throw Error('Unknown tag category');
     }
 
     // Remove tag
