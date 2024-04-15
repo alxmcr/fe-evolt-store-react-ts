@@ -1,5 +1,4 @@
-import { TagFilterKeys } from "../@enums/appEnums";
-import { FilterBluetoothData, FilterBrandData, FilterStorageData } from "./filterTypes";
+import { FilterBluetoothData, FilterBrandData, FilterProductTag, FilterStorageData } from "./filterTypes";
 
 type UpdateMinPriceAction = {
   type: 'update_min_price';
@@ -73,7 +72,7 @@ export type FilterProductsCriterias = {
 };
 
 export type FilterProductsTags = {
-  tagsFilter: TagFilterKeys[];
+  tagsFilter: FilterProductTag[];
 };
 
 export type ProductsLimitsPrice = {
