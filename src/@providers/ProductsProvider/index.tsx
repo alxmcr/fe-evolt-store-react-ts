@@ -3,11 +3,8 @@ import { LoadingStates } from '../../@enums/appEnums';
 import { ProductsLimitsPrice } from '../../@types/reducerTypes';
 import { getMaxPricePossible, getMinPricePossible } from '../../helpers/helpers-products';
 import useProducts from '../../hooks/useProducts';
-import {
-  ProductsContext,
-  ProductsLimitsPriceContext,
-  ProductsLoadingStateContext,
-} from './ProductsContext';
+import { ProductsContext, ProductsLimitsPriceContext, ProductsLoadingStateContext } from './ProductsContext';
+import { createNewRange } from '../../helpers/helpers-products-filter';
 
 type Props = {
   children: React.ReactNode;
@@ -26,8 +23,13 @@ export default function ProductsProvider({ children }: Props) {
   React.useEffect(() => {
     if (LoadingStates.SUCCESS === statusProducts) {
       // Find out limits price
-      setStartPrice(Math.floor(getMinPricePossible(products)));
-      setEndPrice(Math.floor(getMaxPricePossible(products)));
+      const minPrice = Math.floor(getMinPricePossible(products));
+      const maxPrice = Math.floor(getMaxPricePossible(products));
+
+      const [rangeStart, rangeEnd] = createNewRange(minPrice, maxPrice);
+
+      setStartPrice(rangeStart);
+      setEndPrice(rangeEnd);
     }
   }, [statusProducts, products]);
 

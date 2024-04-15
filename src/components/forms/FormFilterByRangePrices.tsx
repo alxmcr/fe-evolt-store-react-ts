@@ -47,9 +47,9 @@ export default function FormFilterByRangePrices() {
   };
 
   React.useEffect(() => {
-    setMinPrice(Math.floor(limitsPrice.startPrice / 2));
-    setMaxPrice(limitsPrice.startPrice);
-  }, [limitsPrice.startPrice]);
+    setMinPrice(limitsPrice.startPrice);
+    setMaxPrice(limitsPrice.endPrice);
+  }, [limitsPrice.startPrice, limitsPrice.endPrice]);
 
   return (
     <form onSubmit={onSubmit} className="flex items-start gap-3">
@@ -76,9 +76,7 @@ export default function FormFilterByRangePrices() {
           </div>
           <span className="text-center text-[.75rem] text-perano-500">Min. Price</span>
         </label>
-        <span className="flex h-[2.875rem] w-[1.125rem] items-center justify-center text-[.875rem]">
-          to
-        </span>
+        <span className="flex h-[2.875rem] w-[1.125rem] items-center justify-center text-[.875rem]">to</span>
         <label
           htmlFor="max-price-range"
           className="flex h-[4.5rem] min-w-[5.875rem] flex-col gap-1  text-perano-500"
