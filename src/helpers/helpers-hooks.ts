@@ -32,6 +32,8 @@ export const createNewRange = (
   maxPrice: number = 0,
   percentage: number = 0.2,
 ): [number, number] => {
+  console.log(minPrice, maxPrice);
+
   const newMin = minPrice + (maxPrice - minPrice) * percentage;
   const newMax = minPrice + (maxPrice - minPrice) * (1 - percentage);
 

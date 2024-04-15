@@ -1,6 +1,9 @@
 import React from 'react';
 import { FilterCriteriasDispatchContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
-import { ProductCheapestContext } from '../../@providers/ProductsProvider/ProductsContext';
+import {
+  ProductCheapestContext,
+  ProductMostExpensiveContext,
+} from '../../@providers/ProductsProvider/ProductsContext';
 import {
   FilterProductsTagsContext,
   FilterProductsTagsDispatchContext,
@@ -13,7 +16,7 @@ export default function FormFilterByRangePrices() {
   const [minPrice, setMinPrice] = React.useState(0);
   const [maxPrice, setMaxPrice] = React.useState(0);
   const productCheapest = React.useContext(ProductCheapestContext);
-  const productMostExpensive = React.useContext(ProductCheapestContext);
+  const productMostExpensive = React.useContext(ProductMostExpensiveContext);
   const tagFilters = React.useContext(FilterProductsTagsContext);
   const dispatchTagsFilter = React.useContext(FilterProductsTagsDispatchContext);
   const dispatchFilterCriterias = React.useContext(FilterCriteriasDispatchContext);
@@ -54,6 +57,7 @@ export default function FormFilterByRangePrices() {
         productCheapest.priceValue,
         productMostExpensive.priceValue,
       );
+      console.log([minValue, maxValue]);
 
       setMinPrice(Math.floor(minValue));
       setMaxPrice(Math.floor(maxValue));
