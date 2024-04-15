@@ -1,6 +1,7 @@
 import React from 'react';
 import { FilterCriteriasDispatchContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
 import { FilterBluetoothData } from '../../@types/filterTypes';
+import { FilterProductsTagsDispatchContext } from '../../@providers/TagsFilterProvider/TagsFilterContext';
 
 type Props = {
   bluetooth: FilterBluetoothData;
@@ -8,6 +9,7 @@ type Props = {
 
 export default function FormFieldBluetoothCheckbox({ bluetooth }: Props) {
   const dispatch = React.useContext(FilterCriteriasDispatchContext);
+  const dispatchTagsFilter = React.useContext(FilterProductsTagsDispatchContext);
 
   const onChangeCheckbox = (ev: React.ChangeEvent<HTMLInputElement>) => {
     dispatch({
@@ -17,6 +19,26 @@ export default function FormFieldBluetoothCheckbox({ bluetooth }: Props) {
         checked: ev.target.checked,
       },
     });
+
+    // tag
+    const tag = {
+      id: `tag-bluetooth-${bluetooth.id}`,
+      key: 'bluetooth',
+      value: bluetooth.version,
+    };
+    if (ev.target.checked) {
+      dispatchTagsFilter({
+        type: 'added_tag_filter',
+        payload: tag,
+      });
+    } else {
+      dispatchTagsFilter({
+        type: 'deleted_tag_filter',
+        payload: {
+          id: tag.id,
+        },
+      });
+    }
   };
 
   return (
