@@ -37,11 +37,23 @@ export const uncheckedByCategory = (
       });
       break;
 
-    case 'range-price':
-      console.log('🚀 ~ tagToRemove:', tagToRemove);
-      break;
-
     default:
       throw Error('Unknown tag category');
   }
+};
+
+export const resetRangePriceFilter = (dispatch: React.Dispatch<FilterAction>) => {
+  dispatch({
+    type: 'update_min_price',
+    payload: {
+      min: 0,
+    },
+  });
+
+  dispatch({
+    type: 'update_max_price',
+    payload: {
+      max: 0,
+    },
+  });
 };

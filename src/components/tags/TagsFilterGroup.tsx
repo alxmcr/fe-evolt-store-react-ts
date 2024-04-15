@@ -2,8 +2,8 @@ import React from 'react';
 import { FilterCriteriasDispatchContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
 import { FilterProductsTagsDispatchContext } from '../../@providers/TagsFilterProvider/TagsFilterContext';
 import { TagFilterProduct } from '../../@types/filterTypes';
+import { resetRangePriceFilter, uncheckedByCategory } from '../../helpers/helpers-tags-filter';
 import TagFilter from './TagFilter';
-import { uncheckedByCategory } from '../../helpers/helpers-tags-filter';
 
 type Props = {
   tagsFilter: TagFilterProduct[];
@@ -14,8 +14,17 @@ export default function TagsFilterGroup({ tagsFilter = [] }: Props) {
   const dispatchTagsFilter = React.useContext(FilterProductsTagsDispatchContext);
 
   const removeTagFilter = (tagToRemove: TagFilterProduct) => {
-    // Unchecked by category
-    uncheckedByCategory(tagToRemove, dispatch);
+    if (
+      tagToRemove.category === 'brand' ||
+      tagToRemove.category === 'storage' ||
+      tagToRemove.category === 'bluetooth'
+    ) {
+      // Unchecked by category
+      uncheckedByCategory(tagToRemove, dispatch);
+    } else {
+      // reset range price filter
+      resetRangePriceFilter(dispatch)
+    }
 
     // Remove tag
     dispatchTagsFilter({
