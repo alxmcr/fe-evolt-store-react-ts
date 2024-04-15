@@ -1,20 +1,20 @@
 import React from 'react';
+import { FilterCriteriasDispatchContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
 import {
-    FilterCriteriasContext,
-    FilterCriteriasDispatchContext,
-} from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
-import { ProductsLimitsPriceContext } from '../../@providers/ProductsProvider/ProductsContext';
+  ProductsLimitsPriceContext
+} from '../../@providers/ProductsProvider/ProductsContext';
 import Icon16x16ArrowRight from '../@icons/16x16/Icon16x16ArrowRight';
-import FormFielPriceInput from '../forms-formfields/FormFielPriceInput';
 
 export default function FormFilterByRangePrices() {
-  const [minPrice, setMinPrice] = React.useState(0);
-  const [maxPrice, setMaxPrice] = React.useState(0);
   const limitsPrice = React.useContext(ProductsLimitsPriceContext);
-  const filterCriterias = React.useContext(FilterCriteriasContext);
+  console.log('🚀 ~ FormFilterByRangePrices ~ limitsPrice:', limitsPrice);
+  const [minPrice, setMinPrice] = React.useState(Math.floor(limitsPrice.startPrice / 2));
+  const [maxPrice, setMaxPrice] = React.useState(limitsPrice.startPrice);
   const dispatch = React.useContext(FilterCriteriasDispatchContext);
 
   const onChangeMinPrice = (ev: React.ChangeEvent<HTMLInputElement>) => {
+    console.log('ev.target.valueAsNumber', ev.target.valueAsNumber);
+
     setMinPrice(ev.target.valueAsNumber);
   };
 
@@ -43,27 +43,53 @@ export default function FormFilterByRangePrices() {
   return (
     <form onSubmit={onSubmit} className="flex items-start gap-3">
       <div className="flex min-w-[13.375rem] gap-2">
-        <FormFielPriceInput
-          labelText="Min price"
-          inputName="min-range"
-          inputId="min-range"
-          inputValue={minPrice}
-          minValueInput={limitsPrice.startPrice}
-          maxValueInput={filterCriterias.maxPrice - 1}
-          onChange={onChangeMinPrice}
-        />
+        <label
+          htmlFor="min-price-range"
+          className="flex h-[4.5rem] min-w-[5.875rem] flex-col gap-1  text-perano-500"
+        >
+          <div className="flex h-[2.875rem] w-[110px] items-center justify-between rounded-md border border-perano-500 bg-white">
+            <input
+              className="size-full rounded-l-md px-2 text-xl text-light-950 outline-none"
+              type="number"
+              name="min-price-range"
+              id="min-price-range"
+              value={minPrice}
+              onChange={onChangeMinPrice}
+              min={Math.floor(limitsPrice.startPrice / 2)}
+              max={limitsPrice.startPrice - 1}
+              required
+            />
+            <span className="flex h-[2.875rem] w-12 items-center justify-center rounded-r-md bg-perano-500 text-xl text-white">
+              $
+            </span>
+          </div>
+          <span className="text-center text-[.75rem] text-perano-500">Min. Price</span>
+        </label>
         <span className="flex h-[2.875rem] w-[1.125rem] items-center justify-center text-[.875rem]">
           to
         </span>
-        <FormFielPriceInput
-          labelText="Max price"
-          inputName="max-range"
-          inputId="max-range"
-          inputValue={maxPrice}
-          minValueInput={filterCriterias.minPrice + 1}
-          maxValueInput={limitsPrice.endPrice}
-          onChange={onChangeMaxPrice}
-        />
+        <label
+          htmlFor="max-price-range"
+          className="flex h-[4.5rem] min-w-[5.875rem] flex-col gap-1  text-perano-500"
+        >
+          <div className="flex h-[2.875rem] w-[110px] items-center justify-between rounded-md border border-perano-500 bg-white">
+            <input
+              className="size-full rounded-l-md px-2 text-xl text-light-950 outline-none"
+              type="number"
+              name="max-price-range"
+              id="max-price-range"
+              value={maxPrice}
+              onChange={onChangeMaxPrice}
+              min={limitsPrice.startPrice}
+              max={limitsPrice.endPrice}
+              required
+            />
+            <span className="flex h-[2.875rem] w-12 items-center justify-center rounded-r-md bg-perano-500 text-xl text-white">
+              $
+            </span>
+          </div>
+          <span className="text-center text-[.75rem] text-perano-500">Max. Price</span>
+        </label>
       </div>
       <div>
         <button

@@ -26,8 +26,8 @@ export default function ProductsProvider({ children }: Props) {
   React.useEffect(() => {
     if (LoadingStates.SUCCESS === statusProducts) {
       // Find out limits price
-      setStartPrice(getMinPricePossible(products));
-      setEndPrice(getMaxPricePossible(products));
+      setStartPrice(Math.floor(getMinPricePossible(products)));
+      setEndPrice(Math.floor(getMaxPricePossible(products)));
     }
   }, [statusProducts, products]);
 

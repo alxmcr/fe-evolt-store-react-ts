@@ -3,8 +3,8 @@ type FormFieldPriceInputProps = {
   inputId: string;
   inputName: string;
   inputValue: number;
-  minValueInput: number;
-  maxValueInput: number;
+  minValueInput?: number;
+  maxValueInput?: number;
   onChange: (ev: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
