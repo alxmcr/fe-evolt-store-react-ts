@@ -1,4 +1,5 @@
-import { FilterBluetoothData, FilterBrandData, TagFilterProduct, FilterStorageData } from "./filterTypes";
+import { FilterBluetoothData, FilterBrandData, TagFilterProduct, FilterStorageData } from './filterTypes';
+import { ProductInCart } from './shoppingCartTypes';
 
 type UpdateMinPriceAction = {
   type: 'update_min_price';
@@ -79,3 +80,26 @@ export type ProductsLimitsPrice = {
   startPrice: number;
   endPrice: number;
 };
+
+export type ShoppingCart = {
+  productsInCart: ProductInCart[];
+};
+
+type AddProductToCartAction = {
+  type: 'add_product_to_cart';
+  payload: ProductInCart;
+};
+
+type RemoveToCartAction = {
+  type: 'remove_product_to_cart';
+  payload: {
+    productId: string;
+  };
+};
+
+type UpdateProductToCartAction = {
+  type: 'update_product_to_cart';
+  payload: ProductInCart;
+};
+
+export type ProductToCartAction = AddProductToCartAction | RemoveToCartAction | UpdateProductToCartAction;

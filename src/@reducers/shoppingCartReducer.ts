@@ -1,0 +1,30 @@
+import { ProductToCartAction, ShoppingCart } from '../@types/reducerTypes';
+
+export default function shoppingCartReducer(state: ShoppingCart, action: ProductToCartAction): ShoppingCart {
+  switch (action.type) {
+    case 'add_product_to_cart': {
+      return { ...state, productsInCart: [...state.productsInCart, action.payload] };
+    }
+    case 'update_product_to_cart': {
+      return {
+        ...state,
+        productsInCart: state.productsInCart.map((p) => {
+          if (p.id === action.payload.id) {
+            return action.payload;
+          }
+          return p;
+        }),
+      };
+    }
+    case 'remove_product_to_cart': {
+      return {
+        ...state,
+        productsInCart: state.productsInCart.filter((p) => p.id !== action.payload.productId),
+      };
+    }
+
+    default: {
+      throw Error(`Unknown action`);
+    }
+  }
+}
