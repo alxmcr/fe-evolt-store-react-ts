@@ -1,14 +1,20 @@
 import React from 'react';
 import { FilterCriteriasDispatchContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
-import {
-  ProductsLimitsPriceContext
-} from '../../@providers/ProductsProvider/ProductsContext';
+import { ProductsLimitsPriceContext } from '../../@providers/ProductsProvider/ProductsContext';
 import Icon16x16ArrowRight from '../@icons/16x16/Icon16x16ArrowRight';
+import {
+  FilterProductsTagsContext,
+  FilterProductsTagsDispatchContext,
+} from '../../@providers/TagsFilterProvider/TagsFilterContext';
+import { FilterProductsTags } from '../../@types/reducerTypes';
+import { FilterProductTag } from '../../@types/filterTypes';
 
 export default function FormFilterByRangePrices() {
   const limitsPrice = React.useContext(ProductsLimitsPriceContext);
   const [minPrice, setMinPrice] = React.useState(Math.floor(limitsPrice.startPrice / 2));
   const [maxPrice, setMaxPrice] = React.useState(limitsPrice.startPrice);
+  const tagFilters = React.useContext(FilterProductsTagsContext);
+  const dispatchTagsFilter = React.useContext(FilterProductsTagsDispatchContext);
   const dispatchFilterCriterias = React.useContext(FilterCriteriasDispatchContext);
 
   const onChangeMinPrice = (ev: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,6 +28,7 @@ export default function FormFilterByRangePrices() {
   const onSubmit = (ev: React.FormEvent) => {
     ev.preventDefault();
 
+    // Filter criterias
     dispatchFilterCriterias({
       type: 'update_min_price',
       payload: {
@@ -33,6 +40,25 @@ export default function FormFilterByRangePrices() {
       type: 'update_max_price',
       payload: {
         max: maxPrice,
+      },
+    });
+
+    // Tags filter
+    console.log({ tagFilters });
+
+    const isNewTag = (tags: FilterProductTag[] = [], textTag = '') => {
+      if (tags.length === 0) return true;
+
+      return tags.findIndex((t) => t.value === textTag) === -1;
+    };
+
+    dispatchTagsFilter({
+      type: 'added_tag_filter',
+      payload: {
+        id: '',
+        key: 'price-range',
+        typeValue: 'string',
+        value: `${minPrice} - ${maxPrice}`,
       },
     });
   };

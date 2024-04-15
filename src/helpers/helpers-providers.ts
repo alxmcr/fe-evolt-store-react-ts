@@ -57,3 +57,9 @@ export default function initializationFilterProductsCriterias(
     );
   }
 }
+
+const isNewTag = (tags: FilterProductTag[] = [], textTag = '') => {
+  if (tags.length === 0) return true;
+
+  return tags.findIndex((t) => t.value === textTag) === -1;
+};
