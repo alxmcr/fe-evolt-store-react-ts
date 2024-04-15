@@ -22,3 +22,17 @@ export type FilterBluetoothData = {
   version: string;
   checked: boolean;
 };
+
+export type AddTagFilterAction = {
+  type: 'added_tag_filter';
+  payload: FilterProductTag;
+};
+
+export type DeleteTagFilterAction = {
+  type: 'deleted_tag_filter';
+  payload: {
+    id: string;
+  };
+};
+
+export type TagFilterAction = AddTagFilterAction | DeleteTagFilterAction;
