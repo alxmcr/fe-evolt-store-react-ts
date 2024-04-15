@@ -72,7 +72,7 @@ export type FilterProductsCriterias = {
 };
 
 export type FilterProductsTags = {
-  tagsFilter: FilterProductTag[];
+  tags: FilterProductTag[];
 };
 
 export type ProductsLimitsPrice = {

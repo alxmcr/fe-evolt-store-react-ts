@@ -1,13 +1,13 @@
 import React from 'react';
 import { FilterCriteriasDispatchContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
 import { ProductsLimitsPriceContext } from '../../@providers/ProductsProvider/ProductsContext';
-import Icon16x16ArrowRight from '../@icons/16x16/Icon16x16ArrowRight';
 import {
   FilterProductsTagsContext,
   FilterProductsTagsDispatchContext,
 } from '../../@providers/TagsFilterProvider/TagsFilterContext';
-import { FilterProductsTags } from '../../@types/reducerTypes';
 import { FilterProductTag } from '../../@types/filterTypes';
+import { checkExists } from '../../helpers/helpers-providers';
+import Icon16x16ArrowRight from '../@icons/16x16/Icon16x16ArrowRight';
 
 export default function FormFilterByRangePrices() {
   const limitsPrice = React.useContext(ProductsLimitsPriceContext);
@@ -44,23 +44,25 @@ export default function FormFilterByRangePrices() {
     });
 
     // Tags filter
-    console.log({ tagFilters });
-
-    const isNewTag = (tags: FilterProductTag[] = [], textTag = '') => {
-      if (tags.length === 0) return true;
-
-      return tags.findIndex((t) => t.value === textTag) === -1;
+    const textTag = `${minPrice} - ${maxPrice}`;
+    const isNewTag = checkExists(tagFilters, textTag);
+    const tag: FilterProductTag = {
+      id: 'tag-price-range',
+      key: 'price-range',
+      value: textTag,
     };
 
-    dispatchTagsFilter({
-      type: 'added_tag_filter',
-      payload: {
-        id: '',
-        key: 'price-range',
-        typeValue: 'string',
-        value: `${minPrice} - ${maxPrice}`,
-      },
-    });
+    if (isNewTag) {
+      dispatchTagsFilter({
+        type: 'added_tag_filter',
+        payload: tag,
+      });
+    } else {
+      dispatchTagsFilter({
+        type: 'updated_tag_filter',
+        payload: { ...tag, value: textTag },
+      });
+    }
   };
 
   return (

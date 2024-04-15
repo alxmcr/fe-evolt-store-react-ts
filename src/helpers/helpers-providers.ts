@@ -1,21 +1,18 @@
-import {
-  FilterAction,
-  FilterProductsCriterias,
-  ProductsLimitsPrice,
-} from '../@reducers/filterProductsCriteriasReducer';
 import { ProductData } from '../@types/appTypes';
+import { FilterProductTag } from '../@types/filterTypes';
+import { FilterAction, FilterProductsCriterias, ProductsLimitsPrice } from '../@types/reducerTypes';
 import {
   findAllFilterBluetooths,
   findAllFilterBrands,
   findAllFilterStorages,
 } from './helpers-products-filter';
 
-export default function initializationFilterProductsCriterias(
+export const initializationFilterProductsCriterias = (
   products: ProductData[],
   limitsPrice: ProductsLimitsPrice,
   filterCriterias: FilterProductsCriterias,
   dispatch: React.Dispatch<FilterAction>,
-) {
+) => {
   if (filterCriterias.brands.length === 0) {
     // Filter criterias
     const brandsForFilter = findAllFilterBrands(products);
@@ -56,9 +53,14 @@ export default function initializationFilterProductsCriterias(
       }),
     );
   }
-}
+};
 
-const isNewTag = (tags: FilterProductTag[] = [], textTag = '') => {
+export const checkExists = (tags: FilterProductTag[] = [], textTag = '') => {
+  console.log("🚀 ~ checkExists ~ tags:", tags)
+  console.log("🚀 ~ checkExists ~ Array.isArray(tags):", Array.isArray(tags))
+  console.log("🚀 ~ checkExists ~ typeof tags:", typeof tags)
+  console.log("🚀 ~ checkExists ~ tags.length:", tags.length)
+  console.log("🚀 ~ checkExists ~ tags.findIndex:", tags.findIndex)
   if (tags.length === 0) return true;
 
   return tags.findIndex((t) => t.value === textTag) === -1;

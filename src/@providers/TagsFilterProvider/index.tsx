@@ -8,10 +8,10 @@ type Props = {
 };
 
 export default function TagsFilterProvider({ children }: Props) {
-  const [tagsFilter, dispatch] = React.useReducer(tagsFilterReducer, initialFilterProductsTags);
+  const [tags, dispatch] = React.useReducer(tagsFilterReducer, initialFilterProductsTags);
 
   return (
-    <FilterProductsTagsContext.Provider value={tagsFilter}>
+    <FilterProductsTagsContext.Provider value={tags.tags}>
       <FilterProductsTagsDispatchContext.Provider value={dispatch}>
         {children}
       </FilterProductsTagsDispatchContext.Provider>

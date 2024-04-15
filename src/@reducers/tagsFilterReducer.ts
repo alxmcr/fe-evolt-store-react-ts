@@ -7,20 +7,17 @@ export default function tagsFilterReducer(
 ): FilterProductsTags {
   switch (action.type) {
     case 'added_tag_filter': {
-      return {
-        ...state,
-        tagsFilter: [...state.tagsFilter, action.payload],
-      };
+      return { ...state, tags: [...state.tags, action.payload] };
     }
 
     case 'deleted_tag_filter': {
-      return { ...state, tagsFilter: state.tagsFilter.filter((t) => t.id !== action.payload.id) };
+      return { ...state, tags: state.tags.filter((t) => t.id !== action.payload.id) };
     }
 
     case 'updated_tag_filter': {
       return {
         ...state,
-        tagsFilter: state.tagsFilter.map((t) => {
+        tags: state.tags.map((t) => {
           if (t.id === action.payload.id) {
             return action.payload;
           }

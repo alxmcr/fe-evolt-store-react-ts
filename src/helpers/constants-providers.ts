@@ -9,7 +9,7 @@ export const initialFilterProductsCriterias: FilterProductsCriterias = {
 };
 
 export const initialFilterProductsTags: FilterProductsTags = {
-  tagsFilter: [],
+  tags: [],
 };
 
 export const initialLimitsPrice: ProductsLimitsPrice = {
