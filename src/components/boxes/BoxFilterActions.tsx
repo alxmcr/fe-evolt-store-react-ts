@@ -1,7 +1,11 @@
+import React from 'react';
 import Icon16x16Close from '../@icons/16x16/Icon16x16Close';
 import TagsFilterGroup from '../tags/TagsFilterGroup';
+import { FilterProductsTagsContext } from '../../@providers/TagsFilterProvider/TagsFilterContext';
 
 export default function BoxFilterActions() {
+  const tagsFilter = React.useContext(FilterProductsTagsContext);
+
   return (
     <div className="flex flex-col flex-wrap justify-start gap-4 rounded-lg bg-light-50 p-4">
       <header className="flex items-center gap-4">
@@ -16,7 +20,7 @@ export default function BoxFilterActions() {
           <span className="text-[.75rem]">Reset</span>
         </button>
       </header>
-      <TagsFilterGroup tagsFilter={[]} />
+      <TagsFilterGroup tagsFilter={tagsFilter} />
     </div>
   );
 }
