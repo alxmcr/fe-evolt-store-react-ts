@@ -37,10 +37,6 @@ export const uncheckedByCategory = (
       });
       break;
 
-    case 'range-price':
-      console.log('🚀 ~ tagToRemove:', tagToRemove);
-      break;
-
     default:
       throw Error('Unknown tag category');
   }
