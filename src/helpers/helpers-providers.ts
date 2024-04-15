@@ -1,5 +1,4 @@
 import { ProductData } from '../@types/appTypes';
-import { FilterProductTag } from '../@types/filterTypes';
 import { FilterAction, FilterProductsCriterias, ProductsLimitsPrice } from '../@types/reducerTypes';
 import {
   findAllFilterBluetooths,
@@ -53,11 +52,4 @@ export const initializationFilterProductsCriterias = (
       }),
     );
   }
-};
-
-export const checkExistsRangePrice = (tags: FilterProductTag[] = [], keyTag = '') => {
-  console.log('🚀 ~ checkExists ~ textTag:', keyTag);
-  if (tags.length === 0) return true;
-
-  return tags.findIndex((t) => t.key === keyTag) === -1;
 };
