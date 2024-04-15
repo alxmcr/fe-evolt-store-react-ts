@@ -56,11 +56,6 @@ export const initializationFilterProductsCriterias = (
 };
 
 export const checkExists = (tags: FilterProductTag[] = [], textTag = '') => {
-  console.log("🚀 ~ checkExists ~ tags:", tags)
-  console.log("🚀 ~ checkExists ~ Array.isArray(tags):", Array.isArray(tags))
-  console.log("🚀 ~ checkExists ~ typeof tags:", typeof tags)
-  console.log("🚀 ~ checkExists ~ tags.length:", tags.length)
-  console.log("🚀 ~ checkExists ~ tags.findIndex:", tags.findIndex)
   if (tags.length === 0) return true;
 
   return tags.findIndex((t) => t.value === textTag) === -1;

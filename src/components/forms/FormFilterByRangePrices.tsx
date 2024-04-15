@@ -11,7 +11,6 @@ import Icon16x16ArrowRight from '../@icons/16x16/Icon16x16ArrowRight';
 
 export default function FormFilterByRangePrices() {
   const limitsPrice = React.useContext(ProductsLimitsPriceContext);
-  console.log('🚀 ~ FormFilterByRangePrices ~ limitsPrice:', limitsPrice);
   const [minPrice, setMinPrice] = React.useState(0);
   const [maxPrice, setMaxPrice] = React.useState(0);
   const tagFilters = React.useContext(FilterProductsTagsContext);
@@ -47,6 +46,7 @@ export default function FormFilterByRangePrices() {
     // Tags filter
     const textTag = `${minPrice} - ${maxPrice}`;
     const isNewTag = checkExists(tagFilters, textTag);
+    console.log("🚀 ~ onSubmit ~ isNewTag:", isNewTag)
     const tag: FilterProductTag = {
       id: 'tag-price-range',
       key: 'price-range',
