@@ -11,8 +11,9 @@ import Icon16x16ArrowRight from '../@icons/16x16/Icon16x16ArrowRight';
 
 export default function FormFilterByRangePrices() {
   const limitsPrice = React.useContext(ProductsLimitsPriceContext);
-  const [minPrice, setMinPrice] = React.useState(Math.floor(limitsPrice.startPrice / 2));
-  const [maxPrice, setMaxPrice] = React.useState(limitsPrice.startPrice);
+  console.log('🚀 ~ FormFilterByRangePrices ~ limitsPrice:', limitsPrice);
+  const [minPrice, setMinPrice] = React.useState(0);
+  const [maxPrice, setMaxPrice] = React.useState(0);
   const tagFilters = React.useContext(FilterProductsTagsContext);
   const dispatchTagsFilter = React.useContext(FilterProductsTagsDispatchContext);
   const dispatchFilterCriterias = React.useContext(FilterCriteriasDispatchContext);
@@ -64,6 +65,11 @@ export default function FormFilterByRangePrices() {
       });
     }
   };
+
+  React.useEffect(() => {
+    setMinPrice(Math.floor(limitsPrice.startPrice / 2));
+    setMaxPrice(limitsPrice.startPrice);
+  }, [limitsPrice.startPrice]);
 
   return (
     <form onSubmit={onSubmit} className="flex items-start gap-3">
