@@ -10,7 +10,7 @@ export default function BoxProductsInCart() {
       <StackProductsInCart productsInCart={shoppingCart.productsInCart} />
       <div>
         <h4>Total</h4>
-        <span>MXN 5999.97</span>
+        <span className="text-[1.25rem] font-bold">MXN 5999.97</span>
       </div>
     </div>
   );
