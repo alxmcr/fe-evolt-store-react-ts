@@ -1,6 +1,6 @@
 import { ProductInCart } from '../../@types/shoppingCartTypes';
 import { formatPriceWithDecimals } from '../../helpers/helpers-format';
-import Icon16x16Plus from '../@icons/16x16/Icon16x16Plus';
+import Icon16x16CircleAdd from '../@icons/16x16/Icon16x16CircleAdd';
 import BoxProductImageCover from '../boxes/BoxProductImageCover';
 
 type Props = {
@@ -19,11 +19,11 @@ export default function CardProductInCart({ productInCart }: Props) {
         <h3 className="font-black">{productInCart.name}</h3>
         <div className="flex items-center gap-4">
           <button className="flex items-center">
-            <Icon16x16Plus />
+            <Icon16x16CircleAdd />
           </button>
           <span className="font-semibold">{productInCart.quantity}</span>
           <button className="flex items-center">
-            <Icon16x16Plus />
+            <Icon16x16CircleAdd />
           </button>
         </div>
         <p className="font-semibold">
