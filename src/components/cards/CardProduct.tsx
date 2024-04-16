@@ -1,5 +1,11 @@
+import React from 'react';
+import {
+  ShoppingCartContext,
+  ShoppingCartDispatchContext,
+} from '../../@providers/ShoppingCartProvider/ShoppingCardContext';
 import { ProductData } from '../../@types/appTypes';
-import Icon16x16Plus from '../@icons/16x16/Icon16x16Plus';
+import { findProductInCartById } from '../../helpers/helpers-reducers';
+import Icon16X16Cart from '../@icons/16x16/Icon16x16Cart';
 import BoxProductImage from '../boxes/BoxProductImage';
 
 type Props = {
@@ -7,6 +13,47 @@ type Props = {
 };
 
 export default function CardProduct({ product }: Props) {
+  const [addedToCart, setAddedToCart] = React.useState(false);
+  const shoppingCart = React.useContext(ShoppingCartContext);
+  const dispatch = React.useContext(ShoppingCartDispatchContext);
+
+  const handleAddProductToCart = (product: ProductData, quantity = 1) => {
+    const productInCart = findProductInCartById(shoppingCart.productsInCart, product?.id);
+
+    if (productInCart === null) {
+      // Add new product to cart
+      dispatch({
+        type: 'add_product_to_cart',
+        payload: {
+          ...product,
+          quantity,
+        },
+      });
+    } else {
+      // Update cart
+      dispatch({
+        type: 'update_product_to_cart',
+        payload: {
+          ...product,
+          quantity: productInCart?.quantity + 1,
+        },
+      });
+    }
+
+    setAddedToCart(true);
+  };
+
+  const handleRemoveProductToCart = (product: ProductData) => {
+    dispatch({
+      type: 'remove_product_to_cart',
+      payload: {
+        productId: product.id,
+      },
+    });
+
+    setAddedToCart(false);
+  };
+
   if (product === null || product === undefined) {
     return null;
   }
@@ -26,10 +73,24 @@ export default function CardProduct({ product }: Props) {
         <p className="text-[.9375rem] font-semibold">
           {product.priceCurrency} {product.priceValue}
         </p>
-        <button className="flex min-h-[1.875rem] items-center justify-center gap-2 rounded-lg border border-perano-200">
-          <span className="text-[.5625rem] font-semibold uppercase">Add to cart</span>
-          <Icon16x16Plus />
-        </button>
+
+        {addedToCart ? (
+          <button
+            className="flex min-h-10 items-center justify-center gap-2 rounded-lg border border-[#FF668B] bg-[#FF668B] text-[.875rem] text-white hover:border-light-950 hover:bg-light-950"
+            onClick={() => handleRemoveProductToCart(product)}
+          >
+            <Icon16X16Cart />
+            <span className="font-semibold uppercase ">Remove from cart</span>
+          </button>
+        ) : (
+          <button
+            className="bg:text-white flex min-h-10 items-center justify-center gap-2 rounded-lg border border-perano-200 text-[.875rem] hover:border-[#6691FF] hover:bg-[#6691FF] hover:text-light-50"
+            onClick={() => handleAddProductToCart(product, 1)}
+          >
+            <Icon16X16Cart />
+            <span className="font-semibold uppercase">Add to cart</span>
+          </button>
+        )}
       </footer>
     </article>
   );
