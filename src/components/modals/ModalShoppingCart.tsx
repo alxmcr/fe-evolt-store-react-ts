@@ -9,11 +9,17 @@ export default function ModalShoppingCart() {
         <h3 className="font-semibold">Shopping cart</h3>
         <Icon18x18Close />
       </header>
-      <BoxProductsInCart />
-      <button className="flex h-[2.625rem] items-center justify-center gap-4 rounded-lg bg-perano-300">
-        <span>Checkout</span>
-        <Icon18x18ArrowForward />
-      </button>
+      <div>
+        <BoxProductsInCart />
+        <div className="flex items-center justify-between">
+          <h4>Total</h4>
+          <span className="text-[1.25rem] font-bold">MXN 5999.97</span>
+        </div>
+        <button className="flex h-[2.625rem] items-center justify-center gap-4 rounded-lg bg-perano-300">
+          <span>Checkout</span>
+          <Icon18x18ArrowForward />
+        </button>
+      </div>
     </article>
   );
 }
