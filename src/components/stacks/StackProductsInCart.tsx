@@ -16,7 +16,7 @@ export default function StackProductsInCart({ productsInCart = [] }: Props) {
   }
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-5">
       {productsInCart.map((productInCart) => (
         <CardProductInCart key={productInCart.id} productInCart={productInCart} />
       ))}
