@@ -1,5 +1,6 @@
 import { ProductInCart } from '../../@types/shoppingCartTypes';
 import Icon10x10Plus from '../@icons/10x10/Icon10x10Plus';
+import BoxProductImageCover from '../boxes/BoxProductImageCover';
 
 type Props = {
   productInCart: ProductInCart;
@@ -8,9 +9,11 @@ type Props = {
 export default function CardProductInCart({ productInCart }: Props) {
   return (
     <article>
-      <div>
-        <img src="" alt="" />
-      </div>
+      <BoxProductImageCover
+        photoFilename={productInCart.photoFilename}
+        photoAlt={productInCart.photoAlt}
+        photoSource={productInCart.photoSource}
+      />
       <div>
         <h3>{productInCart.name}</h3>
         <div>

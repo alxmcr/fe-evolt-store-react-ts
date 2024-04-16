@@ -1,4 +1,5 @@
 import Icon16x16ArrowRight from '../@icons/16x16/Icon16x16ArrowRight';
+import BoxProductsInCart from '../boxes/BoxProductsInCart';
 
 export default function ModalShoppingCart() {
   return (
@@ -6,13 +7,7 @@ export default function ModalShoppingCart() {
       <header>
         <h3>Shopping cart</h3>
       </header>
-      <div>
-        <div></div>
-        <div>
-          <h4>Total</h4>
-          <span>MXN 5999.97</span>
-        </div>
-      </div>
+      <BoxProductsInCart />
       <button>
         <span>Checkout</span>
         <Icon16x16ArrowRight />
