@@ -1,25 +1,18 @@
-import Icon18x18ArrowForward from '../@icons/18x18/Icon18x18ArrowForward';
+import React from 'react';
+import { ShoppingCartContext } from '../../@providers/ShoppingCartProvider/ShoppingCardContext';
 import Icon18x18Close from '../@icons/18x18/Icon18x18Close';
 import BoxProductsInCart from '../boxes/BoxProductsInCart';
 
 export default function ModalShoppingCart() {
+  const shoppingCart = React.useContext(ShoppingCartContext);
+
   return (
-    <article className="flex w-[21.25rem] flex-col gap-10 bg-light-50 px-[8px] py-[12px]">
+    <article className="flex w-[19rem] flex-col gap-10 bg-light-50 p-[12px]">
       <header className="flex items-center justify-between">
         <h3 className="font-semibold">Shopping cart</h3>
         <Icon18x18Close />
       </header>
-      <div>
-        <BoxProductsInCart />
-        <div className="flex items-center justify-between">
-          <h4>Total</h4>
-          <span className="text-[1.25rem] font-bold">MXN 5999.97</span>
-        </div>
-        <button className="flex h-[2.625rem] items-center justify-center gap-4 rounded-lg bg-perano-300">
-          <span>Checkout</span>
-          <Icon18x18ArrowForward />
-        </button>
-      </div>
+      <BoxProductsInCart productsInCart={shoppingCart.productsInCart} />
     </article>
   );
 }
