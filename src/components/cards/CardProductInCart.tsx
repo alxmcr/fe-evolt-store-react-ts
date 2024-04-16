@@ -1,4 +1,5 @@
 import { ProductInCart } from '../../@types/shoppingCartTypes';
+import { formatPriceWithDecimals } from '../../helpers/helpers-format';
 import Icon16x16Plus from '../@icons/16x16/Icon16x16Plus';
 import BoxProductImageCover from '../boxes/BoxProductImageCover';
 
@@ -26,7 +27,7 @@ export default function CardProductInCart({ productInCart }: Props) {
           </button>
         </div>
         <p className="font-semibold">
-          {productInCart.priceCurrency} {productInCart.priceValue * productInCart.quantity}
+          {`${productInCart.priceCurrency} ${formatPriceWithDecimals(productInCart.priceValue * productInCart.quantity)}`}
         </p>
       </div>
     </article>

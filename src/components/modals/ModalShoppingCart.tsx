@@ -4,7 +4,7 @@ import BoxProductsInCart from '../boxes/BoxProductsInCart';
 
 export default function ModalShoppingCart() {
   return (
-    <article className="flex w-[18.75rem] flex-col gap-10 bg-light-50 px-[8px] py-[12px]">
+    <article className="flex w-[21.25rem] flex-col gap-10 bg-light-50 px-[8px] py-[12px]">
       <header className="flex items-center justify-between">
         <h3 className="font-semibold">Shopping cart</h3>
         <Icon18x18Close />
