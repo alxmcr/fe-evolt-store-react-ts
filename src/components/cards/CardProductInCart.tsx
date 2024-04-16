@@ -1,7 +1,7 @@
 import { ProductInCart } from '../../@types/shoppingCartTypes';
 import { formatPriceWithDecimals } from '../../helpers/helpers-format';
 import Icon16x16CircleAdd from '../@icons/16x16/Icon16x16CircleAdd';
-import BoxProductImageCover from '../boxes/BoxProductImageCover';
+import BoxProductImageCover from '../boxes/boxes-images/BoxProductImageCover';
 
 type Props = {
   productInCart: ProductInCart;
