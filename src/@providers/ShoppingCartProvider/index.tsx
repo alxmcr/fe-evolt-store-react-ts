@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShoppingCartContext, ShoppingCartDispatch } from './ShoppingCardContext';
+import { ShoppingCartContext, ShoppingCartDispatchContext } from './ShoppingCardContext';
 import shoppingCartReducer from '../../@reducers/shoppingCartReducer';
 import { initialShoppingCart } from '../../helpers/constants-providers';
 
@@ -12,7 +12,7 @@ export default function ShoppingCartProvider({ children }: Props) {
 
   return (
     <ShoppingCartContext.Provider value={shoppingCart}>
-      <ShoppingCartDispatch.Provider value={dispatch}>{children}</ShoppingCartDispatch.Provider>
+      <ShoppingCartDispatchContext.Provider value={dispatch}>{children}</ShoppingCartDispatchContext.Provider>
     </ShoppingCartContext.Provider>
   );
 }
