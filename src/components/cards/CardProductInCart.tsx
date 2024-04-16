@@ -8,24 +8,24 @@ type Props = {
 
 export default function CardProductInCart({ productInCart }: Props) {
   return (
-    <article className="flex items-center justify-between shadow-light-950">
+    <article className="flex items-center justify-between gap-2 p-[.625rem] shadow-light-950">
       <BoxProductImageCover
         photoFilename={productInCart.photoFilename}
         photoAlt={productInCart.photoAlt}
         photoSource={productInCart.photoSource}
       />
-      <div>
-        <h3>{productInCart.name}</h3>
+      <div className="flex h-[7.5rem] w-[17.5rem] flex-col gap-2">
+        <h3 className="font-black">{productInCart.name}</h3>
         <div className="flex items-center gap-4">
           <button className="flex items-center">
             <Icon16x16Plus />
           </button>
-          <span>{productInCart.quantity}</span>
+          <span className="font-semibold">{productInCart.quantity}</span>
           <button className="flex items-center">
             <Icon16x16Plus />
           </button>
         </div>
-        <p>
+        <p className="font-semibold">
           {productInCart.priceCurrency} {productInCart.priceValue * productInCart.quantity}
         </p>
       </div>
