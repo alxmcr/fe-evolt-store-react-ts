@@ -1,9 +1,32 @@
 import { TagFilterAction, TagFilterProduct } from '../@types/filterTypes';
+import { ProductInCart } from '../@types/shoppingCartTypes';
 
 export const checkExistsRangePriceByCategory = (tags: TagFilterProduct[] = [], categoryTag = '') => {
   if (tags.length === 0) return true;
 
   return tags.findIndex((t) => t.category === categoryTag) === -1;
+};
+
+export const checkIfProductWasAddedToCart = (
+  productsInCart: ProductInCart[] = [],
+  productToCheck: ProductInCart,
+) => {
+  if (productsInCart.length === 0) return false;
+  if (productToCheck === null || productToCheck === undefined) return false;
+
+  return productsInCart.findIndex((pr) => pr.id === productToCheck.id) === -1;
+};
+
+export const findProductInCartById = (productsInCart: ProductInCart[] = [], productId = '') => {
+  if (productsInCart.length === 0) return null;
+  if (productId === '') return null;
+
+  for (const productInCart of productsInCart) {
+    if (productInCart.id === productId) {
+      return productInCart;
+    }
+  }
+  return null;
 };
 
 export const handleAddTagRangePrice = (
