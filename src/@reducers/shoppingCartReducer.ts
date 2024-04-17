@@ -30,10 +30,12 @@ export default function shoppingCartReducer(state: ShoppingCart, action: Product
         ...state,
         productsInCart: state.productsInCart.map((p) => {
           if (p.id === action.payload.productId) {
-            return {
-              ...p,
-              quantity: p.quantity + 1,
-            };
+            if (p.quantity + 1 <= p.stock) {
+              return {
+                ...p,
+                quantity: p.quantity + 1,
+              };
+            }
           }
           return p;
         }),
