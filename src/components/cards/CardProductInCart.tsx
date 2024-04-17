@@ -15,8 +15,6 @@ export default function CardProductInCart({ productInCart }: Props) {
   const dispatch = React.useContext(ShoppingCartDispatchContext);
 
   const handleIncreaseQuantity = (productToIncrease: ProductInCart) => {
-    console.log('🚀 ~ handleIncreaseQuantity ~ productToIncrease:', productToIncrease);
-
     dispatch({
       type: 'increase_quantity_one_by_one_product_in_cart',
       payload: {
@@ -26,12 +24,19 @@ export default function CardProductInCart({ productInCart }: Props) {
   };
 
   const handleDecreaseQuantity = (productToDecrease: ProductInCart) => {
-    console.log('🚀 ~ handleDecreaseQuantity ~ productToDecrease:', productToDecrease);
-
     dispatch({
       type: 'decrease_quantity_one_by_one_product_in_cart',
       payload: {
         productId: productToDecrease.id,
+      },
+    });
+  };
+
+  const handleRemoveProductFromCart = (productToRemove: ProductInCart) => {
+    dispatch({
+      type: 'remove_product_from_cart',
+      payload: {
+        productId: productToRemove.id,
       },
     });
   };
@@ -57,7 +62,10 @@ export default function CardProductInCart({ productInCart }: Props) {
               <Icon16x16Add />
             </button>
           </div>
-          <button className="flex size-[24px] items-center justify-center bg-pink-500 text-white md:size-[28px] lg:size-[32px]">
+          <button
+            className="flex size-[24px] items-center justify-center bg-pink-500 text-white md:size-[28px] lg:size-[32px]"
+            onClick={() => handleRemoveProductFromCart(productInCart)}
+          >
             <Icon16x16Close />
           </button>
         </div>

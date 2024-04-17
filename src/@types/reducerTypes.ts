@@ -90,8 +90,8 @@ type AddProductToCartAction = {
   payload: ProductInCart;
 };
 
-type RemoveToCartAction = {
-  type: 'remove_product_to_cart';
+type RemoveProductFromCartAction = {
+  type: 'remove_product_from_cart';
   payload: {
     productId: string;
   };
@@ -118,7 +118,7 @@ type DecreaseQuantityOneByOneProductInCartAction = {
 
 export type ProductToCartAction =
   | AddProductToCartAction
-  | RemoveToCartAction
+  | RemoveProductFromCartAction
   | UpdateProductToCartAction
   | IncreaseQuantityOneByOneProductInCartAction
   | DecreaseQuantityOneByOneProductInCartAction;

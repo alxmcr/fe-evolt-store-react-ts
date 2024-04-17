@@ -6,7 +6,7 @@ export default function shoppingCartReducer(state: ShoppingCart, action: Product
       return { ...state, productsInCart: [...state.productsInCart, action.payload] };
     }
 
-    case 'remove_product_to_cart': {
+    case 'remove_product_from_cart': {
       return {
         ...state,
         productsInCart: state.productsInCart.filter((p) => p.id !== action.payload.productId),
