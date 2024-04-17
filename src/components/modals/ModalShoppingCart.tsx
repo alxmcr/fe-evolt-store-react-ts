@@ -15,7 +15,7 @@ export default function ModalShoppingCart() {
   return (
     <dialog
       ref={dialogRef}
-      className="flex w-[304px] flex-col gap-6 bg-light-50 backdrop:bg-black/50 md:w-[336px] lg:w-[392px]"
+      className="w-[304px] bg-light-50 backdrop:bg-black/50 md:right-[-380px] md:top-[94px] md:w-[336px] lg:right-[-610px] lg:top-[-190px] lg:w-[392px]"
     >
       <div className="flex flex-col gap-6 ">
         <header className="flex items-center justify-between border border-b-perano-400 p-[12px]">
