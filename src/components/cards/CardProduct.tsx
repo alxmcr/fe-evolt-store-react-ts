@@ -54,6 +54,15 @@ export default function CardProduct({ product }: Props) {
     });
   };
 
+  React.useEffect(() => {
+    const indexProduct = shoppingCart.productsInCart.findIndex((p) => p.id === product.id);
+
+    if (indexProduct === -1) {
+      // Product exists on shopping cart
+      setAddedToCart(false);
+    }
+  }, [shoppingCart.productsInCart, product.id]);
+
   if (product === null || product === undefined) {
     return null;
   }
