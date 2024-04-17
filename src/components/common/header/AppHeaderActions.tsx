@@ -1,8 +1,12 @@
+import React from 'react';
 import Icon30x30Cart from '../../@icons/30x30/Icon30x30Cart';
 import Icon30x30Heart from '../../@icons/30x30/Icon30x30Heart';
 import AppBadgeIcon from '../../badges/AppBadgeIcon';
+import { ShoppingCartContext } from '../../../@providers/ShoppingCartProvider/ShoppingCardContext';
 
 export default function AppHeaderActions() {
+  const shoppingCart = React.useContext(ShoppingCartContext);
+
   const handleFavorites = () => {
     console.log('Display favorites');
   };
@@ -19,7 +23,7 @@ export default function AppHeaderActions() {
         </AppBadgeIcon>
       </button>
       <button className="flex size-[40px] items-center" onClick={handleCart}>
-        <AppBadgeIcon smallText="0">
+        <AppBadgeIcon smallText={String(shoppingCart.productsInCart.length)}>
           <Icon30x30Cart />
         </AppBadgeIcon>
       </button>

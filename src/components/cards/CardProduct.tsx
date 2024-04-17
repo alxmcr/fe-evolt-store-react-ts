@@ -6,7 +6,7 @@ import {
 import { ProductData } from '../../@types/appTypes';
 import { findProductInCartById } from '../../helpers/helpers-reducers';
 import Icon16X16Cart from '../@icons/16x16/Icon16x16Cart';
-import BoxProductImage from '../boxes/BoxProductImage';
+import BoxProductImage from '../boxes/boxes-images/BoxProductImage';
 
 type Props = {
   product: ProductData;
