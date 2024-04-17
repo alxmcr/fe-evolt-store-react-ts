@@ -18,6 +18,7 @@ export type ProductData = {
   brand: BrandData;
   bluetooth: BluetoothData;
   storage: StorageData;
+  stock: number;
 };
 
 export type BrandData = {
