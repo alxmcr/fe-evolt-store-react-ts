@@ -8,6 +8,10 @@ type Props = {
 };
 
 export default function BoxProductsInCart({ productsInCart = [] }: Props) {
+  const handleGoToCheckout = () => {
+    console.log('go to checkout');
+  };
+
   if (productsInCart.length === 0) {
     return (
       <div className="flex h-[31.25rem] flex-col items-center justify-center gap-6">
@@ -25,7 +29,10 @@ export default function BoxProductsInCart({ productsInCart = [] }: Props) {
           <h4>Total</h4>
           <span className="text-[1.25rem] font-bold text-perano-600">MXN 5999.97</span>
         </div>
-        <button className="flex h-[2.625rem] w-full items-center justify-center gap-4 rounded-lg bg-perano-600 text-light-50">
+        <button
+          className="flex h-[2.625rem] w-full items-center justify-center gap-4 rounded-lg bg-perano-600 text-light-50"
+          onClick={handleGoToCheckout}
+        >
           <span>Checkout</span>
           <Icon18x18ArrowForward />
         </button>
