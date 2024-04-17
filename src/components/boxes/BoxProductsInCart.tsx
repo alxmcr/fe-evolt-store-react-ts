@@ -10,7 +10,7 @@ type Props = {
 export default function BoxProductsInCart({ productsInCart = [] }: Props) {
   if (productsInCart.length === 0) {
     return (
-      <div className="flex h-[31.25rem] flex-col items-center justify-center gap-6">
+      <div className="flex h-[31.25rem] flex-col items-center justify-center gap-6 bg-[#f6bcf6]">
         <Icon200x200Cart />
         <p>Your shopping list is empty.</p>
       </div>
@@ -18,7 +18,7 @@ export default function BoxProductsInCart({ productsInCart = [] }: Props) {
   }
 
   return (
-    <div className="flex h-[31.25rem] flex-col items-center justify-center gap-6">
+    <div className="flex h-[31.25rem] flex-col items-center gap-6 bg-[#f6bcf6]">
       <StackProductsInCart productsInCart={productsInCart} />
       <div className="flex items-center justify-between">
         <h4>Total</h4>

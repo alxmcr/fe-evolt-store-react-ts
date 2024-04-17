@@ -9,14 +9,10 @@ type Props = {
 
 export default function CardProductInCart({ productInCart }: Props) {
   return (
-    <article className="h-[120px] w-[280px] p-[10px] md:h-[140px] md:w-[314px] lg:h-[154px] lg:w-[370px]">
-      <BoxProductImageCover
-        photoFilename={productInCart.photoFilename}
-        photoAlt={productInCart.photoAlt}
-        photoSource={productInCart.photoSource}
-      />
-      <div className="flex h-[120px] w-[280px] flex-col gap-2">
-        <h3 className="font-black">{productInCart.name}</h3>
+    <article className="flex h-[120px] w-[280px] gap-[8px] border border-perano-600 bg-white p-[10px] md:h-[140px] md:w-[314px] lg:h-[154px] lg:w-[370px]">
+      <BoxProductImageCover photoFilename={productInCart.photoFilename} photoAlt={productInCart.photoAlt} />
+      <div className="flex w-[152px] flex-col gap-2 md:w-[166px] lg:w-[208px]">
+        <h3 className="truncate font-black">{productInCart.name}</h3>
         <div className="flex items-center gap-4">
           <button className="flex items-center">
             <Icon16x16CircleAdd />
