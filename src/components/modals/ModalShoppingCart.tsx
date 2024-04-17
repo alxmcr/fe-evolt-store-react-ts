@@ -9,8 +9,8 @@ export default function ModalShoppingCart() {
   console.log(shoppingCart.productsInCart);
 
   return (
-    <article className="flex w-[304px] flex-col gap-10 bg-light-50 md:w-[336px] lg:w-[392px]">
-      <header className="flex items-center justify-between p-[12px]">
+    <article className="flex w-[304px] flex-col gap-6 bg-light-50 md:w-[336px] lg:w-[392px]">
+      <header className="flex items-center justify-between border border-b-perano-400 p-[12px]">
         <h3 className="font-semibold">Shopping cart</h3>
         <Icon18x18Close />
       </header>
