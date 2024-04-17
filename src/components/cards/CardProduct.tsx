@@ -85,7 +85,7 @@ export default function CardProduct({ product }: Props) {
 
         {addedToCart ? (
           <button
-            className="flex min-h-10 items-center justify-center gap-2 rounded-lg border border-[#FF668B] bg-[#FF668B] text-[.875rem] text-white hover:border-light-950 hover:bg-light-950"
+            className="flex min-h-10 items-center justify-center gap-2 rounded-lg border border-[#FF668B] bg-[#FF668B] text-[.875rem] text-white md:hover:border-light-950 md:hover:bg-light-950"
             onClick={() => handleRemoveProductFromCart(product)}
           >
             <span className="font-semibold uppercase ">Remove</span>
@@ -93,7 +93,7 @@ export default function CardProduct({ product }: Props) {
           </button>
         ) : (
           <button
-            className="bg:text-white flex min-h-10 items-center justify-center gap-2 rounded-lg border border-perano-200 text-[.875rem] hover:border-[#6691FF] hover:bg-[#6691FF] hover:text-light-50"
+            className="bg:text-white flex min-h-10 items-center justify-center gap-2 rounded-lg border border-perano-200 text-[.875rem] md:hover:border-[#6691FF] md:hover:bg-[#6691FF] md:hover:text-light-50"
             onClick={() => handleAddProductToCart(product, 1)}
           >
             <span className="font-semibold uppercase">Add to cart</span>
