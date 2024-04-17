@@ -18,9 +18,9 @@ export default function BoxProductsInCart({ productsInCart = [] }: Props) {
   }
 
   return (
-    <div className="flex h-[31.25rem] flex-col items-center gap-6">
+    <div className="flex h-[550px] flex-col items-center gap-6">
       <StackProductsInCart productsInCart={productsInCart} />
-      <div className="flex h-[156px] w-full flex-col items-center justify-between gap-4 px-[12px]">
+      <div className="flex h-[100px] w-full flex-col items-center justify-between gap-4 px-[12px]">
         <div className="flex w-full items-center justify-between">
           <h4>Total</h4>
           <span className="text-[1.25rem] font-bold text-perano-600">MXN 5999.97</span>
