@@ -43,15 +43,15 @@ export default function CardProduct({ product }: Props) {
     setAddedToCart(true);
   };
 
-  const handleRemoveProductToCart = (product: ProductData) => {
+  const handleRemoveProductFromCart = (productToRemove: ProductData) => {
+    setAddedToCart(false);
+
     dispatch({
-      type: 'remove_product_to_cart',
+      type: 'remove_product_from_cart',
       payload: {
-        productId: product.id,
+        productId: productToRemove.id,
       },
     });
-
-    setAddedToCart(false);
   };
 
   if (product === null || product === undefined) {
@@ -77,7 +77,7 @@ export default function CardProduct({ product }: Props) {
         {addedToCart ? (
           <button
             className="flex min-h-10 items-center justify-center gap-2 rounded-lg border border-[#FF668B] bg-[#FF668B] text-[.875rem] text-white hover:border-light-950 hover:bg-light-950"
-            onClick={() => handleRemoveProductToCart(product)}
+            onClick={() => handleRemoveProductFromCart(product)}
           >
             <Icon16X16Cart />
             <span className="font-semibold uppercase ">Remove from cart</span>
