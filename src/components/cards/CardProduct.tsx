@@ -43,16 +43,25 @@ export default function CardProduct({ product }: Props) {
     setAddedToCart(true);
   };
 
-  const handleRemoveProductToCart = (product: ProductData) => {
+  const handleRemoveProductFromCart = (productToRemove: ProductData) => {
+    setAddedToCart(false);
+
     dispatch({
-      type: 'remove_product_to_cart',
+      type: 'remove_product_from_cart',
       payload: {
-        productId: product.id,
+        productId: productToRemove.id,
       },
     });
-
-    setAddedToCart(false);
   };
+
+  React.useEffect(() => {
+    const indexProduct = shoppingCart.productsInCart.findIndex((p) => p.id === product.id);
+
+    if (indexProduct === -1) {
+      // Product exists on shopping cart
+      setAddedToCart(false);
+    }
+  }, [shoppingCart.productsInCart, product.id]);
 
   if (product === null || product === undefined) {
     return null;
@@ -77,18 +86,18 @@ export default function CardProduct({ product }: Props) {
         {addedToCart ? (
           <button
             className="flex min-h-10 items-center justify-center gap-2 rounded-lg border border-[#FF668B] bg-[#FF668B] text-[.875rem] text-white hover:border-light-950 hover:bg-light-950"
-            onClick={() => handleRemoveProductToCart(product)}
+            onClick={() => handleRemoveProductFromCart(product)}
           >
+            <span className="font-semibold uppercase ">Remove</span>
             <Icon16X16Cart />
-            <span className="font-semibold uppercase ">Remove from cart</span>
           </button>
         ) : (
           <button
             className="bg:text-white flex min-h-10 items-center justify-center gap-2 rounded-lg border border-perano-200 text-[.875rem] hover:border-[#6691FF] hover:bg-[#6691FF] hover:text-light-50"
             onClick={() => handleAddProductToCart(product, 1)}
           >
-            <Icon16X16Cart />
             <span className="font-semibold uppercase">Add to cart</span>
+            <Icon16X16Cart />
           </button>
         )}
       </footer>

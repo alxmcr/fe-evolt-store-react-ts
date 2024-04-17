@@ -18,6 +18,7 @@ export const productInCart001: ProductInCart = {
   brand: { id: 'brand-0008', name: 'Samsung' },
   bluetooth: { id: 'bluetooth-003', version: '5.2' },
   storage: { capacity: '1TB SSD', id: 'storage0004' },
+  stock: 50,
   quantity: 1,
 };
 
@@ -39,6 +40,7 @@ export const productInCart002: ProductInCart = {
   brand: { id: 'brand-0009', name: 'MSI' },
   bluetooth: { id: 'bluetooth-001', version: '5.0' },
   storage: { capacity: '128GB SSD + 128GB Micro SD', id: 'storage0001' },
+  stock: 50,
   quantity: 1,
 };
 
@@ -62,6 +64,7 @@ export const productInCart003: ProductInCart = {
   brand: { id: 'brand-0010', name: 'Razer' },
   bluetooth: { id: 'bluetooth-001', version: '5.0' },
   storage: { capacity: '128GB SSD + 128GB Micro SD', id: 'storage0001' },
+  stock: 50,
   quantity: 1,
 };
 
@@ -83,6 +86,7 @@ export const productInCart004: ProductInCart = {
   brand: { id: 'brand-0007', name: 'Lenovo' },
   bluetooth: { id: 'bluetooth-002', version: '5.1' },
   storage: { capacity: '2TB SSD', id: 'storage0005' },
+  stock: 50,
   quantity: 1,
 };
 

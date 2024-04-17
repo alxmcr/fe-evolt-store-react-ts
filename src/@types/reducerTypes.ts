@@ -90,8 +90,8 @@ type AddProductToCartAction = {
   payload: ProductInCart;
 };
 
-type RemoveToCartAction = {
-  type: 'remove_product_to_cart';
+type RemoveProductFromCartAction = {
+  type: 'remove_product_from_cart';
   payload: {
     productId: string;
   };
@@ -102,4 +102,23 @@ type UpdateProductToCartAction = {
   payload: ProductInCart;
 };
 
-export type ProductToCartAction = AddProductToCartAction | RemoveToCartAction | UpdateProductToCartAction;
+type IncreaseQuantityOneByOneProductInCartAction = {
+  type: 'increase_quantity_one_by_one_product_in_cart';
+  payload: {
+    productId: string;
+  };
+};
+
+type DecreaseQuantityOneByOneProductInCartAction = {
+  type: 'decrease_quantity_one_by_one_product_in_cart';
+  payload: {
+    productId: string;
+  };
+};
+
+export type ProductToCartAction =
+  | AddProductToCartAction
+  | RemoveProductFromCartAction
+  | UpdateProductToCartAction
+  | IncreaseQuantityOneByOneProductInCartAction
+  | DecreaseQuantityOneByOneProductInCartAction;

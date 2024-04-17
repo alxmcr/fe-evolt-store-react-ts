@@ -1,24 +1,7 @@
 import { ProductData } from '../@types/appTypes';
 import { bluetoothV5, bluetoothV5_1, bluetoothV5_2, bluetoothV5_3 } from './mock-laptops-bluetooth';
-import {
-  ACER,
-  APPLE,
-  ASUS,
-  DELL,
-  HP,
-  LENOVO,
-  MICROSOFT,
-  MSI,
-  RAZER,
-  SAMSUNG,
-} from './mock-laptops-brands';
-import {
-  storage128GB,
-  storage1TB,
-  storage256GB,
-  storage2TB,
-  storage512GB,
-} from './mock-laptops-storages';
+import { ACER, APPLE, ASUS, DELL, HP, LENOVO, MICROSOFT, MSI, RAZER, SAMSUNG } from './mock-laptops-brands';
+import { storage128GB, storage1TB, storage256GB, storage2TB, storage512GB } from './mock-laptops-storages';
 
 export const computer001: ProductData = {
   id: 'product-000001',
@@ -38,6 +21,7 @@ export const computer001: ProductData = {
   brand: APPLE,
   bluetooth: bluetoothV5,
   storage: storage128GB,
+  stock: 75,
 };
 
 export const computer002: ProductData = {
@@ -58,6 +42,7 @@ export const computer002: ProductData = {
   brand: MICROSOFT,
   bluetooth: bluetoothV5_1,
   storage: storage512GB,
+  stock: 76,
 };
 
 export const computer003: ProductData = {
@@ -78,6 +63,7 @@ export const computer003: ProductData = {
   brand: ASUS,
   bluetooth: bluetoothV5,
   storage: storage256GB,
+  stock: 64,
 };
 
 export const computer004: ProductData = {
@@ -98,6 +84,7 @@ export const computer004: ProductData = {
   brand: ACER,
   bluetooth: bluetoothV5_2,
   storage: storage1TB,
+  stock: 34,
 };
 
 export const computer005: ProductData = {
@@ -118,6 +105,7 @@ export const computer005: ProductData = {
   brand: LENOVO,
   bluetooth: bluetoothV5_1,
   storage: storage2TB,
+  stock: 13,
 };
 
 export const computer006: ProductData = {
@@ -138,6 +126,7 @@ export const computer006: ProductData = {
   brand: HP,
   bluetooth: bluetoothV5_3,
   storage: storage256GB,
+  stock: 10,
 };
 
 export const computer007: ProductData = {
@@ -158,6 +147,7 @@ export const computer007: ProductData = {
   brand: DELL,
   bluetooth: bluetoothV5_1,
   storage: storage128GB,
+  stock: 30,
 };
 
 export const computer008: ProductData = {
@@ -178,6 +168,7 @@ export const computer008: ProductData = {
   brand: SAMSUNG,
   bluetooth: bluetoothV5_2,
   storage: storage1TB,
+  stock: 40,
 };
 
 export const computer009: ProductData = {
@@ -198,6 +189,7 @@ export const computer009: ProductData = {
   brand: MSI,
   bluetooth: bluetoothV5,
   storage: storage128GB,
+  stock: 50,
 };
 
 export const computer010: ProductData = {
@@ -220,6 +212,7 @@ export const computer010: ProductData = {
   brand: RAZER,
   bluetooth: bluetoothV5,
   storage: storage128GB,
+  stock: 20,
 };
 
 export const MOCK_DATA_COMPUTERS: ProductData[] = [
