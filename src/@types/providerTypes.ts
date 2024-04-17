@@ -1,11 +1,6 @@
 import { LoadingStates } from '../@enums/appEnums';
 import { ProductData } from './appTypes';
-import {
-  FilterBluetoothData,
-  FilterBrandData,
-  TagFilterProduct,
-  FilterStorageData,
-} from './filterTypes';
+import { FilterBluetoothData, FilterBrandData, TagFilterProduct, FilterStorageData } from './filterTypes';
 
 export type ProductsContextData = {
   products: ProductData[];
@@ -28,4 +23,9 @@ export type ProductFilterCriteriasContextData = {
   brands: FilterBrandData[];
   storages: FilterStorageData[];
   bluetooths: FilterBluetoothData[];
+};
+
+export type CartDialogActions = {
+  openDialog: () => void;
+  closeDialog: () => void;
 };
