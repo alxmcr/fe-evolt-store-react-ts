@@ -26,6 +26,13 @@ export default function tagsFilterReducer(
       };
     }
 
+    case 'reset_tags_filter': {
+      return {
+        ...state,
+        tags: [],
+      };
+    }
+
     default: {
       throw Error(`Unknown action`);
     }
