@@ -76,12 +76,15 @@ export const getBrandNamesFromFilterCriterias = (filterProductsCriterias: Filter
     return [];
   }
 
-  return filterProductsCriterias.brands.map((b) => {
-    if (b.checked) {
-      return b.name;
+  const brandNamesChecked = [];
+
+  for (const brand of filterProductsCriterias.brands) {
+    if (brand.checked) {
+      brandNamesChecked.push(brand.name);
     }
-    return '';
-  });
+  }
+
+  return brandNamesChecked;
 };
 
 export const getStorageCapacitiesFromFilterCriterias = (filterProductsCriterias: FilterProductsCriterias) => {
@@ -97,12 +100,15 @@ export const getStorageCapacitiesFromFilterCriterias = (filterProductsCriterias:
     return [];
   }
 
-  return filterProductsCriterias.storages.map((b) => {
-    if (b.checked) {
-      return b.capacity;
+  const storageCapacitiesChecked = [];
+
+  for (const storage of filterProductsCriterias.storages) {
+    if (storage.checked) {
+      storageCapacitiesChecked.push(storage.capacity);
     }
-    return '';
-  });
+  }
+
+  return storageCapacitiesChecked;
 };
 
 export const getBluetoothVersionsFromFilterCriterias = (filterProductsCriterias: FilterProductsCriterias) => {
@@ -118,12 +124,15 @@ export const getBluetoothVersionsFromFilterCriterias = (filterProductsCriterias:
     return [];
   }
 
-  return filterProductsCriterias.bluetooths.map((b) => {
-    if (b.checked) {
-      return b.version;
+  const bluetoothVersionsChecked = [];
+
+  for (const bluetooth of filterProductsCriterias.bluetooths) {
+    if (bluetooth.checked) {
+      bluetoothVersionsChecked.push(bluetooth.version);
     }
-    return '';
-  });
+  }
+
+  return bluetoothVersionsChecked;
 };
 
 export const filterProductsByFilterCriterias = (
@@ -140,14 +149,47 @@ export const filterProductsByFilterCriterias = (
 
   // Get data
   const brandNames = getBrandNamesFromFilterCriterias(filterProductsCriterias);
+  console.log('🚀 ~ brandNames:', brandNames);
   const storageCapacities = getStorageCapacitiesFromFilterCriterias(filterProductsCriterias);
+  console.log('🚀 ~ storageCapacities:', storageCapacities);
   const bluetoothVersions = getBluetoothVersionsFromFilterCriterias(filterProductsCriterias);
+  console.log('🚀 ~ bluetoothVersions:', bluetoothVersions);
 
+  return products;
+
+  /*
   return products.filter((product) => {
+    let match = false;
+
     const brandConditions = brandNames.includes(product.brand.name);
     const storageConditions = storageCapacities.includes(product.storage.capacity);
     const bluetoothConditions = bluetoothVersions.includes(product.bluetooth.version);
 
-    return brandConditions && storageConditions && bluetoothConditions;
+    //console.log(`${product.name}`, { brandConditions, storageConditions, bluetoothConditions });
+
+    if (brandConditions && storageCapacities && bluetoothConditions) {
+      //console.log('brandConditions && storageCapacities && bluetoothConditions');
+      match = brandConditions && storageConditions && bluetoothConditions;
+    } else if (brandConditions && storageCapacities) {
+      //console.log('brandConditions && storageCapacities');
+      match = brandConditions && storageConditions;
+    } else if (brandConditions && bluetoothConditions) {
+      //console.log('brandConditions && bluetoothConditions');
+      match = brandConditions && bluetoothConditions;
+    } else if (storageCapacities && bluetoothConditions) {
+      //console.log('storageCapacities && bluetoothConditions');
+      match = storageCapacities && bluetoothConditions;
+    } else if (brandConditions) {
+      match = brandConditions;
+    } else if (storageCapacities) {
+      //console.log('storageCapacities');
+      match = storageConditions;
+    } else if (bluetoothConditions) {
+      //console.log('bluetoothConditions');
+      match = bluetoothConditions;
+    }
+
+    return match;
   });
+  */
 };
