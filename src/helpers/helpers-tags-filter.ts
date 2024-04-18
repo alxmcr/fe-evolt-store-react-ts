@@ -1,10 +1,10 @@
 import { ProductData } from '../@types/appTypes';
 import { TagFilterProduct } from '../@types/filterTypes';
-import { FilterAction, FilterProductsCriterias } from '../@types/reducerTypes';
+import { FilterCriteriasAction, FilterProductsCriterias } from '../@types/reducerTypes';
 
 export const uncheckedByCategory = (
   tagToRemove: TagFilterProduct,
-  dispatch: React.Dispatch<FilterAction>,
+  dispatch: React.Dispatch<FilterCriteriasAction>,
 ) => {
   const { category, valueId } = tagToRemove;
 
@@ -43,7 +43,7 @@ export const uncheckedByCategory = (
   }
 };
 
-export const resetRangePriceFilter = (dispatch: React.Dispatch<FilterAction>) => {
+export const resetRangePriceFilter = (dispatch: React.Dispatch<FilterCriteriasAction>) => {
   dispatch({
     type: 'update_min_price',
     payload: {

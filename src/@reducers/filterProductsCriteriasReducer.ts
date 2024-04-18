@@ -1,8 +1,8 @@
-import { FilterAction, FilterProductsCriterias } from '../@types/reducerTypes';
+import { FilterCriteriasAction, FilterProductsCriterias } from '../@types/reducerTypes';
 
 export default function filterProductsCriteriasReducer(
   state: FilterProductsCriterias,
-  action: FilterAction,
+  action: FilterCriteriasAction,
 ): FilterProductsCriterias {
   switch (action.type) {
     case 'add_brand': {

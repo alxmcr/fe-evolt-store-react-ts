@@ -54,7 +54,7 @@ type AddBluetoothAction = {
   payload: FilterBluetoothData;
 };
 
-export type FilterAction =
+export type FilterCriteriasAction =
   | AddBrandAction
   | AddStorageAction
   | AddBluetoothAction
