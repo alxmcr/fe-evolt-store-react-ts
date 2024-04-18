@@ -231,7 +231,7 @@ export const computer011: ProductData = {
   photoAlt: '[Image of Apple MacBook Air M3]',
   screenSize: '13.6-inch',
   brand: APPLE,
-  bluetooth: bluetoothV5,
+  bluetooth: bluetoothV5_2,
   storage: storage128GB,
   stock: 75,
 };

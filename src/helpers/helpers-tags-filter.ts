@@ -149,15 +149,9 @@ export const filterProductsByFilterCriterias = (
 
   // Get data
   const brandNames = getBrandNamesFromFilterCriterias(filterProductsCriterias);
-  console.log('🚀 ~ brandNames:', brandNames);
   const storageCapacities = getStorageCapacitiesFromFilterCriterias(filterProductsCriterias);
-  console.log('🚀 ~ storageCapacities:', storageCapacities);
   const bluetoothVersions = getBluetoothVersionsFromFilterCriterias(filterProductsCriterias);
-  console.log('🚀 ~ bluetoothVersions:', bluetoothVersions);
 
-  return products;
-
-  /*
   return products.filter((product) => {
     let match = false;
 
@@ -165,7 +159,7 @@ export const filterProductsByFilterCriterias = (
     const storageConditions = storageCapacities.includes(product.storage.capacity);
     const bluetoothConditions = bluetoothVersions.includes(product.bluetooth.version);
 
-    //console.log(`${product.name}`, { brandConditions, storageConditions, bluetoothConditions });
+    console.log(`${product.name}`, { brandConditions, storageConditions, bluetoothConditions });
 
     if (brandConditions && storageCapacities && bluetoothConditions) {
       //console.log('brandConditions && storageCapacities && bluetoothConditions');
@@ -180,6 +174,9 @@ export const filterProductsByFilterCriterias = (
       //console.log('storageCapacities && bluetoothConditions');
       match = storageCapacities && bluetoothConditions;
     } else if (brandConditions) {
+      console.log('`------')
+      console.log('brandConditions');
+      console.log('------')
       match = brandConditions;
     } else if (storageCapacities) {
       //console.log('storageCapacities');
@@ -191,5 +188,4 @@ export const filterProductsByFilterCriterias = (
 
     return match;
   });
-  */
 };
