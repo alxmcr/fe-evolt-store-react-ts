@@ -232,7 +232,7 @@ export const computer011: ProductData = {
   screenSize: '13.6-inch',
   brand: APPLE,
   bluetooth: bluetoothV5_2,
-  storage: storage128GB,
+  storage: storage2TB,
   stock: 75,
 };
 
