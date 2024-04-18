@@ -147,45 +147,18 @@ export const filterProductsByFilterCriterias = (
     return products;
   }
 
-  // Get data
+  // Get values to filter
   const brandNames = getBrandNamesFromFilterCriterias(filterProductsCriterias);
-  const storageCapacities = getStorageCapacitiesFromFilterCriterias(filterProductsCriterias);
+  const storagesCapacity = getStorageCapacitiesFromFilterCriterias(filterProductsCriterias);
   const bluetoothVersions = getBluetoothVersionsFromFilterCriterias(filterProductsCriterias);
 
   return products.filter((product) => {
-    let match = false;
+    const matchBrands = brandNames.length > 0 ? brandNames.includes(product.brand.name) : true;
+    const matchStorages =
+      storagesCapacity.length > 0 ? storagesCapacity.includes(product.storage.capacity) : true;
+    const matchBluetooths =
+      bluetoothVersions.length > 0 ? bluetoothVersions.includes(product.bluetooth.version) : true;
 
-    const brandConditions = brandNames.includes(product.brand.name);
-    const storageConditions = storageCapacities.includes(product.storage.capacity);
-    const bluetoothConditions = bluetoothVersions.includes(product.bluetooth.version);
-
-    console.log(`${product.name}`, { brandConditions, storageConditions, bluetoothConditions });
-
-    if (brandConditions && storageCapacities && bluetoothConditions) {
-      //console.log('brandConditions && storageCapacities && bluetoothConditions');
-      match = brandConditions && storageConditions && bluetoothConditions;
-    } else if (brandConditions && storageCapacities) {
-      //console.log('brandConditions && storageCapacities');
-      match = brandConditions && storageConditions;
-    } else if (brandConditions && bluetoothConditions) {
-      //console.log('brandConditions && bluetoothConditions');
-      match = brandConditions && bluetoothConditions;
-    } else if (storageCapacities && bluetoothConditions) {
-      //console.log('storageCapacities && bluetoothConditions');
-      match = storageCapacities && bluetoothConditions;
-    } else if (brandConditions) {
-      console.log('`------')
-      console.log('brandConditions');
-      console.log('------')
-      match = brandConditions;
-    } else if (storageCapacities) {
-      //console.log('storageCapacities');
-      match = storageConditions;
-    } else if (bluetoothConditions) {
-      //console.log('bluetoothConditions');
-      match = bluetoothConditions;
-    }
-
-    return match;
+    return matchBrands && matchStorages && matchBluetooths;
   });
 };
