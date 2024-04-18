@@ -54,6 +54,10 @@ type AddBluetoothAction = {
   payload: FilterBluetoothData;
 };
 
+type ResetFilterCriterias = {
+  type: 'reset_filter_criterias';
+};
+
 export type FilterCriteriasAction =
   | AddBrandAction
   | AddStorageAction
@@ -62,7 +66,8 @@ export type FilterCriteriasAction =
   | UpdateMaxPriceAction
   | CheckedBrandAction
   | CheckedStorageAction
-  | CheckedBluetoothAction;
+  | CheckedBluetoothAction
+  | ResetFilterCriterias;
 
 export type FilterProductsCriterias = {
   minPrice: number;

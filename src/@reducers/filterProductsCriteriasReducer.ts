@@ -65,6 +65,11 @@ export default function filterProductsCriteriasReducer(
       };
     }
 
+    case 'reset_filter_criterias': {
+      console.log('reset filter');
+      return state;
+    }
+
     default: {
       throw Error(`Unknown action`);
     }

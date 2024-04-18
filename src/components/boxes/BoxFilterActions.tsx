@@ -1,23 +1,19 @@
 import React from 'react';
-import Icon16x16Close from '../@icons/16x16/Icon16x16Close';
-import TagsFilterGroup from '../tags/TagsFilterGroup';
 import {
   FilterProductsTagsContext,
   FilterProductsTagsDispatchContext,
 } from '../../@providers/TagsFilterProvider/TagsFilterContext';
-import { FilterCriteriasDispatchContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
+import Icon16x16Close from '../@icons/16x16/Icon16x16Close';
+import TagsFilterGroup from '../tags/TagsFilterGroup';
 
 export default function BoxFilterActions() {
   const tagsFilter = React.useContext(FilterProductsTagsContext);
   const dispatchTagsFilter = React.useContext(FilterProductsTagsDispatchContext);
-  const dispatchFilterCriterias = React.useContext(FilterCriteriasDispatchContext);
 
   const resetTagsFilter = () => {
     console.log('reset tags...');
     // Reset tags
     dispatchTagsFilter({ type: 'reset_tags_filter' });
-    // Reset filter
-    //dispatchFilterCriterias({ type: 'reset_filter_criterias' });
   };
 
   return (
