@@ -19,17 +19,21 @@ export default function BoxProductsInCart({ productsInCart = [] }: Props) {
 
   if (productsInCart.length === 0) {
     return (
-      <div className="flex h-[31.25rem] flex-col items-center justify-center gap-6">
-        <Icon200x200Cart />
-        <p>Your shopping list is empty.</p>
+      <div className="flex h-[494px] flex-col items-center justify-center gap-6 md:h-[582px] lg:h-[698px]">
+        <span className="text-perano-600">
+          <Icon200x200Cart />
+        </span>
+        <p className="w-[196px] px-[10px] text-center text-[24px] md:w-[226px] md:text-[28px] lg:w-[270px] lg:text-[32px]">
+          Your shopping list is empty.
+        </p>
       </div>
     );
   }
 
   return (
-    <div className="flex h-[550px] flex-col items-center gap-6">
+    <>
       <StackProductsInCart productsInCart={productsInCart} />
-      <div className="flex h-[100px] w-full flex-col items-center justify-between gap-4 px-[12px]">
+      <footer className="flex h-[116px] w-full flex-col justify-between gap-[12px] p-[12px] md:h-[126px] lg:h-[132px]">
         <div className="flex w-full items-center justify-between">
           <h4>Total</h4>
           <span className="text-[1.25rem] font-bold text-perano-600">MXN {totalToPayStr}</span>
@@ -41,7 +45,7 @@ export default function BoxProductsInCart({ productsInCart = [] }: Props) {
           <span>Checkout</span>
           <Icon18x18ArrowForward />
         </button>
-      </div>
-    </div>
+      </footer>
+    </>
   );
 }
