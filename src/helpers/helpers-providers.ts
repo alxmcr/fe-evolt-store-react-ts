@@ -1,5 +1,5 @@
 import { ProductData } from '../@types/appTypes';
-import { FilterAction, FilterProductsCriterias } from '../@types/reducerTypes';
+import { FilterCriteriasAction, FilterProductsCriterias } from '../@types/reducerTypes';
 import {
   findAllFilterBluetooths,
   findAllFilterBrands,
@@ -9,7 +9,7 @@ import {
 export const initializationFilterProductsCriterias = (
   products: ProductData[],
   filterCriterias: FilterProductsCriterias,
-  dispatch: React.Dispatch<FilterAction>,
+  dispatch: React.Dispatch<FilterCriteriasAction>,
 ) => {
   if (filterCriterias.brands.length === 0) {
     // Filter criterias

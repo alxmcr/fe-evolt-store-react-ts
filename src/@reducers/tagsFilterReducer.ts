@@ -1,9 +1,9 @@
-import { TagFilterAction } from '../@types/filterTypes';
+import { TagsFilterAction } from '../@types/filterTypes';
 import { FilterProductsTags } from '../@types/reducerTypes';
 
 export default function tagsFilterReducer(
   state: FilterProductsTags,
-  action: TagFilterAction,
+  action: TagsFilterAction,
 ): FilterProductsTags {
   switch (action.type) {
     case 'added_tag_filter': {
@@ -23,6 +23,13 @@ export default function tagsFilterReducer(
           }
           return t;
         }),
+      };
+    }
+
+    case 'reset_tags_filter': {
+      return {
+        ...state,
+        tags: [],
       };
     }
 

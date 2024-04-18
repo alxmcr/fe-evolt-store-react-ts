@@ -1,4 +1,4 @@
-import { TagFilterAction, TagFilterProduct } from '../@types/filterTypes';
+import { TagsFilterAction, TagFilterProduct } from '../@types/filterTypes';
 import { ProductInCart } from '../@types/shoppingCartTypes';
 
 export const checkExistsRangePriceByCategory = (tags: TagFilterProduct[] = [], categoryTag = '') => {
@@ -33,7 +33,7 @@ export const handleAddTagRangePrice = (
   tagFilters: TagFilterProduct[] = [],
   minPrice = 0,
   maxPrice = 0,
-  dispatchTagsFilter: (value: TagFilterAction) => void,
+  dispatchTagsFilter: (value: TagsFilterAction) => void,
 ) => {
   const textTag = `${minPrice} - ${maxPrice}`;
   const isNewTag = checkExistsRangePriceByCategory(tagFilters, 'range-price');
