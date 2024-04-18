@@ -15,10 +15,10 @@ export default function ModalShoppingCart() {
   return (
     <dialog
       ref={dialogRef}
-      className="w-[304px] bg-light-50 backdrop:bg-black/50 md:right-[-380px] md:top-[53px] md:w-[336px] lg:right-[-640px] lg:top-[70px] xl:right-[-610px] xl:top-[-190px] xl:w-[392px]"
+      className="h-[544px] w-[304px] bg-light-50 backdrop:bg-black/50 md:right-[-380px] md:top-[53px] md:h-[638px] md:w-[336px] lg:right-[-640px] lg:top-[70px] lg:h-[762px] xl:right-[-610px] xl:top-[-16px] xl:w-[392px]"
     >
-      <div className="flex flex-col gap-6 ">
-        <header className="flex items-center justify-between border border-b-perano-400 p-[12px]">
+      <div className="flex flex-col">
+        <header className="flex h-[50px] items-center justify-between px-[12px] py-[14px] md:h-[56px] md:p-[12px] lg:h-[62px]">
           <h3 className="text-[18px] font-bold uppercase tracking-widest text-perano-600 md:text-[26px] lg:text-[28px]">
             Shopping cart
           </h3>
