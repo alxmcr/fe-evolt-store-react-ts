@@ -1,5 +1,6 @@
+import { ProductData } from '../@types/appTypes';
 import { TagFilterProduct } from '../@types/filterTypes';
-import { FilterAction } from '../@types/reducerTypes';
+import { FilterAction, FilterProductsCriterias } from '../@types/reducerTypes';
 
 export const uncheckedByCategory = (
   tagToRemove: TagFilterProduct,
@@ -56,4 +57,34 @@ export const resetRangePriceFilter = (dispatch: React.Dispatch<FilterAction>) =>
       max: 0,
     },
   });
+};
+
+export const filterByBrands = (products: ProductData[] = [], brands: string[]) => {
+  return products.filter((product) => brands.includes(product.brand.name));
+};
+
+export const filterProductsByFilterCriterias = (
+  products: ProductData[] = [],
+  filterProductsCriterias: FilterProductsCriterias,
+) => {
+  if (products.length === 0) {
+    return products;
+  }
+
+  if (filterProductsCriterias === null || filterProductsCriterias === undefined) {
+    return products;
+  }
+
+  // Checkes
+  //const brandsChecked =
+
+  // Get data
+  const brandNames = filterProductsCriterias.brands.map((b) => {
+    if (b.checked) {
+      return b.name;
+    }
+    return '';
+  });
+
+  return products.filter((product) => brandNames.includes(product.brand.name));
 };

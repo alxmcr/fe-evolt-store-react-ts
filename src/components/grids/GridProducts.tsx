@@ -1,11 +1,18 @@
+import React from 'react';
 import { ProductData } from '../../@types/appTypes';
+import { filterProductsByFilterCriterias } from '../../helpers/helpers-tags-filter';
 import CardProduct from '../cards/CardProduct';
+import { FilterCriteriasContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
 
 type Props = {
   products: ProductData[];
 };
 
 export default function GridProducts({ products = [] }: Props) {
+  const filterProductsCriterias = React.useContext(FilterCriteriasContext);
+
+  console.log(filterProductsByFilterCriterias(products, filterProductsCriterias));
+
   if (products.length === 0) {
     return (
       <div>

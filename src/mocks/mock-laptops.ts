@@ -215,6 +215,27 @@ export const computer010: ProductData = {
   stock: 20,
 };
 
+export const computer011: ProductData = {
+  id: 'product-000011',
+  category: 'Computers',
+  name: 'Apple MacBook PRO M3',
+  priceValue: 2199.46,
+  priceCurrency: 'MXN',
+  operatingSystem: 'macOS Ventura',
+  color: 'Space Gray',
+  model: 'M3',
+  SKU: 'MKW43LL/A',
+  memory: '8GB RAM, 256GB SSD',
+  photoSource: 'trustedreviews.com',
+  photoFilename: 'apple-macbook-air-m2.png',
+  photoAlt: '[Image of Apple MacBook Air M3]',
+  screenSize: '13.6-inch',
+  brand: APPLE,
+  bluetooth: bluetoothV5,
+  storage: storage128GB,
+  stock: 75,
+};
+
 export const MOCK_DATA_COMPUTERS: ProductData[] = [
   computer001,
   computer002,
@@ -226,4 +247,5 @@ export const MOCK_DATA_COMPUTERS: ProductData[] = [
   computer008,
   computer009,
   computer010,
+  computer011,
 ];
