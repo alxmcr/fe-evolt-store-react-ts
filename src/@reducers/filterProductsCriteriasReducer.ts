@@ -67,7 +67,32 @@ export default function filterProductsCriteriasReducer(
 
     case 'reset_filter_criterias': {
       console.log('reset filter');
-      return state;
+      const brandsCriteriasReset = [
+        ...state.brands.map((b) => {
+          return { ...b, checked: false };
+        }),
+      ];
+
+      const storagesCriteriasReset = [
+        ...state.storages.map((s) => {
+          return { ...s, checked: false };
+        }),
+      ];
+
+      const bluetoothsCriteriasReset = [
+        ...state.bluetooths.map((bl) => {
+          return { ...bl, checked: false };
+        }),
+      ];
+
+      return {
+        ...state,
+        minPrice: 0,
+        maxPrice: 0,
+        brands: brandsCriteriasReset,
+        storages: storagesCriteriasReset,
+        bluetooths: bluetoothsCriteriasReset,
+      };
     }
 
     default: {

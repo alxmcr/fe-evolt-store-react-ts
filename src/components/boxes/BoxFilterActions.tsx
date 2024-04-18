@@ -1,4 +1,5 @@
 import React from 'react';
+import { FilterCriteriasDispatchContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
 import {
   FilterProductsTagsContext,
   FilterProductsTagsDispatchContext,
@@ -8,10 +9,14 @@ import TagsFilterGroup from '../tags/TagsFilterGroup';
 
 export default function BoxFilterActions() {
   const tagsFilter = React.useContext(FilterProductsTagsContext);
+  const dipatchFilterCriterias = React.useContext(FilterCriteriasDispatchContext);
   const dispatchTagsFilter = React.useContext(FilterProductsTagsDispatchContext);
 
-  const resetTagsFilter = () => {
+  const resetFilter = () => {
     console.log('reset tags...');
+    // Reset filter criterias
+    dipatchFilterCriterias({ type: 'reset_filter_criterias' });
+
     // Reset tags
     dispatchTagsFilter({ type: 'reset_tags_filter' });
   };
@@ -22,7 +27,7 @@ export default function BoxFilterActions() {
         <h4 className="font-bold uppercase">Filters</h4>
         <button
           className="flex min-h-[1.875rem] max-w-[5.125rem] items-center gap-2 rounded-lg border border-light-950 px-4"
-          onClick={resetTagsFilter}
+          onClick={resetFilter}
         >
           <span className="w-4">
             <Icon16x16Close />
