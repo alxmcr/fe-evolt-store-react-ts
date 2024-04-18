@@ -40,4 +40,4 @@ export type DeleteTagFilterAction = {
   };
 };
 
-export type TagFilterAction = AddTagFilterAction | DeleteTagFilterAction | UpdateTagFilterAction;
+export type TagsFilterAction = AddTagFilterAction | DeleteTagFilterAction | UpdateTagFilterAction;

@@ -1,7 +1,7 @@
 import React from 'react';
-import { TagFilterProduct, TagFilterAction } from '../../@types/filterTypes';
+import { TagFilterProduct, TagsFilterAction } from '../../@types/filterTypes';
 
 export const FilterProductsTagsContext = React.createContext<TagFilterProduct[]>([]);
 export const FilterProductsTagsDispatchContext = React.createContext<
-  React.Dispatch<TagFilterAction>
+  React.Dispatch<TagsFilterAction>
 >(() => {});
