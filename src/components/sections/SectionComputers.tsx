@@ -1,20 +1,31 @@
 import React from 'react';
+import { FilterCriteriasContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
 import { ProductsContext } from '../../@providers/ProductsProvider/ProductsContext';
+import { FilterProductsTagsContext } from '../../@providers/TagsFilterProvider/TagsFilterContext';
+import { ProductData } from '../../@types/appTypes';
+import { filterProductsByFilterCriterias } from '../../helpers/helpers-tags-filter';
 import AsideProductsFilter from '../asides/AsideProductsFilter';
 import BoxGridProducts from '../boxes/BoxGridProducts';
-import { filterProductsByFilterCriterias } from '../../helpers/helpers-tags-filter';
-import { FilterCriteriasContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
 
 export default function SectionComputers() {
   const products = React.useContext(ProductsContext);
   const filterProductsCriterias = React.useContext(FilterCriteriasContext);
-  const productsFiltered = filterProductsByFilterCriterias(products, filterProductsCriterias);
-  console.log('🚀 ~ BoxGridProducts ~ productsFiltered:', productsFiltered);
+  const tagsFilters = React.useContext(FilterProductsTagsContext);
+  const productsFiltered: ProductData[] = filterProductsByFilterCriterias(products, filterProductsCriterias);
 
-  if (productsFiltered?.length === 0) {
+  if (products?.length === 0) {
     return (
       <div className="flex h-[88vh] w-full flex-col items-center justify-center gap-3 bg-white">
         <h2 className="w-[90%] text-center text-[2rem]">Your tech store does not have products.</h2>
+      </div>
+    );
+  }
+
+  if (tagsFilters?.length > 0 && productsFiltered?.length === 0) {
+    return (
+      <div className="flex h-[88vh] w-full flex-col items-center justify-center gap-3 bg-white">
+        <h2 className="w-[90%] text-center text-[2rem]">Filter returned not results.</h2>
+        <button>Reset filter</button>
       </div>
     );
   }
