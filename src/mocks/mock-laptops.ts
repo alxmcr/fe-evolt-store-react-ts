@@ -236,7 +236,7 @@ export const computer011: ProductData = {
   stock: 75,
 };
 
-export const MOCK_DATA_COMPUTERS: ProductData[] = [
+export const MOCK_ONLY_COMPUTERS: ProductData[] = [
   computer001,
   computer002,
   computer003,
@@ -249,3 +249,19 @@ export const MOCK_DATA_COMPUTERS: ProductData[] = [
   computer010,
   computer011,
 ];
+
+export const MOCK_PRODUCTS: ProductData[] = [
+  computer001,
+  computer002,
+  computer003,
+  computer004,
+  computer005,
+  computer006,
+  computer007,
+  computer008,
+  computer009,
+  computer010,
+  computer011,
+];
+
+export const MOCK_EMPTY_PRODUCTS: ProductData[] = [];

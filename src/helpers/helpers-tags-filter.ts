@@ -135,7 +135,7 @@ export const getBluetoothVersionsFromFilterCriterias = (filterProductsCriterias:
   return bluetoothVersionsChecked;
 };
 
-export const filterProductsByFilterCriterias = (
+export const applyFilterCriterias = (
   products: ProductData[] = [],
   filterProductsCriterias: FilterProductsCriterias,
 ) => {
