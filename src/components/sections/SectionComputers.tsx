@@ -21,6 +21,7 @@ export default function SectionComputers() {
   const dispatchTagsFilter = React.useContext(FilterProductsTagsDispatchContext);
 
   // apply filter
+  // const productsFiltered: ProductData[] = []
   const productsFiltered: ProductData[] = applyFilterCriterias(products, filterProductsCriterias);
 
   const resetFilter = () => {
@@ -44,7 +45,10 @@ export default function SectionComputers() {
     return (
       <div className="flex h-[88vh] w-full flex-col items-center justify-center gap-3 bg-white">
         <h2 className="w-[90%] text-center text-[2rem]">Filter returned not results.</h2>
-        <button className="bg-perano-600 text-white" onClick={resetFilter}>
+        <button
+          className="bg:text-white flex min-h-10 w-[200px] items-center justify-center gap-2 rounded-lg border border-perano-200 px-3 py-4 text-[1.5rem] md:hover:border-[#6691FF] md:hover:bg-[#6691FF] md:hover:text-light-50"
+          onClick={resetFilter}
+        >
           Reset filter
         </button>
       </div>
