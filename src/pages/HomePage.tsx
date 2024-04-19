@@ -15,7 +15,7 @@ export default function HomePage() {
           <TagsFilterProvider>
             <ShoppingCartProvider>
               <div className="bg-perano-200">
-                <div className="mx-auto flex min-h-screen flex-col items-center gap-4 p-4 lg:w-[67.5rem]">
+                <div className="mx-auto flex min-h-screen flex-col items-center gap-4 p-4 xl:w-[67.5rem]">
                   <AppHeader />
                   <SectionComputers />
                   <ModalShoppingCart />
