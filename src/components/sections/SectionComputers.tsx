@@ -2,11 +2,16 @@ import React from 'react';
 import { ProductsContext } from '../../@providers/ProductsProvider/ProductsContext';
 import AsideProductsFilter from '../asides/AsideProductsFilter';
 import BoxGridProducts from '../boxes/BoxGridProducts';
+import { filterProductsByFilterCriterias } from '../../helpers/helpers-tags-filter';
+import { FilterCriteriasContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
 
 export default function SectionComputers() {
   const products = React.useContext(ProductsContext);
+  const filterProductsCriterias = React.useContext(FilterCriteriasContext);
+  const productsFiltered = filterProductsByFilterCriterias(products, filterProductsCriterias);
+  console.log('🚀 ~ BoxGridProducts ~ productsFiltered:', productsFiltered);
 
-  if (products?.length === 0) {
+  if (productsFiltered?.length === 0) {
     return (
       <div className="flex h-[88vh] w-full flex-col items-center justify-center gap-3 bg-white">
         <h2 className="w-[90%] text-center text-[2rem]">Your tech store does not have products.</h2>
@@ -15,8 +20,8 @@ export default function SectionComputers() {
   }
 
   return (
-    <section className="flex flex-col gap-4">
-      <h2 className="text-xl font-bold">Computers ({products.length})</h2>
+    <section className="flex w-full flex-col gap-4">
+      <h2 className="text-xl font-bold">Computers ({productsFiltered.length})</h2>
       <div className="lg:relative lg:flex lg:gap-4">
         <AsideProductsFilter />
         <BoxGridProducts />

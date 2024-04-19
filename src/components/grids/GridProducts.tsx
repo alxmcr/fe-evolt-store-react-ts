@@ -13,10 +13,10 @@ export default function GridProducts({ products = [] }: Props) {
   const productFiltered = filterProductsByFilterCriterias(products, filterProductsCriterias);
   console.log('🚀 ~ GridProducts ~ productFiltered:', productFiltered);
 
-  if (products.length === 0) {
+  if (products?.length === 0) {
     return (
-      <div>
-        <h2>No products</h2>
+      <div className="flex h-[88vh] w-full flex-col items-center justify-center gap-3 bg-white">
+        <h2 className="w-[90%] text-center text-[2rem]">No products</h2>
       </div>
     );
   }
