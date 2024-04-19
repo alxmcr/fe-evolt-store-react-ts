@@ -30,7 +30,7 @@ export default function BoxGridProducts({ productsFiltered = [] }: Props) {
 
   if (tagsFilter?.length > 0 && productsFiltered?.length === 0) {
     return (
-      <>
+      <div className="flex w-full flex-col gap-4 lg:w-4/6">
         {tagsFilter.length > 0 ? <BoxFilterActions /> : null}
         <section className="flex w-full flex-col gap-4">
           <div className="flex h-[88vh] w-full flex-col items-center justify-center gap-3 bg-white">
@@ -46,14 +46,14 @@ export default function BoxGridProducts({ productsFiltered = [] }: Props) {
             </button>
           </div>
         </section>
-      </>
+      </div>
     );
   }
 
   return (
-    <>
+    <div className="flex w-full flex-col gap-4 lg:w-4/6">
       {tagsFilter.length > 0 ? <BoxFilterActions /> : null}
       <GridProducts products={productsFiltered} />
-    </>
+    </div>
   );
 }

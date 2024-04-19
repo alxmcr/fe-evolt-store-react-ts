@@ -28,12 +28,8 @@ export default function SectionComputers() {
     <section className="flex w-full flex-col gap-4">
       <h2 className="text-xl font-bold">Products ({productsFiltered.length})</h2>
       <div className="lg:relative lg:flex lg:gap-4">
-        <aside className="hidden rounded-xl bg-white p-4 lg:sticky lg:flex lg:h-[880px] lg:w-2/6 lg:flex-col lg:gap-4">
-          <AsideProductsFilter />
-        </aside>
-        <div className="flex w-full flex-col gap-4 lg:w-4/6">
-          <BoxGridProducts productsFiltered={productsFiltered} />
-        </div>
+        <AsideProductsFilter />
+        <BoxGridProducts productsFiltered={productsFiltered} />
       </div>
     </section>
   );
