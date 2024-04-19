@@ -148,17 +148,26 @@ export const applyFilterCriterias = (
   }
 
   // Get values to filter
+  const { minPrice, maxPrice } = filterProductsCriterias;
+  console.log('🚀 ~ minPrice:', minPrice);
+  console.log('🚀 ~ maxPrice:', maxPrice);
   const brandNames = getBrandNamesFromFilterCriterias(filterProductsCriterias);
   const storagesCapacity = getStorageCapacitiesFromFilterCriterias(filterProductsCriterias);
   const bluetoothVersions = getBluetoothVersionsFromFilterCriterias(filterProductsCriterias);
 
   return products.filter((product) => {
+    let matchRangePrice = true;
+
+    if (minPrice > 0 && maxPrice > 0) {
+      matchRangePrice = product.priceValue >= minPrice && product.priceValue <= maxPrice;
+    }
+
     const matchBrands = brandNames.length > 0 ? brandNames.includes(product.brand.name) : true;
     const matchStorages =
       storagesCapacity.length > 0 ? storagesCapacity.includes(product.storage.capacity) : true;
     const matchBluetooths =
       bluetoothVersions.length > 0 ? bluetoothVersions.includes(product.bluetooth.version) : true;
 
-    return matchBrands && matchStorages && matchBluetooths;
+    return matchRangePrice && matchBrands && matchStorages && matchBluetooths;
   });
 };
