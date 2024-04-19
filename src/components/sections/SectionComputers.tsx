@@ -11,7 +11,6 @@ export default function SectionComputers() {
   const products = React.useContext(ProductsContext);
   const filterProductsCriterias = React.useContext(FilterCriteriasContext);
   // apply filter
-  // const productsFiltered: ProductData[] = []
   const productsFiltered: ProductData[] = applyFilterCriterias(products, filterProductsCriterias);
 
   if (products?.length === 0) {
