@@ -249,3 +249,5 @@ export const MOCK_DATA_COMPUTERS: ProductData[] = [
   computer010,
   computer011,
 ];
+
+export const MOCK_EMPTY_PRODUCTS: ProductData[] = [];
