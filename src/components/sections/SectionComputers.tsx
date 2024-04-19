@@ -10,14 +10,15 @@ import {
 } from '../../@providers/TagsFilterProvider/TagsFilterContext';
 import { ProductData } from '../../@types/appTypes';
 import { applyFilterCriterias } from '../../helpers/helpers-tags-filter';
-import AsideProductsFilter from '../asides/AsideProductsFilter';
-import BoxGridProducts from '../boxes/BoxGridProducts';
 import Icon200x200BugGameIcon from '../@icons/200x200/Icon200x200BugGameIcon';
+import AsideProductsFilter from '../asides/AsideProductsFilter';
+import BoxFilterActions from '../boxes/BoxFilterActions';
+import BoxGridProducts from '../boxes/BoxGridProducts';
 
 export default function SectionComputers() {
   const products = React.useContext(ProductsContext);
   const filterProductsCriterias = React.useContext(FilterCriteriasContext);
-  const tagsFilters = React.useContext(FilterProductsTagsContext);
+  const tagsFilter = React.useContext(FilterProductsTagsContext);
   const dipatchFilterCriterias = React.useContext(FilterCriteriasDispatchContext);
   const dispatchTagsFilter = React.useContext(FilterProductsTagsDispatchContext);
 
@@ -36,27 +37,32 @@ export default function SectionComputers() {
 
   if (products?.length === 0) {
     return (
-      <div className="flex h-[88vh] w-full flex-col items-center justify-center gap-3 bg-white">
-        <Icon200x200BugGameIcon />
-        <h2 className="w-[90%] text-center text-[2rem]">Your tech store does not have products.</h2>
-      </div>
+      <section className="flex w-full flex-col gap-4">
+        <div className="flex h-[88vh] w-full flex-col items-center justify-center gap-3 bg-white">
+          <Icon200x200BugGameIcon />
+          <h2 className="w-[90%] text-center text-[2rem]">Your tech store does not have products.</h2>
+        </div>
+      </section>
     );
   }
 
-  if (tagsFilters?.length > 0 && productsFiltered?.length === 0) {
+  if (tagsFilter?.length > 0 && productsFiltered?.length === 0) {
     return (
-      <div className="flex h-[88vh] w-full flex-col items-center justify-center gap-3 bg-white">
-        <span className="text-perano-600">
-          <Icon200x200BugGameIcon />
-        </span>
-        <h2 className="w-[90%] text-center text-[2rem]">Filter returned not results.</h2>
-        <button
-          className="flex min-h-10 w-[200px] items-center justify-center gap-2 rounded-lg border border-perano-800 px-3 py-4 text-[1.5rem] text-perano-800 md:hover:border-[#6691FF] md:hover:bg-[#6691FF] md:hover:text-light-50"
-          onClick={resetFilter}
-        >
-          Reset filter
-        </button>
-      </div>
+      <section className="flex w-full flex-col gap-4">
+        {tagsFilter.length > 0 ? <BoxFilterActions /> : null}
+        <div className="flex h-[88vh] w-full flex-col items-center justify-center gap-3 bg-white">
+          <span className="text-perano-600">
+            <Icon200x200BugGameIcon />
+          </span>
+          <h2 className="w-[90%] text-center text-[2rem]">Filter returned not results.</h2>
+          <button
+            className="flex min-h-10 w-[200px] items-center justify-center gap-2 rounded-lg border border-perano-800 px-3 py-4 text-[1.5rem] text-perano-800 md:hover:border-[#6691FF] md:hover:bg-[#6691FF] md:hover:text-light-50"
+            onClick={resetFilter}
+          >
+            Reset filter
+          </button>
+        </div>
+      </section>
     );
   }
 
