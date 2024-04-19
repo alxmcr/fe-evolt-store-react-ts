@@ -2,7 +2,7 @@ import React from 'react';
 import { LoadingStates } from '../@enums/appEnums';
 import { ProductData } from '../@types/appTypes';
 import { findProductCheapest, findProductMostExpensive } from '../helpers/helpers-hooks';
-import { MOCK_DATA_COMPUTERS } from '../mocks/mock-laptops';
+import { MOCK_PRODUCTS } from '../mocks/mock-laptops';
 
 export default function useProducts() {
   const [products, setProducts] = React.useState<ProductData[]>([]);
@@ -12,9 +12,9 @@ export default function useProducts() {
 
   React.useEffect(() => {
     setStatusProducts(LoadingStates.PENDING);
-    setProducts(MOCK_DATA_COMPUTERS);
-    setProductCheapest(findProductCheapest(MOCK_DATA_COMPUTERS));
-    setProductMostExpensive(findProductMostExpensive(MOCK_DATA_COMPUTERS));
+    setProducts(MOCK_PRODUCTS);
+    setProductCheapest(findProductCheapest(MOCK_PRODUCTS));
+    setProductMostExpensive(findProductMostExpensive(MOCK_PRODUCTS));
     setStatusProducts(LoadingStates.SUCCESS);
   }, []);
 
