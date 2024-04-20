@@ -4,7 +4,7 @@ import {
   ProductCheapestContext,
   ProductMostExpensiveContext,
   ProductsContext,
-  ProductsLoadingStateContext
+  ProductsLoadingStateContext,
 } from './ProductsContext';
 
 type Props = {

@@ -23,7 +23,7 @@ export default function TagsFilterGroup({ tagsFilter = [] }: Props) {
       uncheckedByCategory(tagToRemove, dispatch);
     } else {
       // reset range price filter
-      resetRangePriceFilter(dispatch)
+      resetRangePriceFilter(dispatch);
     }
 
     // Remove tag

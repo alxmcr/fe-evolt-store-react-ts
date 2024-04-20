@@ -17,9 +17,4 @@ export const bluetoothV5_3: BluetoothData = {
   version: '5.3',
 };
 
-export const MOCK_BLUETOOTHS: BluetoothData[] = [
-  bluetoothV5,
-  bluetoothV5_1,
-  bluetoothV5_2,
-  bluetoothV5_3,
-];
+export const MOCK_BLUETOOTHS: BluetoothData[] = [bluetoothV5, bluetoothV5_1, bluetoothV5_2, bluetoothV5_3];
