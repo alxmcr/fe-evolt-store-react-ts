@@ -22,11 +22,19 @@ export default function FormFilterByRangePrices() {
   const dispatchFilterCriterias = React.useContext(FilterCriteriasDispatchContext);
 
   const onChangeMinPrice = (ev: React.ChangeEvent<HTMLInputElement>) => {
-    setMinPrice(ev.target.valueAsNumber);
+    const number = Number(ev.target.value);
+
+    if (!isNaN(number)) {
+      setMinPrice(number);
+    }
   };
 
   const onChangeMaxPrice = (ev: React.ChangeEvent<HTMLInputElement>) => {
-    setMaxPrice(ev.target.valueAsNumber);
+    const number = Number(ev.target.value);
+
+    if (!isNaN(number)) {
+      setMaxPrice(number);
+    }
   };
 
   const onSubmit = (ev: React.FormEvent) => {
@@ -76,12 +84,13 @@ export default function FormFilterByRangePrices() {
           <div className="flex h-[2.875rem] w-[110px] items-center justify-between rounded-md border border-perano-500 bg-white">
             <input
               className="size-full rounded-l-md px-2 text-xl text-light-950 outline-none"
-              type="number"
+              type="text"
               name="min-price-range"
               id="min-price-range"
+              autoComplete="off"
+              placeholder="Min."
               value={minPrice}
               onChange={onChangeMinPrice}
-              min={productCheapest !== null ? Math.floor(productCheapest.priceValue) : 1}
               required
             />
             <span className="flex h-[2.875rem] w-12 items-center justify-center rounded-r-md bg-perano-500 text-xl text-white">
@@ -98,12 +107,13 @@ export default function FormFilterByRangePrices() {
           <div className="flex h-[2.875rem] w-[110px] items-center justify-between rounded-md border border-perano-500 bg-white">
             <input
               className="size-full rounded-l-md px-2 text-xl text-light-950 outline-none"
-              type="number"
+              type="text"
               name="max-price-range"
               id="max-price-range"
+              autoComplete="off"
+              placeholder="Max."
               value={maxPrice}
               onChange={onChangeMaxPrice}
-              max={productMostExpensive !== null ? Math.floor(productMostExpensive.priceValue) : 100}
               required
             />
             <span className="flex h-[2.875rem] w-12 items-center justify-center rounded-r-md bg-perano-500 text-xl text-white">
