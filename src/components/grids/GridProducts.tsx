@@ -6,7 +6,6 @@ type Props = {
 };
 
 export default function GridProducts({ products = [] }: Props) {
-
   if (products?.length === 0) {
     return (
       <div className="flex h-[88vh] w-full flex-col items-center justify-center gap-3 bg-white">
