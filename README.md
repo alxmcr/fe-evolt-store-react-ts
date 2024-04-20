@@ -33,11 +33,19 @@ Start the server
 
 ## Screenshots
 
+- Home page
+
 ![Home page](https://evolt-store.netlify.app/screenshots/01-evolt-home-page.png)
+
+- Home page - Add to cart
 
 ![Home page - Add to cart](https://evolt-store.netlify.app/screenshots/02-evolt-home-page-add-to-cart.png)
 
+- Home page - Dialog with products on cart
+
 ![Home page - Dialog with products on cart](https://evolt-store.netlify.app/screenshots/03-evolt-home-page-dialog-shopping-cart.png)
+
+- Home page - Filter products
 
 ![Home page - Filter products](https://evolt-store.netlify.app/screenshots/04-evolt-home-page-filter.png)
 
