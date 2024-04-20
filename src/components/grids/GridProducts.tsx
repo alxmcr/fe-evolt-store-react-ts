@@ -1,7 +1,4 @@
-import React from 'react';
-import { FilterCriteriasContext } from '../../@providers/FilterCriteriasProvider/FilterCriteriasContext';
 import { ProductData } from '../../@types/appTypes';
-import { applyFilterCriterias } from '../../helpers/helpers-tags-filter';
 import CardProduct from '../cards/CardProduct';
 
 type Props = {
@@ -9,10 +6,6 @@ type Props = {
 };
 
 export default function GridProducts({ products = [] }: Props) {
-  const filterProductsCriterias = React.useContext(FilterCriteriasContext);
-  const productFiltered = applyFilterCriterias(products, filterProductsCriterias);
-  console.log('🚀 ~ GridProducts ~ productFiltered:', productFiltered);
-
   if (products?.length === 0) {
     return (
       <div className="flex h-[88vh] w-full flex-col items-center justify-center gap-3 bg-white">

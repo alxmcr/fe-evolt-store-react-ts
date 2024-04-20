@@ -149,8 +149,6 @@ export const applyFilterCriterias = (
 
   // Get values to filter
   const { minPrice, maxPrice } = filterProductsCriterias;
-  console.log('🚀 ~ minPrice:', minPrice);
-  console.log('🚀 ~ maxPrice:', maxPrice);
   const brandNames = getBrandNamesFromFilterCriterias(filterProductsCriterias);
   const storagesCapacity = getStorageCapacitiesFromFilterCriterias(filterProductsCriterias);
   const bluetoothVersions = getBluetoothVersionsFromFilterCriterias(filterProductsCriterias);
