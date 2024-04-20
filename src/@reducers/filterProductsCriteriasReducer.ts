@@ -66,7 +66,6 @@ export default function filterProductsCriteriasReducer(
     }
 
     case 'reset_filter_criterias': {
-      console.log('reset filter');
       const brandsCriteriasReset = [
         ...state.brands.map((b) => {
           return { ...b, checked: false };

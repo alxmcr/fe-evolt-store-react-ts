@@ -13,7 +13,6 @@ export default function BoxFilterActions() {
   const dispatchTagsFilter = React.useContext(FilterProductsTagsDispatchContext);
 
   const resetFilter = () => {
-    console.log('reset tags...');
     // Reset filter criterias
     dipatchFilterCriterias({ type: 'reset_filter_criterias' });
 
