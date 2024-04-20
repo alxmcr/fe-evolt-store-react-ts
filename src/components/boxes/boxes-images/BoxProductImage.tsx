@@ -4,11 +4,7 @@ type Props = {
   photoAlt: string;
 };
 
-export default function BoxProductImage({
-  photoSource = '',
-  photoFilename = '',
-  photoAlt = '',
-}: Props) {
+export default function BoxProductImage({ photoSource = '', photoFilename = '', photoAlt = '' }: Props) {
   return (
     <div className="flex flex-col gap-2 px-2">
       <div className="flex h-[7.75rem] flex-col justify-center bg-perano-100 md:h-[12.75rem] lg:h-[16.75rem]">
